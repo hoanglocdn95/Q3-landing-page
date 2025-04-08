@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome to Q3 Landing Page"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "language": {
+    "vi": "Vietnamese",
+    "en": "English"
+  }
+} 

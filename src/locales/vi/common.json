@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Trang chủ",
+    "welcome": "Chào mừng đến với Q3 Landing Page"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
+  },
+  "language": {
+    "vi": "Tiếng Việt",
+    "en": "English"
+  }
+} 
