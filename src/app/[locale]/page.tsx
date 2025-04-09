@@ -1,8 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-
-const locales = ["en", "vi"];
+import { locales } from "@/constants/common";
 
 const dictionary = {
   en: {
