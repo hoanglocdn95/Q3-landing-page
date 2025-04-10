@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "email": "enquire@example.com",
+    "phone": "+44 (0) 1234 567 891"
+  },
+  "nav": {
+    "about": "Giới thiệu",
+    "courses": "Khóa học",
+    "knowledge": "Kiến thức",
+    "policy": "Chính sách", 
+    "contact": "Liên hệ"
+  },
+  "courses": {
+    "pte": "PTE Academic",
+    "ielts": "IELTS",
+    "toeic": "TOEIC",
+    "conversation": "Tiếng Anh Giao Tiếp"
+  },
+  "knowledge": {
+    "pteTips": "Mẹo Thi PTE",
+    "learningTips": "Kinh Nghiệm Học Tiếng Anh",
+    "news": "Tin Tức & Sự Kiện"
+  },
+  "cta": "Tư vấn ngay",
+  "language": {
+    "title": "Ngôn ngữ",
+    "vi": "Tiếng Việt",
+    "en": "English"
+  }
+} 

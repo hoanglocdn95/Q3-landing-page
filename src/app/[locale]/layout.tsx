@@ -6,16 +6,19 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header locale={locale}/>
       <main className="flex-grow">{children}</main>
-      <Footer />
+      <Footer locale={locale}/>
     </div>
   );
 }

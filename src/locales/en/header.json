@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "email": "enquire@example.com",
+    "phone": "+44 (0) 1234 567 891"
+  },
+  "nav": {
+    "about": "About",
+    "courses": "Courses",
+    "knowledge": "Knowledge",
+    "policy": "Policy",
+    "contact": "Contact"
+  },
+  "courses": {
+    "pte": "PTE Academic",
+    "ielts": "IELTS",
+    "toeic": "TOEIC",
+    "conversation": "English Conversation"
+  },
+  "knowledge": {
+    "pteTips": "PTE Tips",
+    "learningTips": "English Learning Tips",
+    "news": "News & Events"
+  },
+  "cta": "Get Consultation",
+  "language": {
+    "title": "Language",
+    "vi": "Vietnamese",
+    "en": "English"
+  }
+} 
