@@ -9,7 +9,7 @@ export default function Footer({ locale = "vi" }: { locale?: string }) {
 
   return (
     <footer className="bg-white py-12 px-4 md:px-8 border-t">
-      <div className="container mx-auto max-w-6xl">
+      <div className="section-container">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <Link href="/" className="inline-block mb-6">

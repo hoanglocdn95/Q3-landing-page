@@ -20,6 +20,8 @@
   --color-border: #dde0e8;
   --color-background: #ffffff;
   --color-background-secondary: #f5f6f9;
+  --color-gray-25: #fcfcfd;
+  --color-custom-border: #0068ff;
 }
 
 body {

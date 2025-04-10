@@ -190,8 +190,8 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
       </div>
 
       {/* Main Navigation */}
-      <header className="bg-white py-4 px-4 md:px-8 shadow-sm relative z-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <header className="bg-white py-4 shadow-sm relative z-20">
+        <div className="section-container flex justify-between items-center">
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <button
