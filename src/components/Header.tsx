@@ -14,6 +14,9 @@ import {
 import { useState, useRef, useEffect } from "react";
 import viTranslations from "@/locales/vi/header.json";
 import enTranslations from "@/locales/en/header.json";
+import { redirect } from "next/navigation";
+import { cn } from "@/utils/cn";
+import MailIcon from "@/public/icons/mail.svg";
 
 export default function Header({ locale = "vi" }: { locale?: string }) {
   const t = locale === "en" ? enTranslations : viTranslations;
@@ -84,28 +87,25 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
     { code: "en", name: t.language.en },
   ];
 
+  const handleChangeLanguage = (language: string) => {
+    if (typeof window !== "undefined") {
+      const pathname = window.location.pathname;
+
+      const newPathname = pathname.replace(/\/(en|vi)\//, `/${language}/`);
+
+      redirect(newPathname);
+    }
+  };
+
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-primary text-white py-2 px-4 md:px-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="bg-primary text-white h-12">
+        <div className="section-container flex justify-between items-center h-full">
           <div className="flex items-center gap-6">
             <div className="flex items-center text-sm">
               <span className="mr-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
+                <MailIcon />
               </span>
               {t.contact.email}
             </div>
@@ -116,7 +116,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
               {t.contact.phone}
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 h-full">
             <Link href="#" aria-label="Facebook">
               <Facebook size={16} />
             </Link>
@@ -129,7 +129,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
 
             {/* Language Dropdown */}
             <div
-              className="relative group"
+              className="relative group h-full flex"
               ref={languageDropdownRef}
               onMouseEnter={() => setLanguageDropdownOpen(true)}
               onMouseLeave={() => setLanguageDropdownOpen(false)}
@@ -161,7 +161,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
 
               {/* Language Dropdown Menu */}
               <div
-                className={`absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150 
+                className={`absolute top-full right-0 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150 
                   ${
                     languageDropdownOpen
                       ? "opacity-100"
@@ -169,14 +169,19 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                   }`}
               >
                 {languages.map((language) => (
-                  <Link
+                  <div
                     key={language.code}
-                    href={`/${language.code}`}
-                    className="block px-4 py-2 text-sm hover:bg-gray-100"
-                    onClick={() => setLanguageDropdownOpen(false)}
+                    className={cn(
+                      "block px-4 py-2 text-sm hover:bg-gray-100",
+                      locale === language.code &&
+                        "text-primary-hover bg-gray-100"
+                    )}
+                    onClick={() => {
+                      handleChangeLanguage(language.code);
+                    }}
                   >
                     {language.name}
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>

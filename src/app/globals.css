@@ -39,3 +39,7 @@ select {
 .text-balance {
   text-wrap: balance;
 }
+
+.section-container {
+  @apply xl:mx-auto max-w-[1200px] md:mx-8 mx-4;
+}
