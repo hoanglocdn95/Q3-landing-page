@@ -1,0 +1,22 @@
+{
+  "title": "Đăng ký nhận tư vấn ngay",
+  "form": {
+    "name": "Họ tên",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "purpose": "Bạn cần PTE làm gì?",
+    "score": "Bạn cần đạt bao nhiêu điểm PTE?",
+    "time": "Thời gian bạn cần đạt số điểm trên?",
+    "submit": "Tư vấn ngay"
+  },
+  "quickConsult": {
+    "title": "Tư vấn nhanh",
+    "australia": "+61 426 812 895 (Úc - Australia)",
+    "vietnam": "+84 888 031 854 (Việt Nam)"
+  },
+  "quickInfo": {
+    "title": "Nhận tin nhanh",
+    "zalo": "Zalo"
+  },
+  "heroFormImageAlt": "Hình ảnh hỗ trợ tư vấn"
+} 

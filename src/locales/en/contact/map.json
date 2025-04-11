@@ -1,0 +1,31 @@
+{
+  "title": "Branch Locations",
+  "mapImageAlt": "Google Maps",
+  "locations": [
+    {
+      "city": "Ho Chi Minh City",
+      "name": "Q3 Language Helper",
+      "address": "440 Dien Bien Phu, Ward 11, District 10, Ho Chi Minh City 700000"
+    },
+    {
+      "city": "Hanoi",
+      "name": "Q3 Language Helper",
+      "address": "440 Dien Bien Phu, Ward 11, District 10, Ho Chi Minh City 700000"
+    },
+    {
+      "city": "Da Nang",
+      "name": "Q3 Language Helper",
+      "address": "123 Nguyen Van Linh, Hai Chau District, Da Nang 550000"
+    },
+    {
+      "city": "Can Tho",
+      "name": "Q3 Language Helper",
+      "address": "456 Nguyen Trai, Ninh Kieu District, Can Tho 900000"
+    },
+    {
+      "city": "Nha Trang",
+      "name": "Q3 Language Helper",
+      "address": "789 Tran Phu, Loc Tho Ward, Nha Trang 650000"
+    }
+  ]
+} 

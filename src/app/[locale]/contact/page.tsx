@@ -1,17 +1,9 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { locales } from "@/constants/common";
-
-const dictionary = {
-  en: {
-    title: "Blog",
-    welcome: "Welcome to Q3 Landing Page",
-  },
-  vi: {
-    title: "Trang Blog",
-    welcome: "Chào mừng đến với Q3 Landing Page",
-  },
-};
+import HeroSection from "./(components)/HeroSection";
+import ContactFormSection from "./(components)/ContactFormSection";
+import MapSection from "./(components)/MapSection";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) => {
@@ -31,14 +23,11 @@ export default async function Home({
     notFound();
   }
 
-  const dict = dictionary[locale as keyof typeof dictionary];
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between text-sm">
-        <h1 className="text-4xl font-bold mb-8">{dict.welcome}</h1>
-        <p className="text-xl">{dict.title}</p>
-      </div>
-    </main>
+    <>
+      <HeroSection locale={locale} />
+      <ContactFormSection locale={locale} />
+      <MapSection locale={locale} />
+    </>
   );
 }
