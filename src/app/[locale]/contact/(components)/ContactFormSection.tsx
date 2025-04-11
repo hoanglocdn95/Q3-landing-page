@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ChevronRight, Phone } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import viTranslations from "@/locales/vi/contact/form.json";
 import enTranslations from "@/locales/en/contact/form.json";
 
@@ -23,11 +23,11 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
     : ["1 tháng", "2 tháng", "3 tháng", "6 tháng", "Linh hoạt"];
 
   return (
-    <section>
+    <section className="overflow-hidden">
       <div className="section-container relative">
         <div className="flex lg:flex-row flex-col gap-6 lg:gap-0 items-center pt-8 lg:py-16">
-          <div className="flex flex-col">
-            <h2 className="text-2xl md:text-3xl lg:text-[40px] lg:leading-[72px] font-bold text-text-primary lg:mb-6">
+          <div className="flex flex-col lg:w-[522px] w-full gap-8">
+            <h2 className="text-2xl md:text-3xl lg:text-[40px] lg:leading-[72px] font-bold text-text-primary lg:mb-6 lg:whitespace-nowrap">
               {t.title}
             </h2>
 
@@ -136,7 +136,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
 
               <button
                 type="submit"
-                className="w-full bg-primary mt-2 rounded-full text-white py-3 font-medium hover:bg-primary-hover transition-colors flex items-center justify-center"
+                className="w-full bg-primary mt-2 cursor-pointer rounded-full text-white py-3 font-medium hover:bg-primary-hover transition-colors flex items-center justify-center"
               >
                 {t.form.submit}
                 <ChevronRight size={16} className="ml-1" />
@@ -145,25 +145,37 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium text-text-primary mb-2">
+                <h3 className="font-semibold text-dark mb-2">
                   {t.quickConsult.title}
                 </h3>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center text-sm">
-                    <Phone size={14} className="mr-2 text-gray-700" />
+                    <Image
+                      alt="Phone"
+                      height={16}
+                      src="/icons/phone.svg"
+                      width={16}
+                      className="mr-2 text-dark"
+                    />
                     <span>{t.quickConsult.australia}</span>
                   </div>
                   <div className="flex items-center text-sm">
-                    <Phone size={14} className="mr-2 text-gray-700" />
+                    <Image
+                      alt="Phone"
+                      height={16}
+                      src="/icons/phone.svg"
+                      width={16}
+                      className="mr-2 text-dark"
+                    />
                     <span>{t.quickConsult.vietnam}</span>
                   </div>
                 </div>
               </div>
               <div>
-                <h3 className="font-medium text-text-primary mb-2">
+                <h3 className="font-semibold text-dark mb-2">
                   {t.quickInfo.title}
                 </h3>
-                <button className="flex items-center justify-center border border-custom-border rounded-full px-4 py-2 w-full text-sm">
+                <button className="flex items-center justify-center cursor-pointer border border-custom-border rounded-full px-4 py-2 w-full text-sm text-dark font-semibold">
                   {t.quickInfo.zalo}
                   <ChevronRight size={14} className="ml-1" />
                 </button>
@@ -171,13 +183,13 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
             </div>
           </div>
 
-          <div className="w-full h-full lg:max-w-[673px]">
+          <div className="w-full h-full lg:w-[calc(100%-522px)]">
             <Image
               src="/images/hero-form.webp"
               alt={t.heroFormImageAlt}
               width={500}
               height={600}
-              className="w-full h-auto md:max-w-[713px] lg:absolute bottom-0"
+              className="w-full h-auto md:max-w-[713px] lg:absolute bottom-0 lg:left-1/2 xl:left-auto"
             />
           </div>
         </div>

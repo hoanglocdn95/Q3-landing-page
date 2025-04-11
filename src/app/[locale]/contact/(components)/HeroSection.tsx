@@ -13,12 +13,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ locale }) => {
   return (
     <section className="relative h-[386px] flex items-center justify-center">
       <Image
-        src="/images/hero-contact.webp"
+        src="/images/hero-contact.png"
         alt={t.heroImageAlt}
         fill
-        className="object-cover"
+        className="object-cover md:block hidden"
         priority
       />
+      <Image
+        src="/images/contact-mobile.png"
+        alt={t.heroImageAlt}
+        fill
+        className="object-cover md:hidden"
+        priority
+      />
+
       <div className="relative z-10 text-center">
         <h1 className="text-4xl lg:text-[56px] lg:leading-[110px] text-gray-25 font-extrabold">
           {t.title}

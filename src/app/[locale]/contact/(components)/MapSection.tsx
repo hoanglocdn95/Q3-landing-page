@@ -23,7 +23,7 @@ const MapSection: React.FC<MapSectionProps> = ({ locale }) => {
               className="object-cover sm:block hidden"
             />
 
-            <div className="sm:absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md max-w-sm sm:max-h-[568px] max-h-[450px] h-full">
+            <div className="sm:absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md sm:max-w-sm sm:max-h-[568px] max-h-[450px] h-full">
               <h2 className="text-2xl font-bold text-secondary-foreground mb-6">
                 {t.title}
               </h2>
@@ -34,10 +34,10 @@ const MapSection: React.FC<MapSectionProps> = ({ locale }) => {
                     <MapPin className="text-primary mr-3 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-bold">{location.city}</h3>
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-text-secondary">
                         {location.name}
                       </p>
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-text-secondary">
                         {location.address}
                       </p>
                     </div>

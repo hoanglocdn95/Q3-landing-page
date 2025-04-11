@@ -4,25 +4,21 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ChevronRight,
-  Facebook,
   Menu,
-  Phone,
-  Twitter,
   X,
-  Youtube,
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import viTranslations from "@/locales/vi/header.json";
 import enTranslations from "@/locales/en/header.json";
 import { redirect } from "next/navigation";
 import { cn } from "@/utils/cn";
-import MailIcon from "@/public/icons/mail.svg";
 
 export default function Header({ locale = "vi" }: { locale?: string }) {
   const t = locale === "en" ? enTranslations : viTranslations;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const [languageDropdownMobileOpen, setLanguageDropdownMobileOpen] = useState(false);
 
   // For mobile view only
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<
@@ -102,29 +98,62 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
       {/* Top Bar */}
       <div className="bg-primary text-white h-12">
         <div className="section-container flex justify-between items-center h-full">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center md:gap-6 gap-2 justify-between md:justify-start w-full md:w-auto">
             <div className="flex items-center text-sm">
-              <span className="mr-2">
-                <MailIcon />
+              <span className="md:mr-2 mr-1">
+                <Image
+                  alt="Mail"
+                  height={16}
+                  src="/icons/mail-light.svg"
+                  width={16}
+                />
               </span>
               {t.contact.email}
             </div>
-            <div className="hidden md:flex items-center text-sm">
-              <span className="mr-2">
-                <Phone size={16} />
+            <div className="flex items-center text-sm">
+              <span className="md:mr-2 mr-1">
+                <Image
+                  alt="Phone"
+                  height={16}
+                  src="/icons/phone-light.svg"
+                  width={16}
+                />
               </span>
               {t.contact.phone}
             </div>
           </div>
-          <div className="flex items-center gap-3 h-full">
-            <Link href="#" aria-label="Facebook">
-              <Facebook size={16} />
-            </Link>
+          <div className="hidden md:flex items-center gap-3 h-full">
             <Link href="#" aria-label="Youtube">
-              <Youtube size={16} />
+              <Image
+                alt="Youtube"
+                height={24}
+                src="/icons/youtube-light.svg"
+                width={24}
+              />
+            </Link>
+            <Link href="#" aria-label="Instagram">
+              <Image
+                alt="Instagram"
+                height={24}
+                src="/icons/instagram-light.svg"
+                width={24}
+              />
+            </Link>
+            <Link href="#" aria-label="Facebook">
+              <Image
+                alt="Facebook"
+                height={24}
+                src="/icons/facebook-light.svg"
+                width={24}
+              />
             </Link>
             <Link href="#" aria-label="Twitter">
-              <Twitter size={16} />
+              <Image
+                alt="Twitter"
+                height={24}
+                src="/icons/x-light.svg"
+                width={24}
+              />
             </Link>
 
             {/* Language Dropdown */}
@@ -203,11 +232,11 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
             </button>
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-mobile.png"
                 alt="Q3 Language"
                 width={104}
                 height={46}
-                className="h-[46px] w-auto"
+                className="h-[36px] w-[81px]"
               />
             </Link>
           </div>
@@ -227,7 +256,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                 {item.hasDropdown ? (
                   <>
                     <button
-                      className={`text-text-primary hover:text-primary font-medium flex items-center focus:outline-none ${
+                      className={`text-[#111111] hover:text-primary font-semibold flex items-center focus:outline-none ${
                         activeDropdown === item.name ? "text-primary" : ""
                       }`}
                       aria-expanded={activeDropdown === item.name}
@@ -265,7 +294,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                         <Link
                           key={dropdownItem.name}
                           href={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-text-primary hover:bg-gray-100 hover:text-primary"
+                          className="block px-4 py-2 text-sm text-[#111111] font-semibold hover:bg-gray-100 hover:text-primary"
                         >
                           {dropdownItem.name}
                         </Link>
@@ -275,7 +304,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-text-primary hover:text-primary font-medium"
+                    className="text-[#111111] hover:text-primary font-semibold"
                   >
                     {item.name}
                   </Link>
@@ -305,28 +334,42 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
       />
 
       <div
-        className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-30 shadow-xl transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex justify-end p-4">
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-text-primary focus:outline-none"
-            aria-label="Close menu"
+        className={cn("fixed top-0 left-0 h-full w-full max-w-md bg-white z-30 shadow-xl transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto flex flex-col bg-[url('/images/sidebar-bg.png')] bg-no-repeat bg-bottom bg-contain", mobileMenuOpen ? "translate-x-0" : "-translate-x-full")}
+      > 
+        <div className="p-4 flex justify-between items-center border-b border-gray-200">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-text-primary focus:outline-none"
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
+            <Image
+              src="/images/logo-mobile.png"
+              alt="Q3 Language"
+              width={100}
+              height={40}
+              className="h-[36px] w-[81px]"
+            />
+          </div>
+          <Link
+            href="#"
+            className="bg-primary text-white px-4 py-2 rounded-full flex items-center text-sm font-medium hover:bg-primary-hover transition-colors"
           >
-            <X size={24} />
-          </button>
+            {t.cta}
+            <ChevronRight size={16} className="ml-1" />
+          </Link>
         </div>
 
-        <nav className="px-6 py-4">
-          <ul className="flex flex-col gap-4">
+        <nav className="px-6 py-4 flex-grow">
+          <ul className="flex flex-col gap-2">
             {navItems.map((item) => (
               <li key={item.name}>
                 {item.hasDropdown ? (
-                  <div className="border-b border-custom-border pb-2">
+                  <div>
                     <button
-                      className="flex justify-between items-center w-full py-2 text-text-primary font-medium"
+                      className="flex justify-between items-center w-full py-2 text-[#111111] font-medium"
                       onClick={() => toggleMobileDropdown(item.name)}
                       aria-expanded={activeMobileDropdown === item.name}
                     >
@@ -353,16 +396,16 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
                         activeMobileDropdown === item.name
-                          ? "max-h-60 opacity-100 mt-2"
+                          ? "max-h-60 opacity-100"
                           : "max-h-0 opacity-0"
                       }`}
                     >
-                      <div className="pl-4 flex flex-col gap-2 py-2">
+                      <div className="pl-4 flex flex-col gap-2">
                         {item.dropdownItems?.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="text-sm text-text-secondary hover:text-primary py-1"
+                            className="block text-[#111111] hover:text-primary font-medium"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {dropdownItem.name}
@@ -374,7 +417,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-2 text-text-primary hover:text-primary font-medium border-b border-custom-border"
+                    className="block py-2 text-[#111111] hover:text-primary font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -384,87 +427,107 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
             ))}
           </ul>
 
-          <div className="mt-8">
-            <Link
-              href="#"
-              className="bg-primary text-white px-4 py-3 rounded-md flex items-center justify-center text-sm font-medium hover:bg-primary-hover transition-colors w-full"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t.cta}
-              <ChevronRight size={16} className="ml-1" />
-            </Link>
-          </div>
-
           {/* Language Selector in Mobile Menu */}
-          <div className="mt-6 border-t border-custom-border pt-6">
-            <h3 className="font-medium text-text-primary mb-2">
-              {t.language.title}
-            </h3>
-            <div className="flex flex-col gap-2">
-              {languages.map((language) => (
+          <div className="pb-6 mt-4">
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex gap-3">
                 <Link
-                  key={language.code}
-                  href={`/${language.code}`}
-                  className={`text-sm py-1 ${
-                    language.code === locale
-                      ? "text-primary font-medium"
-                      : "text-text-secondary"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
+                  href="#"
+                  aria-label="Youtube"
                 >
-                  {language.name}
+                  <Image
+                    alt="Youtube"
+                    height={24}
+                    src="/icons/youtube-dark.svg"
+                    width={24}
+                  />
                 </Link>
-              ))}
-            </div>
-          </div>
+                <Link
+                  href="#"
+                  aria-label="Instagram"
+                >
+                  <Image
+                    alt="Instagram"
+                    height={24}
+                    src="/icons/instagram-dark.svg"
+                    width={24}
+                  />
+                </Link>
+                <Link
+                  href="#"
+                  aria-label="Facebook"
+                >
+                  <Image
+                    alt="Facebook"
+                    height={24}
+                    src="/icons/facebook-dark.svg"
+                    width={24}
+                  />
+                </Link>
+                <Link
+                  href="#"
+                  aria-label="Twitter"
+                >
+                  <Image
+                    alt="Twitter"
+                    height={24}
+                    src="/icons/x-dark.svg"
+                    width={24}
+                  />
+                </Link>
+              </div>
 
-          <div className="mt-8 flex flex-col gap-4">
-            <div className="flex items-center text-sm">
-              <Phone size={16} className="mr-2 text-text-secondary" />
-              <span>{t.contact.phone}</span>
-            </div>
-            <div className="flex items-center text-sm">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mr-2 text-text-secondary"
-              >
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              <span>{t.contact.email}</span>
-            </div>
-          </div>
+              <div className="relative">
+                <button
+                  className="flex items-center text-text-primary focus:outline-none"
+                  onClick={() => setLanguageDropdownMobileOpen(!languageDropdownMobileOpen)}
+                >
+                  <span>{locale === "en" ? t.language.en : t.language.vi}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={`ml-1 transition-transform duration-200 ${
+                      languageDropdownMobileOpen ? "rotate-180" : ""
+                    }`}
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
 
-          <div className="mt-6 flex gap-4">
-            <Link
-              href="#"
-              aria-label="Facebook"
-              className="text-text-secondary hover:text-primary"
-            >
-              <Facebook size={20} />
-            </Link>
-            <Link
-              href="#"
-              aria-label="Youtube"
-              className="text-text-secondary hover:text-primary"
-            >
-              <Youtube size={20} />
-            </Link>
-            <Link
-              href="#"
-              aria-label="Twitter"
-              className="text-text-secondary hover:text-primary"
-            >
-              <Twitter size={20} />
-            </Link>
+                {/* Language Dropdown Menu */}
+                <div
+                  className={`absolute right-0 top-full mb-2 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150 
+            ${
+              languageDropdownMobileOpen
+                ? "opacity-100 visible"
+                : "opacity-0 invisible"
+            }`}
+                >
+                  {languages.map((language) => (
+                    <button
+                      key={language.code}
+                      className="block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setLanguageDropdownMobileOpen(false);
+                        setMobileMenuOpen(false);
+                        handleChangeLanguage(language.code);
+                      }}
+                    >
+                      {language.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
