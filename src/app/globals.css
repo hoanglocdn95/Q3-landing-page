@@ -9,6 +9,9 @@
   --color-border: #dde0e8;
   --color-background: #ffffff;
   --color-background-secondary: #f5f6f9;
+  --color-gray-25: #fcfcfd;
+  --color-custom-border: #0068ff;
+  --shadow-input: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); 
 }
 
 @theme {
@@ -21,7 +24,9 @@
   --color-background: #ffffff;
   --color-background-secondary: #f5f6f9;
   --color-gray-25: #fcfcfd;
+  --color-gray-700: #364153;
   --color-custom-border: #0068ff;
+  --shadow-input: 0px 1px 2px 0px rgba(16, 24, 40, 0.05); 
 }
 
 body {

@@ -79,7 +79,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
       ],
     },
     { name: t.nav.policy, href: "#", hasDropdown: false },
-    { name: t.nav.contact, href: "#", hasDropdown: false },
+    { name: t.nav.contact, href: `/${locale}/contact/`, hasDropdown: false },
   ];
 
   const languages = [
