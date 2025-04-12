@@ -10,7 +10,6 @@ interface Props {
 }
 
 const EvaluateCard = ({ evaluate, className = "" }: Props) => {
-  console.log("🚀 ~ EvaluateCard ~ evaluate:", evaluate);
   return (
     <div className={cn("bg-text-gray-white rounded-12 w-full", className)}>
       <div className="flex flex-col md:flex-row items-center">

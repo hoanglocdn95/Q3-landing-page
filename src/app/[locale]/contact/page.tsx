@@ -1,9 +1,9 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { locales } from "@/constants/common";
-import HeroSection from "./(components)/HeroSection";
-import ContactFormSection from "./(components)/ContactFormSection";
-import MapSection from "./(components)/MapSection";
+import HeroSection from "./_components/hero-section";
+import ContactFormSection from "./_components/contact-form-section";
+import MapSection from "./_components/map-section";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) => {

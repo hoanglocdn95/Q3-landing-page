@@ -9,7 +9,6 @@ import FAQ from "./_components/faq";
 import Registration from "./_components/registration";
 import { Contact, Social } from "@/types/course";
 import Image from "next/image";
-import MainContainer from "./_components/main-container";
 import Evaluate from "./_components/evaluate";
 
 const locales = ["en", "vi"];
@@ -35,16 +34,11 @@ export function generateStaticParams() {
   });
 }
 
-export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+export default async function Page({ params }: { params: Promise<{ locale: string, courseId: string }> }) {
   const { locale, courseId } = await params;
   if (!locales.includes(locale)) {
     notFound();
   }
-  console.log(
-    "🚀 ~ Page ~ course:",
-    course[locale as keyof typeof course].courses,
-    typeof courseId
-  );
 
   const courseDetail = course[locale as keyof typeof course].courses.find(
     (course) => course.id === courseId
