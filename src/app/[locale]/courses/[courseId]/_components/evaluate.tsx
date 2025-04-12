@@ -1,7 +1,7 @@
-import React from "react";
-import MainContainer from "./main-container";
-import EvaluateCarousel from "@/components/feature/carousel/evaluate-carousel";
-import type { Evaluate } from "@/types/course";
+import React from 'react';
+import MainContainer from './main-container';
+import EvaluateCarousel from '@/components/feature/carousel/evaluate-carousel';
+import type { Evaluate } from '@/types/course';
 
 interface Props {
   evaluate: Evaluate[];

@@ -1,19 +1,18 @@
-import React from "react";
-import { notFound } from "next/navigation";
-import LearningStages from "./_components/learning-stages";
+import React from 'react';
+import { notFound } from 'next/navigation';
+import LearningStages from './_components/learning-stages';
 
-import course from "@/data/course.json";
-import CourseOverview from "./_components/course-overview";
-import FeatureSteps from "./_components/feature-steps";
-import FAQ from "./_components/faq";
-import Registration from "./_components/registration";
-import { Contact, Social } from "@/types/course";
-import Image from "next/image";
-import MainContainer from "./_components/main-container";
-import Evaluate from "./_components/evaluate";
+import course from '@/data/course.json';
+import CourseOverview from './_components/course-overview';
+import FeatureSteps from './_components/feature-steps';
+import FAQ from './_components/faq';
+import Registration from './_components/registration';
+import { Contact, Social } from '@/types/course';
+import Image from 'next/image';
+import Evaluate from './_components/evaluate';
 
-const locales = ["en", "vi"];
-const slug = ["1", "2", "3"];
+const locales = ['en', 'vi'];
+const slug = ['1', '2', '3'];
 
 // const dictionary = {
 //   en: {
@@ -27,27 +26,26 @@ const slug = ["1", "2", "3"];
 // };
 
 export function generateStaticParams() {
-  return locales.flatMap((locale) => {
-    return slug.map((slug) => ({
+  return locales.flatMap(locale => {
+    return slug.map(slug => ({
       locale,
       courseId: slug,
     }));
   });
 }
 
-export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string; courseId: string }>;
+}) {
   const { locale, courseId } = await params;
   if (!locales.includes(locale)) {
     notFound();
   }
-  console.log(
-    "🚀 ~ Page ~ course:",
-    course[locale as keyof typeof course].courses,
-    typeof courseId
-  );
 
   const courseDetail = course[locale as keyof typeof course].courses.find(
-    (course) => course.id === courseId
+    course => course.id === courseId,
   );
 
   if (!courseDetail) {
@@ -56,10 +54,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <div className="bg-background-cream mt-8">
-      <section className="section-container relative rounded-24 overflow-hidden">
+      <section className="section-container rounded-24 relative overflow-hidden">
         <div className="absolute bottom-10 left-10">
-          <h1 className="text-32 font-800 text-text-gray-white">{courseDetail.name}</h1>
-          <p className="text-20 font-500 text-text-gray-white">{courseDetail.description}</p>
+          <h1 className="text-32 font-800 text-text-gray-white">
+            {courseDetail.name}
+          </h1>
+          <p className="text-20 font-500 text-text-gray-white">
+            {courseDetail.description}
+          </p>
         </div>
         <Image
           src={courseDetail.image.desktop.src}

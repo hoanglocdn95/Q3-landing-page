@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from "react";
-import OverviewMenu from "./overview-menu";
-import { cn } from "@/utils/cn";
+import React, { PropsWithChildren } from 'react';
+import OverviewMenu from './overview-menu';
+import { cn } from '@/utils/cn';
 
 interface Props extends PropsWithChildren {
   hasMenu?: boolean;
@@ -18,11 +18,20 @@ const MainContainer = ({
 }: Props) => {
   return (
     <section className={cn(className)}>
-      <div className={cn("section-container flex gap-12 py-12", containerClassName)}>
-        {!fullWidth && <div className="w-[258px]">{hasMenu && <OverviewMenu />}</div>}
+      <div
+        className={cn(
+          'section-container flex gap-12 py-10 lg:py-12',
+          containerClassName,
+        )}
+      >
+        {!fullWidth && (
+          <div className="hidden w-[258px] md:block">
+            {hasMenu && <OverviewMenu />}
+          </div>
+        )}
         <div
-          className={cn("flex-1", {
-            "w-full": fullWidth,
+          className={cn('flex-1', {
+            'w-full': fullWidth,
           })}
         >
           {children}
