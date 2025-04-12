@@ -2,16 +2,27 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ChevronRight,
-  Menu,
-  X,
-} from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import viTranslations from "@/locales/vi/header.json";
 import enTranslations from "@/locales/en/header.json";
 import { redirect } from "next/navigation";
 import { cn } from "@/utils/cn";
+import { Button } from "../ui/button";
+import {
+  ChevronDownIcon,
+  ChevronRightIcon,
+  FacebookDarkIcon,
+  FacebookLightIcon,
+  InstagramDarkIcon,
+  InstagramLightIcon,
+  MailLightIcon,
+  PhoneLightIcon,
+  XDarkIcon,
+  XLightIcon,
+  YoutubeDarkIcon,
+  YoutubeLightIcon,
+} from "../icons";
 
 export default function Header({ locale = "vi" }: { locale?: string }) {
   const t = locale === "en" ? enTranslations : viTranslations;
@@ -21,9 +32,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
   const [languageDropdownMobileOpen, setLanguageDropdownMobileOpen] = useState(false);
 
   // For mobile view only
-  const [activeMobileDropdown, setActiveMobileDropdown] = useState<
-    string | null
-  >(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
 
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const languageDropdownRef = useRef<HTMLDivElement | null>(null);
@@ -101,59 +110,29 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
           <div className="flex items-center md:gap-6 gap-2 justify-between md:justify-start w-full md:w-auto">
             <div className="flex items-center text-sm">
               <span className="md:mr-2 mr-1">
-                <Image
-                  alt="Mail"
-                  height={16}
-                  src="/icons/mail-light.svg"
-                  width={16}
-                />
+                <MailLightIcon />
               </span>
               {t.contact.email}
             </div>
             <div className="flex items-center text-sm">
               <span className="md:mr-2 mr-1">
-                <Image
-                  alt="Phone"
-                  height={16}
-                  src="/icons/phone-light.svg"
-                  width={16}
-                />
+                <PhoneLightIcon />
               </span>
               {t.contact.phone}
             </div>
           </div>
           <div className="hidden md:flex items-center gap-3 h-full">
             <Link href="#" aria-label="Youtube">
-              <Image
-                alt="Youtube"
-                height={24}
-                src="/icons/youtube-light.svg"
-                width={24}
-              />
+              <YoutubeLightIcon />
             </Link>
             <Link href="#" aria-label="Instagram">
-              <Image
-                alt="Instagram"
-                height={24}
-                src="/icons/instagram-light.svg"
-                width={24}
-              />
+              <InstagramLightIcon />
             </Link>
             <Link href="#" aria-label="Facebook">
-              <Image
-                alt="Facebook"
-                height={24}
-                src="/icons/facebook-light.svg"
-                width={24}
-              />
+              <FacebookLightIcon />
             </Link>
             <Link href="#" aria-label="Twitter">
-              <Image
-                alt="Twitter"
-                height={24}
-                src="/icons/x-light.svg"
-                width={24}
-              />
+              <XLightIcon />
             </Link>
 
             {/* Language Dropdown */}
@@ -170,27 +149,12 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                 aria-haspopup="true"
               >
                 <span>{locale === "en" ? t.language.en : t.language.vi}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={`ml-1 transition-transform duration-200 ${
-                    languageDropdownOpen ? "rotate-180" : ""
-                  }`}
-                >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
+                <ChevronDownIcon className="text-[#8A8A8A]" />
               </button>
 
               {/* Language Dropdown Menu */}
               <div
-                className={`absolute top-full right-0 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150 
+                className={`absolute top-full right-0 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150
                   ${
                     languageDropdownOpen
                       ? "opacity-100"
@@ -202,8 +166,7 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
                     key={language.code}
                     className={cn(
                       "block px-4 py-2 text-sm hover:bg-gray-100",
-                      locale === language.code &&
-                        "text-primary-hover bg-gray-100"
+                      locale === language.code && "text-primary-hover bg-gray-100"
                     )}
                     onClick={() => {
                       handleChangeLanguage(language.code);
@@ -314,13 +277,12 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link
-              href="#"
-              className="bg-primary text-white px-4 py-2 rounded-full flex items-center text-sm font-medium hover:bg-primary-hover transition-colors"
-            >
-              {t.cta}
-              <ChevronRight size={16} className="ml-1" />
-            </Link>
+            <Button asChild>
+              <Link href="#">
+                {t.cta}
+                <ChevronRightIcon />
+              </Link>
+            </Button>
           </div>
         </div>
       </header>
@@ -334,8 +296,11 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
       />
 
       <div
-        className={cn("fixed top-0 left-0 h-full w-full max-w-md bg-white z-30 shadow-xl transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto flex flex-col bg-[url('/images/sidebar-bg.png')] bg-no-repeat bg-bottom bg-contain", mobileMenuOpen ? "translate-x-0" : "-translate-x-full")}
-      > 
+        className={cn(
+          "fixed top-0 left-0 h-full w-full max-w-md bg-white z-30 shadow-xl transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto flex flex-col bg-[url('/images/sidebar-bg.png')] bg-no-repeat bg-bottom bg-contain",
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
         <div className="p-4 flex justify-between items-center border-b border-gray-200">
           <div className="flex items-center gap-2">
             <button
@@ -431,49 +396,17 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
           <div className="pb-6 mt-4">
             <div className="flex justify-between items-center mb-4">
               <div className="flex gap-3">
-                <Link
-                  href="#"
-                  aria-label="Youtube"
-                >
-                  <Image
-                    alt="Youtube"
-                    height={24}
-                    src="/icons/youtube-dark.svg"
-                    width={24}
-                  />
+                <Link href="#" aria-label="Youtube">
+                  <YoutubeDarkIcon />
                 </Link>
-                <Link
-                  href="#"
-                  aria-label="Instagram"
-                >
-                  <Image
-                    alt="Instagram"
-                    height={24}
-                    src="/icons/instagram-dark.svg"
-                    width={24}
-                  />
+                <Link href="#" aria-label="Instagram">
+                  <InstagramDarkIcon />
                 </Link>
-                <Link
-                  href="#"
-                  aria-label="Facebook"
-                >
-                  <Image
-                    alt="Facebook"
-                    height={24}
-                    src="/icons/facebook-dark.svg"
-                    width={24}
-                  />
+                <Link href="#" aria-label="Facebook">
+                  <FacebookDarkIcon />
                 </Link>
-                <Link
-                  href="#"
-                  aria-label="Twitter"
-                >
-                  <Image
-                    alt="Twitter"
-                    height={24}
-                    src="/icons/x-dark.svg"
-                    width={24}
-                  />
+                <Link href="#" aria-label="Twitter">
+                  <XDarkIcon />
                 </Link>
               </div>
 
@@ -503,12 +436,8 @@ export default function Header({ locale = "vi" }: { locale?: string }) {
 
                 {/* Language Dropdown Menu */}
                 <div
-                  className={`absolute right-0 top-full mb-2 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150 
-            ${
-              languageDropdownMobileOpen
-                ? "opacity-100 visible"
-                : "opacity-0 invisible"
-            }`}
+                  className={`absolute right-0 top-full mb-2 w-40 bg-white rounded-md shadow-lg py-1 z-50 text-text-primary transition-opacity duration-150
+            ${languageDropdownMobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
                   {languages.map((language) => (
                     <button

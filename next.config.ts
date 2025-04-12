@@ -17,11 +17,40 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  webpack: (config) => {
+  webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgoConfig: {
+              plugins: [
+                {
+                  name: "preset-default",
+                  params: {
+                    overrides: {
+                      removeViewBox: false,
+                    },
+                  },
+                },
+                {
+                  name: "prefixIds",
+                  params: {
+                    prefixIds: true,
+                    prefixClassNames: false,
+                    prefix: (() => {
+                      const uniqueId = Date.now();
+                      let counter = 0;
+                      return () => `icon-${uniqueId}-${counter++}`;
+                    })(),
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ],
     });
 
     return config;
