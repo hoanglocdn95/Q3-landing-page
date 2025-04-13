@@ -1,0 +1,94 @@
+import { ChevronDownIcon } from '@/components/icons';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/utils/cn';
+import Image from 'next/image';
+import React from 'react';
+
+const ImageGallery = ({ className }: { className?: string }) => {
+  const images = [
+    {
+      src: '/images/about/mission-image-1.png',
+      alt: 'image 1',
+      containerClassName: 'basis-[calc(50%-8px)] flex items-end justify-end',
+      className: 'w-[96px] h-[96px] md:w-[129px] md:h-[129px] xl:w-40 xl:h-40',
+    },
+    {
+      src: '/images/about/mission-image-2.png',
+      alt: 'image 2',
+      containerClassName: 'basis-[calc(50%-8px)] flex justify-start',
+      className: 'w-[96px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
+    },
+    {
+      src: '/images/about/mission-image-3.png',
+      alt: 'image 3',
+      containerClassName: 'flex justify-start',
+      className:
+        'w-[112px] h-[72px] md:w-[155px] md:h-[103px] xl:h-[128px] xl:w-[192px]',
+    },
+    {
+      src: '/images/about/mission-image-4.png',
+      alt: 'image 4',
+      containerClassName: 'flex justify-start',
+      className: 'w-[96px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
+    },
+    {
+      src: '/images/about/mission-image-5.png',
+      alt: 'image 5',
+      containerClassName: 'flex justify-start',
+      className:
+        'w-[112px] h-[72px] md:w-[155px] md:h-[103px] xl:h-[128px] xl:w-[192px]',
+    },
+  ];
+
+  return (
+    <div className={cn('mx-auto flex items-center justify-center', className)}>
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+        {images.map((image, index) => (
+          <div key={index} className={image.containerClassName}>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={192}
+              height={240}
+              className={cn('rounded-8 object-cover', image.className)}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Mission = () => {
+  return (
+    <section className="bg-background-cream relative mx-auto overflow-hidden py-16">
+      <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:gap-4 lg:flex-row lg:gap-8">
+        <div className="flex-1">
+          <h2 className="text-40 font-700">Sứ mệnh</h2>
+          <p className="font-500 text-text-secondary mt-4 mb-8">
+            Tại Q3 Language, chúng tôi tin rằng mỗi học viên đều mang trong mình
+            tiềm năng để thành công và nhiệm vụ của chúng tôi là khai phá và
+            phát huy tiềm năng đó. Sứ mệnh của Q3s là mang đến giải pháp học PTE
+            toàn diện, giúp học viên không chỉ đạt được mục tiêu điểm số mà còn
+            xây dựng sự tự tin và khả năng sử dụng tiếng Anh linh hoạt trong
+            cuộc sống và sự nghiệp.
+          </p>
+          <Button className="w-[155px]">
+            Xem thêm <ChevronDownIcon />
+          </Button>
+        </div>
+        <ImageGallery className="relative z-10 w-[525px] lg:w-[576px]" />
+      </div>
+      <Image
+        src={'/images/about/background.png'}
+        width={385}
+        height={267}
+        alt="background-roadmap"
+        className="absolute bottom-0 left-0 h-[116px] w-[175px] object-cover md:h-[197px] md:w-[297px] lg:-bottom-16 lg:h-[267px] lg:w-[385px]"
+      />
+      <div className="absolute top-[340px] left-[-210px] z-0 h-[672px] w-[660px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#FD7200_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.15] md:top-[132px] md:left-[-600px] md:h-[1254px] md:w-[1232px]" />
+    </section>
+  );
+};
+
+export default Mission;

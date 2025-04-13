@@ -75,7 +75,7 @@ const CourseRoadmap = ({ data }: CourseRoadmapProps) => {
     <MainContainer
       id="course-roadmap"
       className="bg-secondary relative overflow-hidden"
-      containerClassName="max-md:pb-[144px]"
+      containerClassName="max-md:pb-[114px]"
     >
       <h2 className="text-24 lg:text-32 font-600 mb-4 text-white">
         Lộ trình khóa học
@@ -90,7 +90,7 @@ const CourseRoadmap = ({ data }: CourseRoadmapProps) => {
         width={864}
         height={282}
         alt="background-roadmap"
-        className="absolute -right-22 bottom-0 h-[126px] w-[385px] object-cover md:-left-24 md:h-[196px] md:w-[603px] lg:h-[282px] lg:w-[864px]"
+        className="absolute -right-22 bottom-0 h-[126px] w-[385px] object-cover md:left-0 md:h-[236px] md:w-[603px] lg:h-[340px] lg:w-[864px]"
       />
     </MainContainer>
   );

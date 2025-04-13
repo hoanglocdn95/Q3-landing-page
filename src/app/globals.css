@@ -63,9 +63,9 @@
   --text-32: 2rem;
   --text-32--line-height: 3.5rem;
   --text-40: 2.5rem;
-  --text-40--line-height: 3rem;
+  --text-40--line-height: 3.5rem;
   --text-48: 3rem;
-  --text-48--line-height: 3rem;
+  --text-48--line-height: 3.5rem;
 
   --font-weight-400: 400;
   --font-weight-500: 500;
@@ -96,6 +96,10 @@ select {
 
 .section-container {
   @apply mx-4 max-w-[1200px] md:mx-8 xl:mx-auto;
+}
+
+.gradient-background {
+  background: linear-gradient(to bottom, #fffbf3, #ffffff);
 }
 
 @theme inline {
