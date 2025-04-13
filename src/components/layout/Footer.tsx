@@ -79,19 +79,19 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <PhoneIcon />
-                <span className="text-dark text-sm font-medium">
+                <span className="text-dark ml-1 text-sm font-medium">
                   (028) 1231 456
                 </span>
               </li>
               <li className="flex items-start">
                 <MailIcon />
-                <span className="text-dark text-sm font-medium">
+                <span className="text-dark ml-1 text-sm font-medium">
                   mail@example.com
                 </span>
               </li>
               <li className="flex items-start">
                 <MapPinIcon />
-                <span className="text-dark flex-1 text-sm font-medium">
+                <span className="text-dark ml-1 flex-1 text-sm font-medium">
                   {t.contactInfo.address}
                 </span>
               </li>

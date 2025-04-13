@@ -13,14 +13,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ locale }) => {
   return (
     <section className="relative flex h-[386px] items-center justify-center">
       <Image
-        src="/images/hero-contact.png"
+        src="/images/contact/hero-contact.png"
         alt={t.heroImageAlt}
         fill
         className="hidden object-cover md:block"
         priority
       />
       <Image
-        src="/images/contact-mobile.png"
+        src="/images/contact/contact-mobile.png"
         alt={t.heroImageAlt}
         fill
         className="object-cover md:hidden"

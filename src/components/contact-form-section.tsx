@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import viTranslations from '@/locales/vi/contact/form.json';
 import enTranslations from '@/locales/en/contact/form.json';
-import { cn } from '@/utils/cn';
+import { PhoneIcon } from '@/components/icons';
 import { Button } from './ui/button';
 import Link from 'next/link';
-
+import { cn } from '@/lib/utils';
 interface ContactFormSectionProps {
   locale: string;
   className?: string;
@@ -165,13 +165,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
                     <span>{t.quickConsult.australia}</span>
                   </div>
                   <div className="flex items-center text-sm">
-                    <Image
-                      alt="Phone"
-                      height={16}
-                      src="/icons/phone.svg"
-                      width={16}
-                      className="text-dark mr-2"
-                    />
+                    <PhoneIcon className="text-dark mr-2" />
                     <span>{t.quickConsult.vietnam}</span>
                   </div>
                 </div>
@@ -195,7 +189,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
 
           <div className="z-10 h-full w-full max-md:relative lg:w-[calc(100%-522px)]">
             <Image
-              src="/images/hero-form.webp"
+              src="/images/contact/hero-form.webp"
               alt={t.heroFormImageAlt}
               width={500}
               height={600}
