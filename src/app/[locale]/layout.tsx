@@ -1,9 +1,9 @@
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import { locales } from "@/constants/common";
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
+import { locales } from '@/constants/common';
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales.map(locale => ({ locale }));
 }
 
 export default async function RootLayout({
@@ -15,7 +15,7 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Header locale={locale} />
       <main className="flex-grow">{children}</main>
       <Footer locale={locale} />

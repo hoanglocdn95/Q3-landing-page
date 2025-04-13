@@ -4,14 +4,14 @@ import CourseRoadmap from './_components/course-roadmap';
 
 import course from '@/data/course.json';
 import CourseOverview from './_components/course-overview';
-import CourseFeatures from './_components/course-feature';
 import FAQ from './_components/faq';
 import Registration from './_components/registration';
 import { Contact, Social } from '@/types/course';
 import Image from 'next/image';
 import Evaluate from './_components/evaluate';
 import { Button } from '@/components/ui/button';
-import { ChevronRightIcon } from 'lucide-react';
+import { ChevronRightIcon } from '@/components/icons';
+import CourseFeatures from './_components/course-feature';
 
 const locales = ['en', 'vi'];
 const slug = ['1', '2', '3'];

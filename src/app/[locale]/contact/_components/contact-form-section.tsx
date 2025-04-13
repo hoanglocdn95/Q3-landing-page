@@ -1,33 +1,35 @@
-import React from "react";
-import Image from "next/image";
-import { ChevronRight } from "lucide-react";
-import viTranslations from "@/locales/vi/contact/form.json";
-import enTranslations from "@/locales/en/contact/form.json";
+import React from 'react';
+import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
+import viTranslations from '@/locales/vi/contact/form.json';
+import enTranslations from '@/locales/en/contact/form.json';
 
 interface ContactFormSectionProps {
   locale: string;
 }
 
 const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
-  const t = locale === "en" ? enTranslations : viTranslations;
+  const t = locale === 'en' ? enTranslations : viTranslations;
 
   // Thêm các options cho các dropdown
-  const purposeOptions = locale === "en" 
-    ? ["Select", "Study Abroad", "Immigration", "Work", "Other"] 
-    : ["Chọn", "Du học", "Định cư", "Làm việc", "Khác"];
-  
-  const scoreOptions = ["50", "65", "70", "79", "79+"];
-  
-  const timeOptions = locale === "en"
-    ? ["1 month", "2 months", "3 months", "6 months", "Flexible"]
-    : ["1 tháng", "2 tháng", "3 tháng", "6 tháng", "Linh hoạt"];
+  const purposeOptions =
+    locale === 'en'
+      ? ['Select', 'Study Abroad', 'Immigration', 'Work', 'Other']
+      : ['Chọn', 'Du học', 'Định cư', 'Làm việc', 'Khác'];
+
+  const scoreOptions = ['50', '65', '70', '79', '79+'];
+
+  const timeOptions =
+    locale === 'en'
+      ? ['1 month', '2 months', '3 months', '6 months', 'Flexible']
+      : ['1 tháng', '2 tháng', '3 tháng', '6 tháng', 'Linh hoạt'];
 
   return (
     <section className="overflow-hidden">
       <div className="section-container relative">
-        <div className="flex lg:flex-row flex-col gap-6 lg:gap-0 items-center pt-8 lg:py-16">
-          <div className="flex flex-col lg:w-[522px] w-full gap-8">
-            <h2 className="text-2xl md:text-3xl lg:text-[40px] lg:leading-[72px] font-bold text-text-primary lg:mb-6 lg:whitespace-nowrap">
+        <div className="flex flex-col items-center gap-6 pt-8 lg:flex-row lg:gap-0 lg:py-16">
+          <div className="flex w-full flex-col gap-8 lg:w-[522px]">
+            <h2 className="text-text-primary text-2xl font-bold md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
               {t.title}
             </h2>
 
@@ -35,35 +37,35 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="mb-1 block text-sm font-medium text-gray-700"
                 >
                   {t.form.name}
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-md shadow-(--shadow-input)"
+                  className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.phone}
                   </label>
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full px-3 py-2 border border-gray-200 rounded-md shadow-(--shadow-input)"
+                    className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.email}
                   </label>
@@ -71,7 +73,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                     type="email"
                     id="email"
                     placeholder="you@company.com"
-                    className="w-full px-3 py-2 border border-gray-200 rounded-md shadow-(--shadow-input)"
+                    className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                   />
                 </div>
               </div>
@@ -79,13 +81,13 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
               <div>
                 <label
                   htmlFor="pte"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="mb-1 block text-sm font-medium text-gray-700"
                 >
                   {t.form.purpose}
                 </label>
                 <select
                   id="pte"
-                  className="w-full px-3 py-2 border border-gray-200 rounded-md shadow-(--shadow-input) appearance-none bg-white"
+                  className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                 >
                   {purposeOptions.map((option, index) => (
                     <option key={`purpose-${index}`} value={option}>
@@ -95,17 +97,17 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                 </select>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                   <label
                     htmlFor="score"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.score}
                   </label>
                   <select
                     id="score"
-                    className="w-full px-3 py-2 border border-gray-200 rounded-md shadow-(--shadow-input) appearance-none bg-white"
+                    className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                   >
                     {scoreOptions.map((option, index) => (
                       <option key={`score-${index}`} value={option}>
@@ -117,13 +119,13 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                 <div>
                   <label
                     htmlFor="time"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.time}
                   </label>
                   <select
                     id="time"
-                    className="w-full px-3 py-2 border border-gray-200 rounded-md shadow-(--shadow-input) appearance-none bg-white"
+                    className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                   >
                     {timeOptions.map((option, index) => (
                       <option key={`time-${index}`} value={option}>
@@ -136,16 +138,16 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
 
               <button
                 type="submit"
-                className="w-full bg-primary mt-2 cursor-pointer rounded-full text-white py-3 font-medium hover:bg-primary-hover transition-colors flex items-center justify-center"
+                className="bg-primary hover:bg-primary-hover mt-2 flex w-full cursor-pointer items-center justify-center rounded-full py-3 font-medium text-white transition-colors"
               >
                 {t.form.submit}
                 <ChevronRight size={16} className="ml-1" />
               </button>
             </form>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
-                <h3 className="font-semibold text-dark mb-2">
+                <h3 className="text-dark mb-2 font-semibold">
                   {t.quickConsult.title}
                 </h3>
                 <div className="flex flex-col gap-2">
@@ -155,7 +157,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                       height={16}
                       src="/icons/phone.svg"
                       width={16}
-                      className="mr-2 text-dark"
+                      className="text-dark mr-2"
                     />
                     <span>{t.quickConsult.australia}</span>
                   </div>
@@ -165,17 +167,17 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                       height={16}
                       src="/icons/phone.svg"
                       width={16}
-                      className="mr-2 text-dark"
+                      className="text-dark mr-2"
                     />
                     <span>{t.quickConsult.vietnam}</span>
                   </div>
                 </div>
               </div>
               <div>
-                <h3 className="font-semibold text-dark mb-2">
+                <h3 className="text-dark mb-2 font-semibold">
                   {t.quickInfo.title}
                 </h3>
-                <button className="flex items-center justify-center cursor-pointer border border-custom-border rounded-full px-4 py-2 w-full text-sm text-dark font-semibold">
+                <button className="border-custom-border text-dark flex w-full cursor-pointer items-center justify-center rounded-full border px-4 py-2 text-sm font-semibold">
                   {t.quickInfo.zalo}
                   <ChevronRight size={14} className="ml-1" />
                 </button>
@@ -183,13 +185,13 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
             </div>
           </div>
 
-          <div className="w-full h-full lg:w-[calc(100%-522px)]">
+          <div className="h-full w-full lg:w-[calc(100%-522px)]">
             <Image
               src="/images/hero-form.webp"
               alt={t.heroFormImageAlt}
               width={500}
               height={600}
-              className="w-full h-auto md:max-w-[713px] lg:absolute bottom-0 lg:left-1/2 xl:left-auto"
+              className="bottom-0 h-auto w-full md:max-w-[713px] lg:absolute lg:left-1/2 xl:left-auto"
             />
           </div>
         </div>
@@ -198,4 +200,4 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
   );
 };
 
-export default ContactFormSection; 
+export default ContactFormSection;

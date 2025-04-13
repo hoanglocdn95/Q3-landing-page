@@ -1,22 +1,22 @@
-import React from "react";
-import Image from "next/image";
-import viTranslations from "@/locales/vi/contact/hero.json";
-import enTranslations from "@/locales/en/contact/hero.json";
+import React from 'react';
+import Image from 'next/image';
+import viTranslations from '@/locales/vi/contact/hero.json';
+import enTranslations from '@/locales/en/contact/hero.json';
 
 interface HeroSectionProps {
   locale: string;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ locale }) => {
-  const t = locale === "en" ? enTranslations : viTranslations;
+  const t = locale === 'en' ? enTranslations : viTranslations;
 
   return (
-    <section className="relative h-[386px] flex items-center justify-center">
+    <section className="relative flex h-[386px] items-center justify-center">
       <Image
         src="/images/hero-contact.png"
         alt={t.heroImageAlt}
         fill
-        className="object-cover md:block hidden"
+        className="hidden object-cover md:block"
         priority
       />
       <Image
@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ locale }) => {
       />
 
       <div className="relative z-10 text-center">
-        <h1 className="text-4xl lg:text-[56px] lg:leading-[110px] text-gray-25 font-extrabold">
+        <h1 className="text-gray-25 text-4xl font-extrabold lg:text-[56px] lg:leading-[110px]">
           {t.title}
         </h1>
       </div>
@@ -36,4 +36,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({ locale }) => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;
