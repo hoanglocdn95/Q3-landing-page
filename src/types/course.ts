@@ -1,4 +1,4 @@
-export interface LearningStage {
+export interface CourseRoadmap {
   id: string;
   title: string;
   description: string[];
@@ -22,7 +22,7 @@ export interface StudyDetails {
   schedule: string;
 }
 
-export interface FeatureStep {
+export interface CourseFeatures {
   number: string;
   title: string;
   description: string;
@@ -49,13 +49,13 @@ export interface FAQ {
 }
 
 export interface Contact {
-  icon: "phone"; // TODO: add other icons
+  icon: 'phone'; // TODO: add other icons
   text: string;
   link: string;
 }
 
 export interface Social {
-  platform: "facebook" | "zalo"; // TODO: add other platforms
+  platform: 'facebook' | 'zalo'; // TODO: add other platforms
   text: string;
   link: string;
 }
@@ -71,11 +71,11 @@ export interface Banner {
 
 export interface Course {
   id: string;
-  learningStages: LearningStage[];
+  courseRoadmap: CourseRoadmap[];
   overview: Overview[];
   reasonsToJoin: ReasonsToJoin[];
   studyDetails: StudyDetails;
-  featureSteps: FeatureStep[];
+  courseFeatures: CourseFeatures[];
   faq: FAQ[];
   contact: Contact[];
   social: Social[];

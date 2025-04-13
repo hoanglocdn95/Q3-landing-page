@@ -3,6 +3,7 @@ import OverviewMenu from './overview-menu';
 import { cn } from '@/utils/cn';
 
 interface Props extends PropsWithChildren {
+  id?: string;
   hasMenu?: boolean;
   fullWidth?: boolean;
   className?: string;
@@ -10,6 +11,7 @@ interface Props extends PropsWithChildren {
 }
 
 const MainContainer = ({
+  id,
   children,
   hasMenu = false,
   fullWidth = false,
@@ -17,16 +19,16 @@ const MainContainer = ({
   containerClassName,
 }: Props) => {
   return (
-    <section className={cn(className)}>
+    <section className={cn(className)} id={id}>
       <div
         className={cn(
-          'section-container flex gap-12 py-10 lg:py-12',
+          'section-container relative flex gap-[54px] py-10 lg:gap-[66px] lg:py-12',
           containerClassName,
         )}
       >
         {!fullWidth && (
-          <div className="hidden w-[258px] md:block">
-            {hasMenu && <OverviewMenu />}
+          <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]">
+            {hasMenu && <OverviewMenu className="sticky top-0" />}
           </div>
         )}
         <div

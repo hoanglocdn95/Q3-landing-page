@@ -13,9 +13,9 @@
             "alt": "course-banner"
           }
         },
-        "name": "Lộ Trình Ôn Luyện Khóa PTE Achievers 1 Kèm 1 ",
+        "name": "Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ",
         "description": "Dành cho Tất Cả Các Band Điểm",
-        "learningStages": [
+        "courseRoadmap": [
           {
             "id": "1",
             "title": "Giai đoạn 1: Test năng lực và tư vấn lộ trình",
@@ -95,7 +95,7 @@
           "hoursPerSession": "Tối thiểu 1.5 giờ",
           "schedule": "Lịch học linh hoạt"
         },
-        "features": [
+        "courseFeatures": [
           {
             "id": "1",
             "number": "01",
@@ -270,9 +270,9 @@
             "alt": "course-banner"
           }
         },
-        "name": "Lộ Trình Ôn Luyện Khóa PTE Achievers 1 Kèm 1 ",
+        "name": "Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ",
         "description": "Dành cho Tất Cả Các Band Điểm",
-        "learningStages": [
+        "courseRoadmap": [
           {
             "id": "1",
             "title": "Giai đoạn 1: Test năng lực và tư vấn lộ trình",
@@ -352,7 +352,7 @@
           "hoursPerSession": "Tối thiểu 1.5 giờ",
           "schedule": "Lịch học linh hoạt"
         },
-        "features": [
+        "courseFeatures": [
           {
             "id": "1",
             "number": "01",
