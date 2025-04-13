@@ -24,7 +24,6 @@ const CourseOverview = ({
   return (
     <MainContainer
       hasMenu
-      className="bg-background-cream"
       containerClassName="pt-10 md:pt-8 lg:pt-12"
       id="course-overview"
     >

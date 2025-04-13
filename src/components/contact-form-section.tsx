@@ -3,12 +3,19 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import viTranslations from '@/locales/vi/contact/form.json';
 import enTranslations from '@/locales/en/contact/form.json';
+import { cn } from '@/utils/cn';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 interface ContactFormSectionProps {
   locale: string;
+  className?: string;
 }
 
-const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
+const ContactFormSection: React.FC<ContactFormSectionProps> = ({
+  locale,
+  className,
+}) => {
   const t = locale === 'en' ? enTranslations : viTranslations;
 
   // Thêm các options cho các dropdown
@@ -25,7 +32,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
       : ['1 tháng', '2 tháng', '3 tháng', '6 tháng', 'Linh hoạt'];
 
   return (
-    <section className="overflow-hidden">
+    <section className={cn('overflow-hidden', className)}>
       <div className="section-container relative">
         <div className="flex flex-col items-center gap-6 pt-8 lg:flex-row lg:gap-0 lg:py-16">
           <div className="flex w-full flex-col gap-8 lg:w-[522px]">
@@ -135,16 +142,11 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                   </select>
                 </div>
               </div>
-
-              <button
-                type="submit"
-                className="bg-primary hover:bg-primary-hover mt-2 flex w-full cursor-pointer items-center justify-center rounded-full py-3 font-medium text-white transition-colors"
-              >
+              <Button type="submit">
                 {t.form.submit}
                 <ChevronRight size={16} className="ml-1" />
-              </button>
+              </Button>
             </form>
-
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <h3 className="text-dark mb-2 font-semibold">
@@ -177,10 +179,12 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ locale }) => {
                 <h3 className="text-dark mb-2 font-semibold">
                   {t.quickInfo.title}
                 </h3>
-                <button className="border-custom-border text-dark flex w-full cursor-pointer items-center justify-center rounded-full border px-4 py-2 text-sm font-semibold">
-                  {t.quickInfo.zalo}
-                  <ChevronRight size={14} className="ml-1" />
-                </button>
+                <Button variant="outline" size="md" asChild>
+                  <Link href={t.quickInfo.zalo} target="_blank">
+                    {t.quickInfo.zalo}
+                    <ChevronRight size={14} className="ml-1" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

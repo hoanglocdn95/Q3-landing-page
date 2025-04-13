@@ -55,7 +55,7 @@ export default async function Page({
   }
 
   return (
-    <div className="bg-background-cream pt-8">
+    <div className="gradient-background md:pt-8">
       <section className="section-container md:rounded-24 relative max-md:!mx-0 md:overflow-hidden">
         <div className="absolute max-md:inset-0 max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:text-center md:bottom-10 md:left-10">
           <h1 className="text-32 font-800 text-text-gray-white mb-4 leading-[120%] max-md:px-10 max-md:whitespace-pre-line md:mb-2 md:leading-[140%]">

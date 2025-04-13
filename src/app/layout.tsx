@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Q3 Landing Page",
-  description: "Q3 Landing Page - Static Site Generation",
-  metadataBase: new URL("https://your-domain.com"),
+  title: 'Q3 Landing Page',
+  description: 'Q3 Landing Page - Static Site Generation',
+  metadataBase: new URL('https://your-domain.com'),
   openGraph: {
-    title: "Q3 Landing Page",
-    description: "Q3 Landing Page - Static Site Generation",
-    type: "website",
+    title: 'Q3 Landing Page',
+    description: 'Q3 Landing Page - Static Site Generation',
+    type: 'website',
   },
   robots: {
     index: true,
@@ -59,7 +59,12 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

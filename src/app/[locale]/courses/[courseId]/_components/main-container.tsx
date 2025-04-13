@@ -22,7 +22,7 @@ const MainContainer = ({
     <section className={cn(className)} id={id}>
       <div
         className={cn(
-          'section-container relative flex gap-[54px] py-10 lg:gap-[66px] lg:py-12',
+          'section-container flex gap-[54px] py-10 lg:gap-[66px] lg:py-12',
           containerClassName,
         )}
       >
