@@ -17,7 +17,7 @@ const MapSection: React.FC<MapSectionProps> = ({ locale }) => {
         <div className="overflow-hidden rounded-lg bg-white">
           <div className="relative h-[450px] w-full sm:h-[600px]">
             <Image
-              src="/images/map.webp"
+              src="/images/contact/map.webp"
               alt={t.mapImageAlt}
               fill
               className="hidden object-cover sm:block"

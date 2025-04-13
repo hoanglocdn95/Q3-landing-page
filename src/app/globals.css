@@ -37,11 +37,13 @@
   --color-background-cream: #fffbf3;
   --color-background-tertiary: #faf2eb;
   --color-gray-2: #4f4f4f;
+  --color-gray-25: #fcfcfd;
   --color-blue: #0068ff;
   --radius-2: 0.125rem;
   --radius-4: 0.25rem;
   --radius-6: 0.375rem;
   --radius-8: 0.5rem;
+  --radius: 0.5rem;
   --radius-12: 0.75rem;
   --radius-14: 0.875rem;
   --radius-16: 1rem;
@@ -92,6 +94,38 @@ select {
 
 .text-balance {
   text-wrap: balance;
+}
+
+.clip-polygon-flag {
+  clip-path: polygon(
+    10% 0,
+    100% 0,
+    100% 100%,
+    55% 70%,
+    10% 100%,
+    10% 11%,
+    0 11%
+  );
+}
+
+.bg-gradient-flag {
+  background: linear-gradient(89.58deg, #455ca5 -35.4%, #1d3172 147.25%);
+}
+
+.bg-radial-orange-fade {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ff8d0a 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
+}
+
+.bg-radial-blue-fade {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #b5e2fa 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
 }
 
 .section-container {
