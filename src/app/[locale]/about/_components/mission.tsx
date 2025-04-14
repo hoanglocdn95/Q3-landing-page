@@ -10,13 +10,13 @@ const ImageGallery = ({ className }: { className?: string }) => {
       src: '/images/about/mission-image-1.png',
       alt: 'image 1',
       containerClassName: 'basis-[calc(50%-8px)] flex items-end justify-end',
-      className: 'w-[96px] h-[96px] md:w-[129px] md:h-[129px] xl:w-40 xl:h-40',
+      className: 'w-[86px] h-[86px] md:w-[129px] md:h-[129px] xl:w-40 xl:h-40',
     },
     {
       src: '/images/about/mission-image-2.png',
       alt: 'image 2',
       containerClassName: 'basis-[calc(50%-8px)] flex justify-start',
-      className: 'w-[96px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
+      className: 'w-[86px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
     },
     {
       src: '/images/about/mission-image-3.png',
@@ -29,7 +29,7 @@ const ImageGallery = ({ className }: { className?: string }) => {
       src: '/images/about/mission-image-4.png',
       alt: 'image 4',
       containerClassName: 'flex justify-start',
-      className: 'w-[96px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
+      className: 'w-[86px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
     },
     {
       src: '/images/about/mission-image-5.png',
@@ -61,11 +61,11 @@ const ImageGallery = ({ className }: { className?: string }) => {
 
 const Mission = () => {
   return (
-    <section className="bg-background-cream relative mx-auto overflow-hidden py-16">
+    <section className="bg-background-cream relative mx-auto overflow-hidden py-10 md:py-15 lg:py-16">
       <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:gap-4 lg:flex-row lg:gap-8">
         <div className="flex-1">
-          <h2 className="text-40 font-700">Sứ mệnh</h2>
-          <p className="font-500 text-text-secondary mt-4 mb-8">
+          <h2 className="lg:text-40 md:text-32 text-24 font-700">Sứ mệnh</h2>
+          <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
             Tại Q3 Language, chúng tôi tin rằng mỗi học viên đều mang trong mình
             tiềm năng để thành công và nhiệm vụ của chúng tôi là khai phá và
             phát huy tiềm năng đó. Sứ mệnh của Q3s là mang đến giải pháp học PTE
@@ -73,11 +73,11 @@ const Mission = () => {
             xây dựng sự tự tin và khả năng sử dụng tiếng Anh linh hoạt trong
             cuộc sống và sự nghiệp.
           </p>
-          <Button className="w-[155px]">
+          <Button className="w-[137px] md:w-[155px]">
             Xem thêm <ChevronDownIcon />
           </Button>
         </div>
-        <ImageGallery className="relative z-10 w-[525px] lg:w-[576px]" />
+        <ImageGallery className="relative z-10 w-full md:w-[525px] lg:w-[576px]" />
       </div>
       <Image
         src={'/images/about/background.png'}

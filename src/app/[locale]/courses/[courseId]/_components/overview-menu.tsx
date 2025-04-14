@@ -44,13 +44,8 @@ const OverviewMenu = ({ className }: Props) => {
   };
 
   return (
-    <nav
-      className={cn(
-        'bg-background-secondary rounded-8 text-16 overflow-hidden',
-        className,
-      )}
-    >
-      <h3 className="font-600 bg-primary px-6 py-[22px] text-white">
+    <nav className={cn('bg-background-secondary rounded-8 text-16', className)}>
+      <h3 className="font-600 bg-primary before:border-l-primary relative px-6 py-[22px] text-white before:absolute before:top-1/2 before:-right-5 before:h-0 before:w-0 before:-translate-y-1/2 before:border-10 before:border-transparent before:content-['']">
         Tổng quan
       </h3>
       <ul className="mt-4 space-y-4 divide-y divide-gray-300 px-3 lg:mt-2.5 lg:space-y-5 lg:px-6">
