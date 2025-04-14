@@ -1,8 +1,4 @@
-import {
-  ChevronRightIcon,
-  LogoLightIcon,
-  ChevronDownIcon,
-} from '@/components/icons';
+import { ChevronRightIcon, ChevronDownIcon } from '@/components/icons';
 import Image from 'next/image';
 
 export default function BannerSection({ locale }: { locale: string }) {
@@ -10,7 +6,7 @@ export default function BannerSection({ locale }: { locale: string }) {
   return (
     <section className="relative">
       {/* Hero Section with Background Image */}
-      <div className="relative h-[500px] overflow-hidden md:h-[680px]">
+      <div className="gt-lg:h-[680px] relative h-[467px] overflow-hidden md:h-[491px]">
         <Image
           src="/images/home/hero-home.png"
           alt="Student studying"
@@ -21,16 +17,22 @@ export default function BannerSection({ locale }: { locale: string }) {
         <div className="absolute inset-0">
           <div className="section-container flex h-full flex-col justify-center py-12">
             <div className="max-w-[589px]">
-              <LogoLightIcon className="mb-4" />
+              <Image
+                alt="Logo of Q3 Language"
+                width={186}
+                height={88}
+                className="lt-lg:w-[186px] lt-lg:h-[88px] mb-4 h-[64px] w-[135px]"
+                src={'/icons/logo-light.svg'}
+              />
 
               {/* Hero Text */}
-              <h1 className="mb-12 text-3xl leading-tight font-extrabold text-white md:text-4xl lg:text-[56px] lg:tracking-[-2px]">
+              <h1 className="text-32 sm:text-40 lt-lg:text-[56px] mb-8 leading-tight font-extrabold text-white sm:mb-12 lg:tracking-[-2px]">
                 Học Không Chỉ Để Thi, <br />
                 Học Là Để Dẫn Đầu!
               </h1>
 
               {/* CTA Button */}
-              <button className="hover:bg-secondary flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:text-white lg:h-[52px]">
+              <button className="hover:bg-secondary flex h-10 items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-800 hover:text-white sm:h-[52px] sm:text-base">
                 Tìm khóa học phù hợp ngay
                 <ChevronRightIcon className="ml-1" />
               </button>
@@ -40,10 +42,10 @@ export default function BannerSection({ locale }: { locale: string }) {
       </div>
 
       {/* Search Bar Section */}
-      <div className="bg-secondary section-container relative z-10 -mt-16 rounded-4xl px-4 py-6 shadow-lg md:px-8 lg:px-10">
+      <div className="bg-secondary section-container relative z-10 -mt-16 rounded-4xl p-6 shadow-lg md:px-8 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div className="text-white md:max-w-xs">
-            <p className="text-[18px] leading-6 font-semibold">
+            <p className="text-base font-semibold">
               Tìm các khóa học phù hợp với bạn và giúp con đường học vấn của bạn
               thành công
             </p>
@@ -53,7 +55,7 @@ export default function BannerSection({ locale }: { locale: string }) {
 
           <div className="w-full min-w-[200px] flex-1 md:mx-4 md:w-auto">
             <div className="relative">
-              <select className="w-full appearance-none rounded-full bg-white px-4 py-2 pr-10 text-base outline-none lg:h-[52px]">
+              <select className="h-10 w-full appearance-none rounded-full bg-white px-4 py-2 pr-10 text-base font-medium outline-none md:h-[52px]">
                 <option>Đại học Úc - visa 500 (50/50/65)</option>
                 <option>Đại học Mỹ - visa F1</option>
                 <option>Đại học Canada - visa SDS</option>
@@ -65,7 +67,7 @@ export default function BannerSection({ locale }: { locale: string }) {
             </div>
           </div>
 
-          <button className="bg-secondary hover:border-secondary flex items-center rounded-full border border-white px-4 py-2 text-base font-medium whitespace-nowrap text-white hover:bg-white hover:text-black lg:h-[52px]">
+          <button className="bg-secondary hover:border-secondary flex h-10 w-full items-center justify-center rounded-full border border-white px-4 py-2 text-base font-medium whitespace-nowrap text-white hover:bg-white hover:text-black sm:w-[unset] md:h-[52px]">
             Xem khóa học phù hợp
             <ChevronRightIcon className="ml-1 h-4 w-4" />
           </button>

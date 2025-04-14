@@ -98,6 +98,12 @@ select {
   text-wrap: balance;
 }
 
+@media (min-width: 1025px) {
+  .gt-lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .clip-polygon-flag {
   clip-path: polygon(
     10% 0,

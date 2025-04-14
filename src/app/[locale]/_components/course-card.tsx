@@ -43,7 +43,7 @@ export default function CourseCard({
         )}
       </div>
 
-      <Link href={`/courses/${slug}`}>
+      <Link href={`/${locale}/courses/${slug}`}>
         <div className="rounded-8 relative mx-auto mt-[-36px] w-[90%] bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
           <h3 className="mb-2 line-clamp-2 font-bold text-gray-800">{title}</h3>
           <p className="mb-4 line-clamp-4 text-sm text-gray-600">
