@@ -50,6 +50,8 @@
   --radius-20: 1.25rem;
   --radius-24: 1.5rem;
 
+  --text-12: 0.75rem;
+  --text-12--line-height: 1.5rem;
   --text-14: 0.875rem;
   --text-14--line-height: 1.5rem;
   --text-16: 1rem;
@@ -94,6 +96,12 @@ select {
 
 .text-balance {
   text-wrap: balance;
+}
+
+@media (min-width: 1025px) {
+  .gt-lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .clip-polygon-flag {

@@ -10,11 +10,13 @@ import { cn } from '@/lib/utils';
 interface ContactFormSectionProps {
   locale: string;
   className?: string;
+  isShowBackground?: boolean;
 }
 
 const ContactFormSection: React.FC<ContactFormSectionProps> = ({
   locale,
   className,
+  isShowBackground = false,
 }) => {
   const t = locale === 'en' ? enTranslations : viTranslations;
 
@@ -35,12 +37,11 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
     <section className={cn('overflow-hidden', className)}>
       <div className="section-container relative">
         <div className="flex flex-col items-center gap-6 pt-8 lg:flex-row lg:gap-0 lg:py-16">
-          <div className="flex w-full flex-col gap-8 lg:w-[522px]">
-            <h2 className="text-text-primary text-2xl font-bold md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
+          <div className="relative flex w-full flex-col gap-8 lg:w-[522px]">
+            <h2 className="text-text-primary sm:text-32 text-24 gt-lg:text-[40px] gt-lg:leading-[72px] text-center font-bold md:text-3xl lg:mb-6 lg:whitespace-nowrap">
               {t.title}
             </h2>
-
-            <form className="flex flex-col gap-6 lg:mb-8">
+            <form className="relative z-10 flex flex-col gap-6 lg:mb-8">
               <div>
                 <label
                   htmlFor="name"
@@ -147,7 +148,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
                 <ChevronRight size={16} className="ml-1" />
               </Button>
             </form>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <h3 className="text-dark mb-2 font-semibold">
                   {t.quickConsult.title}
@@ -181,9 +182,12 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
                 </Button>
               </div>
             </div>
+            {isShowBackground && (
+              <div className="absolute top-[95%] left-[-5%] z-0 size-[500px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#067E81_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.2] md:top-[40%] md:left-[-60%] md:size-[800px]" />
+            )}
           </div>
 
-          <div className="h-full w-full lg:w-[calc(100%-522px)]">
+          <div className="z-10 h-full w-full max-md:relative lg:w-[calc(100%-522px)]">
             <Image
               src="/images/contact/hero-form.webp"
               alt={t.heroFormImageAlt}

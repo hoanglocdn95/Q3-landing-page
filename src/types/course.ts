@@ -70,15 +70,14 @@ export interface Banner {
 }
 
 export interface Course {
-  id: string;
+  name: string;
+  description: string;
   courseRoadmap: CourseRoadmap[];
   overview: Overview[];
   reasonsToJoin: ReasonsToJoin[];
   studyDetails: StudyDetails;
   courseFeatures: CourseFeatures[];
   faq: FAQ[];
-  contact: Contact[];
-  social: Social[];
   banner: Banner;
   evaluate: Evaluate[];
 }

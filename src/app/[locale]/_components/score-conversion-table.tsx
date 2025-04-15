@@ -15,7 +15,7 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
 
   return (
     <section className="section-container mt-12 rounded-2xl bg-[#ff8d0a] p-6 md:p-12">
-      <h2 className="mb-6 text-center text-xl font-bold text-white lg:text-[40px] lg:leading-[72px]">
+      <h2 className="sm:text-32 text-24 gt-lg:text-[40px] gt-lg:leading-[72px] mb-6 text-center font-bold text-white">
         Bảng quy đổi điểm PTE - IELTS
       </h2>
 
