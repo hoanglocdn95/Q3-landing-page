@@ -154,19 +154,24 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
                   {t.quickConsult.title}
                 </h3>
                 <div className="flex flex-col gap-2">
-                  <div className="flex items-center text-sm">
-                    <Image
-                      alt="Phone"
-                      height={16}
-                      src="/icons/phone.svg"
-                      width={16}
-                      className="text-dark mr-2"
-                    />
-                    <span>{t.quickConsult.australia}</span>
+                  <div className="flex items-center gap-1 text-sm">
+                    <PhoneIcon />
+                    <Link
+                      href="tel:+61426812895"
+                      className="text-14 font-500 text-dark hover:underline"
+                    >
+                      {t.quickConsult.australia}
+                    </Link>
                   </div>
-                  <div className="flex items-center text-sm">
-                    <PhoneIcon className="text-dark mr-2" />
-                    <span>{t.quickConsult.vietnam}</span>
+
+                  <div className="flex items-center gap-1 text-sm">
+                    <PhoneIcon />
+                    <Link
+                      href="tel:+84888031854"
+                      className="text-14 font-500 text-dark hover:underline"
+                    >
+                      {t.quickConsult.vietnam}
+                    </Link>
                   </div>
                 </div>
               </div>

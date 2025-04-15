@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { ChevronRightIcon } from '@/components/icons';
 import Link from 'next/link';
+import viTranslations from '@/locales/vi/home/course-card.json';
+import enTranslations from '@/locales/en/home/course-card.json';
 
 interface CourseCardProps {
   title: string;
@@ -21,7 +23,8 @@ export default function CourseCard({
   description,
   comingSoon = false,
 }: CourseCardProps) {
-  console.log('🚀 ~ locale:', locale);
+  const t = locale === 'en' ? enTranslations : viTranslations;
+
   return (
     <div className="w-[calc(100vw-32px)] max-w-[300px] rounded-lg bg-white sm:w-auto sm:max-w-[unset]">
       <div className="relative">
@@ -37,7 +40,7 @@ export default function CourseCard({
         {comingSoon && (
           <div className="absolute -top-[6px] right-2 bg-transparent">
             <div className="clip-polygon-flag bg-gradient-flag relative h-[61px] w-[70px] pt-[15px] pl-[5px] text-center text-[10px] leading-[11px] font-extrabold text-white uppercase">
-              Coming Soon
+              {t.comingSoon}
             </div>
           </div>
         )}

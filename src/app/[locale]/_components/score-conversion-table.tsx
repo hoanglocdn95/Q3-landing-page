@@ -1,5 +1,9 @@
+import viTranslations from '@/locales/vi/home/score-conversion.json';
+import enTranslations from '@/locales/en/home/score-conversion.json';
+
 export default function ScoreConversionTable({ locale }: { locale: string }) {
-  console.log('🚀 ~ ScoreConversionTable ~ locale:', locale);
+  const t = locale === 'en' ? enTranslations : viTranslations;
+
   const scores = [
     { pte: 30, ielts: 4.5 },
     { pte: 36, ielts: 5.0 },
@@ -14,9 +18,9 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
   ];
 
   return (
-    <section className="section-container mt-12 rounded-2xl bg-[#ff8d0a] p-6 md:p-12">
+    <section className="section-container relative z-[1] mt-12 rounded-2xl bg-[#ff8d0a] p-6 md:p-12">
       <h2 className="sm:text-32 text-24 mb-6 text-center font-bold text-white lg:text-[40px] lg:leading-[72px]">
-        Bảng quy đổi điểm PTE - IELTS
+        {t.title}
       </h2>
 
       {/* Desktop/Tablet View (Horizontal) - Hidden on mobile */}
@@ -27,7 +31,7 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
               <tr>
                 {/* Empty cell for the corner */}
                 <th className="w-20 bg-gray-50 px-2 py-3 text-center font-medium text-gray-700">
-                  PTE
+                  {t.pte}
                 </th>
                 {scores.map((score, index) => (
                   <th
@@ -42,7 +46,7 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
             <tbody>
               <tr>
                 <th className="bg-gray-50 px-2 py-3 text-center font-medium text-gray-700">
-                  IELTS
+                  {t.ielts}
                 </th>
                 {scores.map((score, index) => (
                   <td
@@ -65,10 +69,10 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
             <thead>
               <tr>
                 <th className="w-1/2 bg-gray-50 px-4 py-3 text-center font-medium text-gray-700">
-                  PTE
+                  {t.pte}
                 </th>
                 <th className="w-1/2 bg-gray-50 px-4 py-3 text-center font-medium text-gray-700">
-                  IELTS
+                  {t.ielts}
                 </th>
               </tr>
             </thead>
