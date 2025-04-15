@@ -1,20 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/utils/cn';
+import { ITrainer } from '@/types/trainer';
+import { ELocale } from '@/constants/enum';
 
-interface ITrainer {
-  name: string;
-  role: string;
-  description: string;
-  imageUrl: string;
-}
-
-interface TrainerCardProps {
+interface ITrainerCardProps {
   trainer: ITrainer;
   className?: string;
+  locale: ELocale;
 }
 
-const TrainerCard: React.FC<TrainerCardProps> = ({ trainer, className }) => {
+const TrainerCard: React.FC<ITrainerCardProps> = ({
+  trainer,
+  className,
+  locale,
+}) => {
   const { name, role, description, imageUrl } = trainer;
 
   return (
@@ -31,7 +31,9 @@ const TrainerCard: React.FC<TrainerCardProps> = ({ trainer, className }) => {
         <div className="flex-1 text-white lg:pt-3">
           <h3 className="text-28 font-700">{name}</h3>
           <p className="text-16 font-500">{role}</p>
-          <p className="text-14 mt-2 leading-[1.2] md:mt-3">{description}</p>
+          <p className="text-14 mt-2 leading-[1.2] md:mt-3">
+            {description[locale]}
+          </p>
         </div>
       </div>
     </div>

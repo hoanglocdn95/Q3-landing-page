@@ -1,8 +1,11 @@
 import { ChevronDownIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
+import { ELocale } from '@/constants/enum';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
 import React from 'react';
+import viTranslations from '@/locales/vi/about.json';
+import enTranslations from '@/locales/en/about.json';
 
 const ImageGallery = ({ className }: { className?: string }) => {
   const images = [
@@ -59,22 +62,20 @@ const ImageGallery = ({ className }: { className?: string }) => {
   );
 };
 
-const Mission = () => {
+const Mission = ({ locale }: { locale: ELocale }) => {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
   return (
     <section className="bg-background-cream relative mx-auto overflow-hidden py-10 md:py-15 lg:py-16">
       <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:gap-4 lg:flex-row lg:gap-8">
         <div className="flex-1">
-          <h2 className="lg:text-40 md:text-32 text-24 font-700">Sứ mệnh</h2>
+          <h2 className="lg:text-40 md:text-32 text-24 font-700">
+            {t.mission.mission}
+          </h2>
           <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
-            Tại Q3 Language, chúng tôi tin rằng mỗi học viên đều mang trong mình
-            tiềm năng để thành công và nhiệm vụ của chúng tôi là khai phá và
-            phát huy tiềm năng đó. Sứ mệnh của Q3s là mang đến giải pháp học PTE
-            toàn diện, giúp học viên không chỉ đạt được mục tiêu điểm số mà còn
-            xây dựng sự tự tin và khả năng sử dụng tiếng Anh linh hoạt trong
-            cuộc sống và sự nghiệp.
+            {t.mission.description}
           </p>
           <Button className="w-[137px] md:w-[155px]">
-            Xem thêm <ChevronDownIcon />
+            {t.actions.see_more} <ChevronDownIcon />
           </Button>
         </div>
         <ImageGallery className="relative z-10 w-full md:w-[525px] lg:w-[576px]" />

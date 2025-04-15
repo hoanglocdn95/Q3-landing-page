@@ -8,23 +8,27 @@ import { cn } from '@/utils/cn';
 import React from 'react';
 import MainContainer from './main-container';
 import Image from 'next/image';
+import viTranslations from '@/locales/vi/course.json';
+import enTranslations from '@/locales/en/course.json';
+import { ELocale } from '@/constants/enum';
 
-interface Stage {
+interface IStage {
   id: string;
   title: string;
   description: string[];
   className?: string;
 }
 
-interface StageProps extends Stage {
+interface IStageProps extends IStage {
   index: number;
 }
 
-interface CourseRoadmapProps {
-  data: Stage[];
+interface ICourseRoadmapProps {
+  data: IStage[];
+  locale: ELocale;
 }
 
-const Stage = ({ title, description, className, index }: StageProps) => {
+const Stage = ({ title, description, className, index }: IStageProps) => {
   const generateIcon = () => {
     switch (index) {
       case 1:
@@ -70,7 +74,8 @@ const Stage = ({ title, description, className, index }: StageProps) => {
   );
 };
 
-const CourseRoadmap = ({ data }: CourseRoadmapProps) => {
+const CourseRoadmap = ({ data, locale }: ICourseRoadmapProps) => {
+  const t = locale === 'en' ? enTranslations : viTranslations;
   return (
     <MainContainer
       id="course-roadmap"
@@ -78,7 +83,7 @@ const CourseRoadmap = ({ data }: CourseRoadmapProps) => {
       containerClassName="max-md:pb-[114px]"
     >
       <h2 className="text-24 lg:text-32 font-600 mb-4 text-white">
-        Lộ trình khóa học
+        {t.course_roadmap.learning_path}
       </h2>
       <div className="rounded-12 overflow-hidden bg-white">
         {data.map((item, index) => (
@@ -89,7 +94,7 @@ const CourseRoadmap = ({ data }: CourseRoadmapProps) => {
         src={'/images/courses/background-roadmap.png'}
         width={864}
         height={282}
-        alt="background-roadmap"
+        alt="background roadmap"
         className="absolute -right-22 bottom-0 h-[126px] w-[385px] object-cover md:left-0 md:h-[236px] md:w-[603px] lg:h-[340px] lg:w-[864px]"
       />
     </MainContainer>

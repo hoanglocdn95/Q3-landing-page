@@ -1,13 +1,13 @@
 import { Carousel, CarouselItem } from '@/components/ui/carousel';
-import { Evaluate } from '@/types/course';
+import { IEvaluate } from '@/types/course';
 import React from 'react';
 import EvaluateCard from '../cards/evaluate-card';
 
-interface Props {
-  evaluate: Evaluate[];
+interface IProps {
+  evaluate: IEvaluate[];
 }
 
-const EvaluateCarousel = ({ evaluate }: Props) => {
+const EvaluateCarousel = ({ evaluate }: IProps) => {
   return (
     <Carousel
       opts={{

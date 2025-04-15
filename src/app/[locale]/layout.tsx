@@ -1,6 +1,7 @@
-import Footer from '@/components/layout/footer';
-import Header from '@/components/layout/header';
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 import { locales } from '@/constants/common';
+import { ELocale } from '@/constants/enum';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -11,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: ELocale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
 
@@ -61,7 +62,7 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: ELocale }>;
 }>) {
   const { locale } = await params;
   if (!locales.includes(locale)) {

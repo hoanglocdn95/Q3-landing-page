@@ -12,8 +12,11 @@ import Evaluate from './_components/evaluate';
 import { Button } from '@/components/ui/button';
 import { ChevronRightIcon } from '@/components/icons';
 import CourseFeatures from './_components/course-feature';
-import { Course } from '@/types/course';
+import { ICourse } from '@/types/course';
 import { locales } from '@/constants/common';
+import viTranslations from '@/locales/vi/course.json';
+import enTranslations from '@/locales/en/course.json';
+import { ELocale } from '@/constants/enum';
 
 export function generateStaticParams() {
   return locales.flatMap(locale => {
@@ -27,7 +30,7 @@ export function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ locale: ELocale; slug: string }>;
 }) {
   const { locale, slug } = await params;
 
@@ -35,11 +38,13 @@ export default async function Page({
     notFound();
   }
 
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
+
   const courseItem = courses.find(course => course.slug === slug);
 
   const courseDetail = courseItem?.[
     locale as keyof typeof courseItem
-  ] as Course;
+  ] as ICourse;
 
   if (!courseItem || !courseDetail) {
     notFound();
@@ -57,7 +62,7 @@ export default async function Page({
           </p>
 
           <Button variant="outline" className="mt-8 w-40 !border-0 md:hidden">
-            Đăng ký ngay
+            {t.actions.registration}
             <ChevronRightIcon />
           </Button>
         </div>
@@ -77,15 +82,21 @@ export default async function Page({
         />
       </section>
       <CourseOverview
+        courseName={courseDetail.name}
         overview={courseDetail.overview}
         reasonsToJoin={courseDetail.reasonsToJoin}
         studyDetails={courseDetail.studyDetails}
+        locale={locale}
       />
-      <CourseRoadmap data={courseDetail.courseRoadmap} />
-      <CourseFeatures steps={courseDetail.courseFeatures} />
-      <Evaluate evaluate={courseDetail.evaluate} />
-      <FAQ faq={courseDetail.faq} />
-      <Registration banner={courseDetail.banner} />
+      <CourseRoadmap data={courseDetail.courseRoadmap} locale={locale} />
+      <CourseFeatures
+        courseName={courseDetail.name}
+        steps={courseDetail.courseFeatures}
+        locale={locale}
+      />
+      <Evaluate evaluate={courseDetail.evaluate} locale={locale} />
+      <FAQ faq={courseDetail.faq} locale={locale} />
+      <Registration banner={courseDetail.banner} locale={locale} />
     </div>
   );
 }

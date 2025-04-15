@@ -1,9 +1,12 @@
 import React, { PropsWithChildren } from 'react';
 import OverviewMenu from './overview-menu';
 import { cn } from '@/utils/cn';
+import { ELocale } from '@/constants/enum';
 
-interface Props extends PropsWithChildren {
+interface IProps extends PropsWithChildren {
   id?: string;
+  courseName?: string;
+  locale?: ELocale;
   hasMenu?: boolean;
   fullWidth?: boolean;
   className?: string;
@@ -12,12 +15,14 @@ interface Props extends PropsWithChildren {
 
 const MainContainer = ({
   id,
+  courseName,
+  locale,
   children,
   hasMenu = false,
   fullWidth = false,
   className,
   containerClassName,
-}: Props) => {
+}: IProps) => {
   return (
     <section className={cn(className)} id={id}>
       <div
@@ -28,7 +33,13 @@ const MainContainer = ({
       >
         {!fullWidth && (
           <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]">
-            {hasMenu && <OverviewMenu className="sticky top-0" />}
+            {hasMenu && courseName && locale && (
+              <OverviewMenu
+                courseName={courseName}
+                className="sticky top-0"
+                locale={locale}
+              />
+            )}
           </div>
         )}
         <div

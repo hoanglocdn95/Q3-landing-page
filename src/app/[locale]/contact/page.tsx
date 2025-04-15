@@ -4,6 +4,7 @@ import { locales } from '@/constants/common';
 import HeroSection from './_components/hero-section';
 import ContactFormSection from '@/components/contact-form-section';
 import MapSection from './_components/map-section';
+import { ELocale } from '@/constants/enum';
 
 export function generateStaticParams() {
   return locales.flatMap(locale => {
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: ELocale }>;
 }) {
   const { locale } = await params;
   if (!locales.includes(locale)) {

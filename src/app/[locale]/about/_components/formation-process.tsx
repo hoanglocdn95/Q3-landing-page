@@ -2,8 +2,12 @@ import { ChevronDownIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import React from 'react';
+import viTranslations from '@/locales/vi/about.json';
+import enTranslations from '@/locales/en/about.json';
+import { ELocale } from '@/constants/enum';
 
-const FormationProcess = () => {
+const FormationProcess = ({ locale }: { locale: ELocale }) => {
+  const t = locale === 'en' ? enTranslations : viTranslations;
   return (
     <section className="relative pt-10 pb-[138px] md:py-15 lg:py-16">
       <div className="section-container flex flex-col justify-between gap-4 md:flex-row md:gap-10 lg:gap-[105px]">
@@ -18,23 +22,16 @@ const FormationProcess = () => {
         </div>
         <div className="order-1 flex-1 md:order-2">
           <h2 className="text-24 md:text-32 font-700 lg:text-40 leading-7 md:leading-12 lg:leading-14">
-            Quá trình hình thành và phát triển
+            {t.formation_process.title}
           </h2>
           <p className="font-500 text-text-secondary text-14 lg:text-16 my-3 md:my-2 lg:my-4">
-            Q3 Language được thành lập vào năm 2024 tại thành phố Adelaide, Úc,
-            với mục tiêu trở thành đơn vị tiên phong trong lĩnh vực đào tạo và
-            luyện thi chứng chỉ PTE (Pearson Test of English).
+            {t.formation_process.description}
           </p>
           <p className="font-500 text-text-secondary text-14 lg:text-16 mb-6">
-            Khởi đầu từ những lớp học nhỏ, chúng tôi tập trung vào việc xây dựng
-            chương trình học tinh gọn và hiệu quả, phù hợp với từng cấp độ học
-            viên. Với sự dẫn dắt của đội ngũ chuyên gia có bề dày kinh nghiệm và
-            tâm huyết, Q3s Language không ngừng hoàn thiện các phương pháp giảng
-            dạy, tích hợp công nghệ mô phỏng bài thi thực tế để học viên làm
-            quen và tự tin khi bước vào kỳ thi PTE chính thức.
+            {t.formation_process.description_2}
           </p>
           <Button className="w-[137px] md:w-[142px] lg:w-[142px]">
-            Xem thêm <ChevronDownIcon />
+            {t.actions.see_more} <ChevronDownIcon />
           </Button>
         </div>
       </div>

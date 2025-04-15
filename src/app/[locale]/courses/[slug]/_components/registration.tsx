@@ -3,22 +3,29 @@ import MainContainer from './main-container';
 import { ChevronRightIcon, FacebookIcon, PhoneIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Banner } from '@/types/course';
+import { IBanner } from '@/types/course';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
+import viTranslations from '@/locales/vi/course.json';
+import enTranslations from '@/locales/en/course.json';
+import { ELocale } from '@/constants/enum';
 
-interface RegistrationProps {
-  banner: Banner;
+interface IRegistrationProps {
+  banner: IBanner;
+  locale: ELocale;
 }
 
-const Registration = ({ banner }: RegistrationProps) => {
+const Registration = ({ banner, locale }: IRegistrationProps) => {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
   return (
     <MainContainer containerClassName="!py-0">
-      <h2 className="text-24 lg:text-32 font-600">Đăng ký ngay</h2>
+      <h2 className="text-24 lg:text-32 font-600">{t.actions.registration}</h2>
       <div className="mt-4 flex flex-col flex-wrap items-start justify-between gap-8 pb-5 md:mt-6 md:flex-row lg:mt-4">
         <div className="order-1 space-y-4 md:mb-0">
           <div className="space-y-4">
-            <h3 className="font-600 text-dark">Tư vấn nhanh</h3>
+            <h3 className="font-600 text-dark">
+              {t.registration.quick_consulting}
+            </h3>
             <div className={cn('flex items-center gap-3')}>
               <PhoneIcon />
               <Link
@@ -44,7 +51,7 @@ const Registration = ({ banner }: RegistrationProps) => {
           <h3 className="font-600 text-dark">Facebook</h3>
           <Link
             href="https://facebook.com/q3language"
-            className="text-14 font-500 text-dark flex items-center gap-3 hover:underline"
+            className="text-14 font-500 text-dark flex w-fit items-center gap-3 hover:underline"
             target="_blank"
           >
             <FacebookIcon />
@@ -53,7 +60,7 @@ const Registration = ({ banner }: RegistrationProps) => {
         </div>
 
         <div className="order-3 min-w-[244px] basis-full space-y-3 max-md:w-full md:order-2 md:basis-auto lg:order-3">
-          <h3 className="font-600 text-dark">Nhắn tin nhanh</h3>
+          <h3 className="font-600 text-dark">{t.registration.quick_message}</h3>
           <Button variant="outline" size="md" asChild>
             <Link href="https://zalo.me/q3language" target="_blank">
               Zalo

@@ -1,19 +1,20 @@
 import React from 'react';
 import EvaluateCarousel from '@/components/feature/carousel/evaluate-carousel';
-import type { Evaluate } from '@/types/course';
+import type { IEvaluate } from '@/types/course';
 import Image from 'next/image';
-import viTranslations from '@/locales/vi/home/evaluate.json';
-import enTranslations from '@/locales/en/home/evaluate.json';
+import viTranslations from '@/locales/vi/home.json';
+import enTranslations from '@/locales/en/home.json';
+import { ELocale } from '@/constants/enum';
 
-const Evaluate = ({ locale }: { locale: string }) => {
-  const t = locale === 'en' ? enTranslations : viTranslations;
+const Evaluate = ({ locale }: { locale: ELocale }) => {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
 
-  const evaluate = [
+  const evaluate: IEvaluate[] = [
     {
       id: '1',
       author: {
         name: 'Herman Miller',
-        position: t.position.student,
+        position: t.evaluate.position.student,
         image: {
           src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
           alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
@@ -26,7 +27,7 @@ const Evaluate = ({ locale }: { locale: string }) => {
       id: '2',
       author: {
         name: 'Herman Miller',
-        position: t.position.student,
+        position: t.evaluate.position.student,
         image: {
           src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
           alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
@@ -39,7 +40,7 @@ const Evaluate = ({ locale }: { locale: string }) => {
       id: '3',
       author: {
         name: 'Herman Miller',
-        position: t.position.student,
+        position: t.evaluate.position.student,
         image: {
           src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
           alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
@@ -52,7 +53,7 @@ const Evaluate = ({ locale }: { locale: string }) => {
       id: '4',
       author: {
         name: 'Herman Miller',
-        position: t.position.student,
+        position: t.evaluate.position.student,
         image: {
           src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
           alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
@@ -65,7 +66,7 @@ const Evaluate = ({ locale }: { locale: string }) => {
       id: '5',
       author: {
         name: 'Herman Miller',
-        position: t.position.student,
+        position: t.evaluate.position.student,
         image: {
           src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
           alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
@@ -88,10 +89,10 @@ const Evaluate = ({ locale }: { locale: string }) => {
       <div className="section-container flex flex-col md:flex-row">
         <div>
           <h2 className="sm:text-32 text-24 mb-2.5 text-center font-bold text-white sm:mb-4 md:text-left lg:text-[40px] lg:leading-[72px]">
-            {t.title}
+            {t.evaluate.title}
           </h2>
           <p className="mb-6 text-center text-base font-medium text-white sm:text-left">
-            {t.description}
+            {t.evaluate.description}
           </p>
         </div>
         <div className="max-w-[658px]">

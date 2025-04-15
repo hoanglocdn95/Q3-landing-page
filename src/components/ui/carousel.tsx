@@ -28,7 +28,7 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
-} & CarouselProps;
+} & ICarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
@@ -231,7 +231,7 @@ function CarouselNext({
   );
 }
 
-interface CarouselProps
+interface ICarouselProps
   extends React.ComponentProps<'div'>,
     CarouselGroupProps,
     React.PropsWithChildren {
@@ -243,7 +243,7 @@ function Carousel({
   contentClassName,
   className,
   ...props
-}: CarouselProps) {
+}: ICarouselProps) {
   return (
     <CarouselGroup className={cn('px-6', className)} {...props}>
       <CarouselContent className={contentClassName}>{children}</CarouselContent>
