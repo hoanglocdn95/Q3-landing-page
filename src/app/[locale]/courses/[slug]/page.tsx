@@ -1,37 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { notFound } from 'next/navigation';
 import CourseRoadmap from './_components/course-roadmap';
 
-import course from '@/data/course.json';
+import { courses } from '@/data/course';
 import CourseOverview from './_components/course-overview';
 import FAQ from './_components/faq';
 import Registration from './_components/registration';
-import { Contact, Social } from '@/types/course';
 import Image from 'next/image';
 import Evaluate from './_components/evaluate';
 import { Button } from '@/components/ui/button';
 import { ChevronRightIcon } from '@/components/icons';
 import CourseFeatures from './_components/course-feature';
-
-const locales = ['en', 'vi'];
-const slug = ['1', '2', '3'];
-
-// const dictionary = {
-//   en: {
-//     title: "Blog",
-//     welcome: "Welcome to Q3 Landing Page",
-//   },
-//   vi: {
-//     title: "Trang Blog",
-//     welcome: "Chào mừng đến với Q3 Landing Page",
-//   },
-// };
+import { Course } from '@/types/course';
+import { locales } from '@/constants/common';
 
 export function generateStaticParams() {
   return locales.flatMap(locale => {
-    return slug.map(slug => ({
+    return courses.map((course: any) => ({
       locale,
-      courseId: slug,
+      slug: course.slug,
     }));
   });
 }
@@ -39,18 +27,21 @@ export function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: Promise<{ locale: string; courseId: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, courseId } = await params;
+  const { locale, slug } = await params;
+
   if (!locales.includes(locale)) {
     notFound();
   }
 
-  const courseDetail = course[locale as keyof typeof course].courses.find(
-    course => course.id === courseId,
-  );
+  const courseItem = courses.find(course => course.slug === slug);
 
-  if (!courseDetail) {
+  const courseDetail = courseItem?.[
+    locale as keyof typeof courseItem
+  ] as Course;
+
+  if (!courseItem || !courseDetail) {
     notFound();
   }
 
@@ -71,15 +62,15 @@ export default async function Page({
           </Button>
         </div>
         <Image
-          src={courseDetail.image.desktop.src}
-          alt={courseDetail.image.desktop.alt}
+          src={courseItem.image.desktop.src}
+          alt={courseItem.image.desktop.alt}
           width={1200}
           height={468}
           className="h-auto w-full max-md:hidden"
         />
         <Image
-          src={courseDetail.image.mobile.src}
-          alt={courseDetail.image.mobile.alt}
+          src={courseItem.image.mobile.src}
+          alt={courseItem.image.mobile.alt}
           width={375}
           height={386}
           className="h-auto w-full md:hidden"
@@ -94,11 +85,7 @@ export default async function Page({
       <CourseFeatures steps={courseDetail.courseFeatures} />
       <Evaluate evaluate={courseDetail.evaluate} />
       <FAQ faq={courseDetail.faq} />
-      <Registration
-        contact={courseDetail.contacts as Contact[]}
-        social={courseDetail.socials as Social[]}
-        banner={courseDetail.banner}
-      />
+      <Registration banner={courseDetail.banner} />
     </div>
   );
 }

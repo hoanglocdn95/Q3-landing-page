@@ -1,19 +1,11 @@
 import React from 'react';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import { locales } from '@/constants/common';
-
-const dictionary = {
-  en: {
-    title: 'Home',
-    welcome: 'Welcome to Q3 Landing Page',
-  },
-  vi: {
-    title: 'Trang chủ',
-    welcome: 'Chào mừng đến với Q3 Landing Page',
-  },
-};
-
+import BannerSection from './_components/banner-section';
+import CourseGrid from './_components/course-grid';
+import ScoreConversionTable from './_components/score-conversion-table';
+import TeachersTeamSection from './_components/teachers-team-section';
+import Evaluate from './_components/evaluate';
+import ContactFormSection from '@/components/contact-form-section';
 export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
@@ -24,39 +16,14 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!locales.includes(locale)) {
-    notFound();
-  }
-
-  const dict = dictionary[locale as keyof typeof dictionary];
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm">
-        <h1 className="mb-8 text-4xl font-bold">{dict.welcome}</h1>
-        <p className="text-xl">{dict.title}</p>
-        <div className="mt-8">
-          <h2 className="mb-4 text-2xl">Chuyển đổi ngôn ngữ:</h2>
-          <div className="flex gap-4">
-            <Link
-              href="/"
-              className={`rounded px-4 py-2 ${
-                locale === 'vi' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-              }`}
-            >
-              Tiếng Việt
-            </Link>
-            <Link
-              href="/en"
-              className={`rounded px-4 py-2 ${
-                locale === 'en' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-              }`}
-            >
-              English
-            </Link>
-          </div>
-        </div>
-      </div>
-    </main>
+    <div className="overflow-hidden">
+      <BannerSection locale={locale} />
+      <CourseGrid locale={locale} />
+      <ScoreConversionTable locale={locale} />
+      <TeachersTeamSection locale={locale} />
+      <Evaluate locale={locale} />
+      <ContactFormSection locale={locale} isShowBackground />
+    </div>
   );
 }

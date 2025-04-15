@@ -202,7 +202,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                 alt="Q3 Language"
                 width={104}
                 height={46}
-                className="h-[36px] w-[81px]"
+                className="h-[36px] w-[81px] md:h-[46px] md:w-[104px]"
               />
             </Link>
           </div>

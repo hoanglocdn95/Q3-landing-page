@@ -14,7 +14,7 @@ const EvaluateCarousel = ({ evaluate }: Props) => {
         align: 'start',
         loop: true,
       }}
-      className="max-w-[calc(100vw-32px)] md:max-w-[calc(100vw-64px-225px-54px-48px)] xl:max-w-[calc(100vw-258px-66px-64px-64px-48px)]"
+      className="max-w-[calc(100vw-32px)] px-0 sm:px-6 md:max-w-[calc(100vw-64px-225px-54px-48px)] xl:max-w-[calc(100vw-258px-66px-64px-64px-48px)]"
     >
       {evaluate.map((item, index) => (
         <CarouselItem key={index} className="basis-[287px] md:basis-full">

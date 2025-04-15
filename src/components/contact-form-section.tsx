@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import viTranslations from '@/locales/vi/contact/form.json';
 import enTranslations from '@/locales/en/contact/form.json';
-import { cn } from '@/utils/cn';
+import { PhoneIcon } from '@/components/icons';
 import { Button } from './ui/button';
 import Link from 'next/link';
-
+import { cn } from '@/lib/utils';
 interface ContactFormSectionProps {
   locale: string;
   className?: string;
@@ -38,7 +38,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
       <div className="section-container relative">
         <div className="flex flex-col items-center gap-6 pt-8 lg:flex-row lg:gap-0 lg:py-16">
           <div className="relative flex w-full flex-col gap-8 lg:w-[522px]">
-            <h2 className="text-text-primary text-2xl font-bold md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
+            <h2 className="text-text-primary sm:text-32 text-24 text-center font-bold md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
               {t.title}
             </h2>
             <form className="relative z-10 flex flex-col gap-6 lg:mb-8">
@@ -165,13 +165,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
                     <span>{t.quickConsult.australia}</span>
                   </div>
                   <div className="flex items-center text-sm">
-                    <Image
-                      alt="Phone"
-                      height={16}
-                      src="/icons/phone.svg"
-                      width={16}
-                      className="text-dark mr-2"
-                    />
+                    <PhoneIcon className="text-dark mr-2" />
                     <span>{t.quickConsult.vietnam}</span>
                   </div>
                 </div>
@@ -195,7 +189,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
 
           <div className="z-10 h-full w-full max-md:relative lg:w-[calc(100%-522px)]">
             <Image
-              src="/images/hero-form.webp"
+              src="/images/contact/hero-form.webp"
               alt={t.heroFormImageAlt}
               width={500}
               height={600}
