@@ -1,8 +1,9 @@
-import { ChevronRightIcon, ChevronDownIcon } from '@/components/icons';
 import Image from 'next/image';
 import viTranslations from '@/locales/vi/home.json';
 import enTranslations from '@/locales/en/home.json';
 import { ELocale } from '@/constants/enum';
+import Link from 'next/link';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 
 export default function BannerSection({ locale }: { locale: ELocale }) {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
@@ -34,9 +35,12 @@ export default function BannerSection({ locale }: { locale: ELocale }) {
               </h1>
 
               {/* CTA Button */}
+
               <button className="hover:bg-secondary flex h-10 items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-800 hover:text-white sm:h-[52px] sm:text-base">
-                {t.banner.cta_button}
-                <ChevronRightIcon className="ml-1" />
+                <Link href="#" className="flex items-center">
+                  {t.banner.cta_button}
+                  <ChevronRight size={20} className="ml-1" />
+                </Link>
               </button>
             </div>
           </div>
@@ -63,14 +67,16 @@ export default function BannerSection({ locale }: { locale: ELocale }) {
                 <option>{t.banner.search_section.options.option4}</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <ChevronDownIcon />
+                <ChevronDown size={20} />
               </div>
             </div>
           </div>
 
           <button className="bg-secondary hover:border-secondary flex h-10 w-full items-center justify-center rounded-full border border-white px-4 py-2 text-base font-medium whitespace-nowrap text-white hover:bg-white hover:text-black sm:w-[unset] md:h-[52px]">
-            {t.banner.search_section.search_button}
-            <ChevronRightIcon className="ml-1 h-4 w-4" />
+            <Link href="#" className="flex items-center">
+              {t.banner.search_section.search_button}
+              <ChevronRight size={20} className="ml-1" />
+            </Link>
           </button>
         </div>
       </div>

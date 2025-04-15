@@ -195,7 +195,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
 
           <div className="z-10 h-full w-full max-md:relative lg:w-[calc(100%-522px)]">
             <Image
-              src="/images/contact/hero-form.webp"
+              src="/images/contact/hero-form.png"
               alt={t.form.hero_form_image_alt}
               width={500}
               height={600}
