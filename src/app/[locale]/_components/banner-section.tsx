@@ -1,10 +1,11 @@
 import { ChevronRightIcon, ChevronDownIcon } from '@/components/icons';
 import Image from 'next/image';
-import viTranslations from '@/locales/vi/home/banner.json';
-import enTranslations from '@/locales/en/home/banner.json';
+import viTranslations from '@/locales/vi/home.json';
+import enTranslations from '@/locales/en/home.json';
+import { ELocale } from '@/constants/enum';
 
-export default function BannerSection({ locale }: { locale: string }) {
-  const t = locale === 'en' ? enTranslations : viTranslations;
+export default function BannerSection({ locale }: { locale: ELocale }) {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
 
   return (
     <section className="relative">
@@ -29,12 +30,12 @@ export default function BannerSection({ locale }: { locale: string }) {
 
               {/* Hero Text */}
               <h1 className="text-32 sm:text-40 mb-8 leading-tight font-extrabold text-white sm:mb-12 lg:text-[56px] lg:tracking-[-2px]">
-                {t.heroTitle}
+                {t.banner.hero_title}
               </h1>
 
               {/* CTA Button */}
               <button className="hover:bg-secondary flex h-10 items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-800 hover:text-white sm:h-[52px] sm:text-base">
-                {t.ctaButton}
+                {t.banner.cta_button}
                 <ChevronRightIcon className="ml-1" />
               </button>
             </div>
@@ -47,7 +48,7 @@ export default function BannerSection({ locale }: { locale: string }) {
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div className="text-white md:max-w-xs">
             <p className="text-base font-semibold">
-              {t.searchSection.description}
+              {t.banner.search_section.description}
             </p>
           </div>
 
@@ -56,10 +57,10 @@ export default function BannerSection({ locale }: { locale: string }) {
           <div className="w-full min-w-[200px] flex-1 md:mx-4 md:w-auto">
             <div className="relative">
               <select className="h-10 w-full appearance-none rounded-full bg-white px-4 py-2 pr-10 text-base font-medium outline-none md:h-[52px]">
-                <option>{t.searchSection.options.option1}</option>
-                <option>{t.searchSection.options.option2}</option>
-                <option>{t.searchSection.options.option3}</option>
-                <option>{t.searchSection.options.option4}</option>
+                <option>{t.banner.search_section.options.option1}</option>
+                <option>{t.banner.search_section.options.option2}</option>
+                <option>{t.banner.search_section.options.option3}</option>
+                <option>{t.banner.search_section.options.option4}</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                 <ChevronDownIcon />
@@ -68,7 +69,7 @@ export default function BannerSection({ locale }: { locale: string }) {
           </div>
 
           <button className="bg-secondary hover:border-secondary flex h-10 w-full items-center justify-center rounded-full border border-white px-4 py-2 text-base font-medium whitespace-nowrap text-white hover:bg-white hover:text-black sm:w-[unset] md:h-[52px]">
-            {t.searchSection.searchButton}
+            {t.banner.search_section.search_button}
             <ChevronRightIcon className="ml-1 h-4 w-4" />
           </button>
         </div>

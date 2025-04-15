@@ -1,8 +1,9 @@
-import viTranslations from '@/locales/vi/home/score-conversion.json';
-import enTranslations from '@/locales/en/home/score-conversion.json';
+import viTranslations from '@/locales/vi/home.json';
+import enTranslations from '@/locales/en/home.json';
+import { ELocale } from '@/constants/enum';
 
-export default function ScoreConversionTable({ locale }: { locale: string }) {
-  const t = locale === 'en' ? enTranslations : viTranslations;
+export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
 
   const scores = [
     { pte: 30, ielts: 4.5 },
@@ -20,7 +21,7 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
   return (
     <section className="section-container relative z-[1] mt-12 rounded-2xl bg-[#ff8d0a] p-6 md:p-12">
       <h2 className="sm:text-32 text-24 mb-6 text-center font-bold text-white lg:text-[40px] lg:leading-[72px]">
-        {t.title}
+        {t.score_conversion.title}
       </h2>
 
       {/* Desktop/Tablet View (Horizontal) - Hidden on mobile */}
@@ -31,7 +32,7 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
               <tr>
                 {/* Empty cell for the corner */}
                 <th className="w-20 bg-gray-50 px-2 py-3 text-center font-medium text-gray-700">
-                  {t.pte}
+                  {t.score_conversion.pte}
                 </th>
                 {scores.map((score, index) => (
                   <th
@@ -46,7 +47,7 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
             <tbody>
               <tr>
                 <th className="bg-gray-50 px-2 py-3 text-center font-medium text-gray-700">
-                  {t.ielts}
+                  {t.score_conversion.ielts}
                 </th>
                 {scores.map((score, index) => (
                   <td
@@ -69,10 +70,10 @@ export default function ScoreConversionTable({ locale }: { locale: string }) {
             <thead>
               <tr>
                 <th className="w-1/2 bg-gray-50 px-4 py-3 text-center font-medium text-gray-700">
-                  {t.pte}
+                  {t.score_conversion.pte}
                 </th>
                 <th className="w-1/2 bg-gray-50 px-4 py-3 text-center font-medium text-gray-700">
-                  {t.ielts}
+                  {t.score_conversion.ielts}
                 </th>
               </tr>
             </thead>

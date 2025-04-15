@@ -1,15 +1,15 @@
 import { StarIcon } from '@/components/icons';
-import { Evaluate } from '@/types/course';
+import { IEvaluate } from '@/types/course';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
 import React from 'react';
 
-interface Props {
-  evaluate: Evaluate;
+interface IProps {
+  evaluate: IEvaluate;
   className?: string;
 }
 
-const EvaluateCard = ({ evaluate, className }: Props) => {
+const EvaluateCard = ({ evaluate, className }: IProps) => {
   return (
     <div className={cn('bg-text-gray-white rounded-12 w-full', className)}>
       <div className="flex flex-col max-md:p-4 md:flex-row md:items-center">

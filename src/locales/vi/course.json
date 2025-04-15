@@ -1,0 +1,40 @@
+{
+  "actions": {
+    "registration": "Đăng ký ngay"
+  },
+  "menu": {
+    "overview": "Tổng quan",
+    "study_details": "Thời gian học tập linh hoạt",
+    "course_roadmap": "Lộ trình học tập",
+    "course_features": "Đặc Điểm Nổi Bật Của Khóa",
+    "student_feedback": "Cảm nghĩ học viên",
+    "faq": "Câu Hỏi Thường Gặp"
+  },
+  "course_overview": {
+    "overview": "Tổng quan",
+    "reasons_to_join": "Bạn nên tham gia khóa học này nếu bạn",
+    "study_details": {
+      "flexible_study_time": "Thời gian học tập linh hoạt",
+      "total_hours": "Thời lượng khóa học:",
+      "hours_per_session": "Số giờ học:",
+      "sessions": "Số buổi học:",
+      "schedule": "Lịch học:"
+    }
+  },
+  "course_roadmap": {
+    "learning_path": "Lộ trình học tập"
+  },
+  "course_features": {
+    "highlighted_features": "Đặc Điểm Nổi Bật Của Khóa"
+  },
+  "evaluate": {
+    "student_feedback": "Cảm nghĩ học viên"
+  },
+  "faq": {
+    "frequently_asked_questions": "Câu Hỏi Thường Gặp"
+  },
+  "registration": {
+    "quick_consulting": "Tư vấn nhanh",
+    "quick_message": "Nhắn tin nhanh"
+  }
+}

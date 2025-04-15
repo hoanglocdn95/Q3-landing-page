@@ -4,7 +4,7 @@ export const courses = [
     title: 'Foundation Achievers 1',
     slug: 'foundation-achievers-1',
     previewSrc: '/images/courses/foundation-achievers-1.png',
-    peviewAlt: 'Foundation Achievers 1',
+    previewAlt: 'Foundation Achievers 1',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: false,
@@ -486,7 +486,7 @@ export const courses = [
     title: 'PTE Achievers 30-36-42',
     slug: 'pte-achievers-30-36-42',
     previewSrc: '/images/courses/pte-achievers-30-36-42.png',
-    peviewAlt: 'PTE Achievers 30-36-42',
+    previewAlt: 'PTE Achievers 30-36-42',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: false,
@@ -501,7 +501,7 @@ export const courses = [
       },
     },
     vi: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nPTE Achievers 30-36-42',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
@@ -732,7 +732,7 @@ export const courses = [
       },
     },
     en: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nPTE Achievers 30-36-42',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
@@ -968,7 +968,7 @@ export const courses = [
     title: 'PTE Achievers 36-42-50',
     slug: 'pte-achievers-36-42-50',
     previewSrc: '/images/courses/pte-achievers-36-42-50.png',
-    peviewAlt: 'PTE Achievers 36-42-50',
+    previewAlt: 'PTE Achievers 36-42-50',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: false,
@@ -1450,7 +1450,7 @@ export const courses = [
     title: 'Foundation Achievers 2',
     slug: 'foundation-achievers-2',
     previewSrc: '/images/courses/foundation-achievers-2.png',
-    peviewAlt: 'Foundation Achievers 2',
+    previewAlt: 'Foundation Achievers 2',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: true,
@@ -1932,7 +1932,7 @@ export const courses = [
     title: 'PTE Achievers 50-58',
     slug: 'pte-achievers-50-58',
     previewSrc: '/images/courses/pte-achievers-50-58.png',
-    peviewAlt: 'PTE Achievers 50-58',
+    previewAlt: 'PTE Achievers 50-58',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: false,
@@ -2414,7 +2414,7 @@ export const courses = [
     title: 'PTE Achievers 65-73-79',
     slug: 'pte-achievers-65-73-79',
     previewSrc: '/images/courses/pte-achievers-65-73-79.png',
-    peviewAlt: 'PTE Achievers 65-73-79',
+    previewAlt: 'PTE Achievers 65-73-79',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: true,
@@ -2896,7 +2896,7 @@ export const courses = [
     title: 'PTE 1 kèm 1',
     slug: 'pte-1-kem-1',
     previewSrc: '/images/courses/pte-1-kem-1.png',
-    peviewAlt: 'PTE 1 kèm 1',
+    previewAlt: 'PTE 1 kèm 1',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     comingSoon: false,
@@ -3378,7 +3378,7 @@ export const courses = [
     title: 'PTE Cấp Tốc',
     slug: 'pte-cap-toc',
     previewSrc: '/images/courses/pte-cap-toc.png',
-    peviewAlt: 'PTE Cấp Tốc',
+    previewAlt: 'PTE Cấp Tốc',
     shortDescription:
       'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading jjdajdjaldaldkasdkadjkasdskajd.',
     comingSoon: false,

@@ -1,0 +1,40 @@
+{
+  "actions": {
+    "registration": "Register Now"
+  },
+  "menu": {
+    "overview": "Overview",
+    "study_details": "Flexible Study Time",
+    "course_roadmap": "Learning Path",
+    "course_features": "Course Highlights",
+    "student_feedback": "Student Feedback",
+    "faq": "Frequently Asked Questions"
+  },
+  "course_overview": {
+    "overview": "Overview",
+    "reasons_to_join": "You should join this course if you",
+    "study_details": {
+      "flexible_study_time": "Flexible Study Time",
+      "total_hours": "Course Duration:",
+      "hours_per_session": "Hours per Session:",
+      "sessions": "Number of Sessions:",
+      "schedule": "Schedule:"
+    }
+  },
+  "course_roadmap": {
+    "learning_path": "Learning Path"
+  },
+  "course_features": {
+    "highlighted_features": "Course Highlights"
+  },
+  "evaluate": {
+    "student_feedback": "Student Feedback"
+  },
+  "faq": {
+    "frequently_asked_questions": "Frequently Asked Questions"
+  },
+  "registration": {
+    "quick_consulting": "Quick Consulting",
+    "quick_message": "Quick Message"
+  }
+}

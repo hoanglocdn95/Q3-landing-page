@@ -1,34 +1,34 @@
-export interface CourseRoadmap {
+export interface ICourseRoadmap {
   id: string;
   title: string;
   description: string[];
 }
 
-export interface Overview {
+export interface IOverview {
   id: string;
   title: string;
 }
 
-export interface ReasonsToJoin {
+export interface IReasonsToJoin {
   id: string;
   title: string;
   icon: string;
 }
 
-export interface StudyDetails {
+export interface IStudyDetails {
   duration: string;
   totalHours: string;
   hoursPerSession: string;
   schedule: string;
 }
 
-export interface CourseFeatures {
+export interface ICourseFeatures {
   number: string;
   title: string;
   description: string;
 }
 
-export interface Evaluate {
+export interface IEvaluate {
   id: string;
   author: {
     name: string;
@@ -42,25 +42,25 @@ export interface Evaluate {
   rating: number;
 }
 
-export interface FAQ {
+export interface IFAQ {
   id: string;
   question: string;
   answer: string;
 }
 
-export interface Contact {
+export interface IContact {
   icon: 'phone'; // TODO: add other icons
   text: string;
   link: string;
 }
 
-export interface Social {
+export interface ISocial {
   platform: 'facebook' | 'zalo'; // TODO: add other platforms
   text: string;
   link: string;
 }
 
-export interface Banner {
+export interface IBanner {
   title: string;
   subtitle: string;
   image: {
@@ -69,15 +69,15 @@ export interface Banner {
   };
 }
 
-export interface Course {
+export interface ICourse {
   name: string;
   description: string;
-  courseRoadmap: CourseRoadmap[];
-  overview: Overview[];
-  reasonsToJoin: ReasonsToJoin[];
-  studyDetails: StudyDetails;
-  courseFeatures: CourseFeatures[];
-  faq: FAQ[];
-  banner: Banner;
-  evaluate: Evaluate[];
+  courseRoadmap: ICourseRoadmap[];
+  overview: IOverview[];
+  reasonsToJoin: IReasonsToJoin[];
+  studyDetails: IStudyDetails;
+  courseFeatures: ICourseFeatures[];
+  faq: IFAQ[];
+  banner: IBanner;
+  evaluate: IEvaluate[];
 }

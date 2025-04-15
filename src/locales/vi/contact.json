@@ -1,0 +1,59 @@
+{
+  "form": {
+    "title": "Đăng ký nhận tư vấn ngay",
+    "form": {
+      "name": "Họ tên",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "purpose": "Bạn cần PTE làm gì?",
+      "score": "Bạn cần đạt bao nhiêu điểm PTE?",
+      "time": "Thời gian bạn cần đạt số điểm trên?",
+      "submit": "Tư vấn ngay"
+    },
+    "quick_consult": {
+      "title": "Tư vấn nhanh",
+      "australia": "+61 426 812 895 (Úc - Australia)",
+      "vietnam": "+84 888 031 854 (Việt Nam)"
+    },
+    "quick_info": {
+      "title": "Nhận tin nhanh",
+      "zalo": "Zalo"
+    },
+    "hero_form_image_alt": "Hình ảnh hỗ trợ tư vấn"
+  },
+  "hero": {
+    "title": "Liên hệ",
+    "hero_image_alt": "Hình ảnh trang liên hệ"
+  },
+  "map": {
+    "title": "Địa chỉ chi nhánh",
+    "map_image_alt": "Bản đồ Google Maps",
+    "locations": [
+      {
+        "city": "Hồ Chí Minh",
+        "name": "Q3 Language Helper",
+        "address": "440 Điện Biên Phủ, Phường 11, Quận 10, Hồ Chí Minh 700000"
+      },
+      {
+        "city": "Hà Nội",
+        "name": "Q3 Language Helper",
+        "address": "440 Điện Biên Phủ, Phường 11, Quận 10, Hồ Chí Minh 700000"
+      },
+      {
+        "city": "Đà Nẵng",
+        "name": "Q3 Language Helper",
+        "address": "123 Nguyễn Văn Linh, Quận Hải Châu, Đà Nẵng 550000"
+      },
+      {
+        "city": "Cần Thơ",
+        "name": "Q3 Language Helper",
+        "address": "456 Nguyễn Trãi, Quận Ninh Kiều, Cần Thơ 900000"
+      },
+      {
+        "city": "Nha Trang",
+        "name": "Q3 Language Helper",
+        "address": "789 Trần Phú, Phường Lộc Thọ, Nha Trang 650000"
+      }
+    ]
+  }
+}

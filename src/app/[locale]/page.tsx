@@ -6,6 +6,7 @@ import ScoreConversionTable from './_components/score-conversion-table';
 import TeachersTeamSection from './_components/teachers-team-section';
 import Evaluate from './_components/evaluate';
 import ContactFormSection from '@/components/contact-form-section';
+import { ELocale } from '@/constants/enum';
 export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: ELocale }>;
 }) {
   const { locale } = await params;
   return (

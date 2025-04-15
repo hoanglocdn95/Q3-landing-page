@@ -5,29 +5,40 @@ import {
   FileIcon,
   HourglassIcon,
 } from '@/components/icons';
-import { Overview, ReasonsToJoin, StudyDetails } from '@/types/course';
+import { IOverview, IReasonsToJoin, IStudyDetails } from '@/types/course';
 import React from 'react';
 import MainContainer from './main-container';
 import { ImageIcon } from '@/components/ui/ImageIcon';
-
-interface OverviewProps {
-  overview: Overview[];
-  reasonsToJoin: ReasonsToJoin[];
-  studyDetails: StudyDetails;
+import viTranslations from '@/locales/vi/course.json';
+import enTranslations from '@/locales/en/course.json';
+import { ELocale } from '@/constants/enum';
+interface IOverviewProps {
+  courseName: string;
+  overview: IOverview[];
+  reasonsToJoin: IReasonsToJoin[];
+  studyDetails: IStudyDetails;
+  locale: ELocale;
 }
 
 const CourseOverview = ({
+  courseName,
   overview,
   reasonsToJoin,
   studyDetails,
-}: OverviewProps) => {
+  locale,
+}: IOverviewProps) => {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
   return (
     <MainContainer
+      locale={locale}
+      courseName={courseName}
       hasMenu
       containerClassName="pt-10 md:pt-8 lg:pt-12"
       id="course-overview"
     >
-      <h2 className="text-24 lg:text-32 font-600 mb-4 lg:mb-3">Tổng quan</h2>
+      <h2 className="text-24 lg:text-32 font-600 mb-4 lg:mb-3">
+        {t.course_overview.overview}
+      </h2>
       <ul className="mb-10 flex flex-wrap gap-x-8 gap-y-2 lg:gap-x-12 lg:gap-y-3">
         {overview.map((item, index) => (
           <li
@@ -40,7 +51,7 @@ const CourseOverview = ({
         ))}
       </ul>
       <h2 className="font-600 text-24 lg:text-32 mb-4 lg:mb-3">
-        Bạn nên tham gia khóa học này nếu bạn
+        {t.course_overview.reasons_to_join}
       </h2>
       <ul className="mb-10 space-y-4 md:space-y-3 lg:space-y-4">
         {reasonsToJoin.map((reason, index) => (
@@ -63,14 +74,14 @@ const CourseOverview = ({
         id="study-details"
       >
         <h3 className="text-20 md:text-24 font-600 mb-3 max-md:text-center md:mb-5 lg:mb-6">
-          Thời gian học tập linh hoạt
+          {t.course_overview.study_details.flexible_study_time}
         </h3>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
           <div className="text-16 flex flex-row gap-3 md:flex-col md:gap-4">
             <FileIcon />
             <div>
               <p className="font-600 text-14 lg:text-16 mb-1">
-                Thời lượng khóa học:
+                {t.course_overview.study_details.total_hours}
               </p>
               <span className="text-14 lg:text-16">
                 {studyDetails.duration}
@@ -80,7 +91,9 @@ const CourseOverview = ({
           <div className="text-16 flex flex-row gap-3 md:flex-col md:gap-4">
             <HourglassIcon />
             <div>
-              <p className="font-600 text-14 lg:text-16 mb-1">Số giờ học:</p>
+              <p className="font-600 text-14 lg:text-16 mb-1">
+                {t.course_overview.study_details.hours_per_session}
+              </p>
               <span className="text-14 lg:text-16">
                 {studyDetails.totalHours}
               </span>
@@ -90,7 +103,7 @@ const CourseOverview = ({
             <ClockRewindIcon />
             <div>
               <p className="font-600 text-14 lg:text-16 mb-1">
-                Số giờ học/buổi:
+                {t.course_overview.study_details.hours_per_session}
               </p>
               <span className="text-14 lg:text-16">
                 {studyDetails.hoursPerSession}
@@ -100,7 +113,9 @@ const CourseOverview = ({
           <div className="text-16 flex flex-row gap-3 md:flex-col md:gap-4">
             <CalendarIcon />
             <div>
-              <p className="font-600 text-14 lg:text-16 mb-1">Lịch học:</p>
+              <p className="font-600 text-14 lg:text-16 mb-1">
+                {t.course_overview.study_details.schedule}
+              </p>
               <span className="text-14 lg:text-16">
                 {studyDetails.schedule}
               </span>

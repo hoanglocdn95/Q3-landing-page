@@ -3,35 +3,42 @@ import { ChevronRightIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import React from 'react';
+import viTranslations from '@/locales/vi/course.json';
+import enTranslations from '@/locales/en/course.json';
+import { ELocale } from '@/constants/enum';
 
-interface Props {
+interface IProps {
   className?: string;
+  courseName: string;
+  locale: ELocale;
 }
 
-const OverviewMenu = ({ className }: Props) => {
+const OverviewMenu = ({ className, courseName, locale }: IProps) => {
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
+
   const menuItems = [
     {
-      title: 'Bạn nên tham gia khóa học này nếu bạn:',
+      title: t.menu.overview,
       id: 'course-overview',
     },
     {
-      title: 'Thời gian học tập linh hoạt',
+      title: t.menu.study_details,
       id: 'study-details',
     },
     {
-      title: 'Lộ trình khóa học',
+      title: t.menu.course_roadmap,
       id: 'course-roadmap',
     },
     {
-      title: 'Đặc Điểm Nổi Bật Của Khóa 1 Kèm 1',
+      title: `${t.menu.course_features} ${courseName}`,
       id: 'course-features',
     },
     {
-      title: 'Cảm nghĩ học viên',
+      title: t.menu.student_feedback,
       id: 'evaluate',
     },
     {
-      title: 'Câu Hỏi Thường Gặp',
+      title: t.menu.faq,
       id: 'faq',
     },
   ];
@@ -46,7 +53,7 @@ const OverviewMenu = ({ className }: Props) => {
   return (
     <nav className={cn('bg-background-secondary rounded-8 text-16', className)}>
       <h3 className="font-600 bg-primary before:border-l-primary relative px-6 py-[22px] text-white before:absolute before:top-1/2 before:-right-5 before:h-0 before:w-0 before:-translate-y-1/2 before:border-10 before:border-transparent before:content-['']">
-        Tổng quan
+        {t.menu.overview}
       </h3>
       <ul className="mt-4 space-y-4 divide-y divide-gray-300 px-3 lg:mt-2.5 lg:space-y-5 lg:px-6">
         {menuItems.map(item => (
@@ -61,7 +68,7 @@ const OverviewMenu = ({ className }: Props) => {
       </ul>
       <div className="p-3 pt-1.5 lg:p-4">
         <Button>
-          Đăng ký ngay <ChevronRightIcon />
+          {t.actions.registration} <ChevronRightIcon />
         </Button>
       </div>
     </nav>
