@@ -64,7 +64,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
   };
 
   const navItems = [
-    { name: t.nav.about, href: '#', hasDropdown: false },
+    { name: t.nav.about, href: `/${locale}/about/`, hasDropdown: false },
     {
       name: t.nav.courses,
       href: '#',
@@ -115,13 +115,24 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
               <span className="mr-1 md:mr-2">
                 <MailLightIcon />
               </span>
-              {t.contact.email}
+
+              <Link
+                href="mailto:contact@q3language.com"
+                className="text-14 font-500 text-white hover:underline"
+              >
+                {t.contact.email}
+              </Link>
             </div>
             <div className="flex items-center text-sm">
               <span className="mr-1 md:mr-2">
                 <PhoneLightIcon />
               </span>
-              {t.contact.phone}
+              <Link
+                href="tel:+61426812895"
+                className="text-14 font-500 text-white hover:underline"
+              >
+                {t.contact.phone}
+              </Link>
             </div>
           </div>
           <div className="hidden h-full items-center gap-3 md:flex">

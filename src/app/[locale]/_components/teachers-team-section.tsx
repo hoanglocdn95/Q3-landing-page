@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import viTranslations from '@/locales/vi/home/teachers.json';
+import enTranslations from '@/locales/en/home/teachers.json';
 
 interface Teacher {
   name: string;
@@ -9,16 +11,17 @@ interface Teacher {
 }
 
 export default function TeachersTeamSection({ locale }: { locale: string }) {
-  console.log('🚀 ~ TeachersTeamSection ~ locale:', locale);
+  const t = locale === 'en' ? enTranslations : viTranslations;
+
   const teachers: Teacher[] = [
     {
       name: 'Hùng Mạnh Dương',
-      role: 'Founder & Head Trainer',
+      role: t.roles.founder,
       imageSrc: '/images/about/trainer-1.png',
     },
     {
       name: 'Phương Dương',
-      role: 'PTE Trainer',
+      role: t.roles.pteTrainer,
       imageSrc: '/images/about/trainer-2.png',
     },
   ];
@@ -35,8 +38,8 @@ export default function TeachersTeamSection({ locale }: { locale: string }) {
         />
         <div className="absolute top-[408px] left-[406px] z-0 size-[300px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#067E81_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.4] sm:size-[500px] md:top-[-20px] md:left-[635px] md:size-[963px]"></div>
         <div className="absolute right-[10px] bottom-[240px] z-0 h-[672px] w-[660px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#FD7200_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.15] md:right-[600px] md:bottom-[160px] md:h-[1254px] md:w-[1232px]"></div>
-        <h2 className="text-text-primary sm:text-32 text-24 mb-10 text-center font-bold lg:text-[40px] lg:leading-[72px]">
-          Đội ngũ giáo viên
+        <h2 className="text-text-primary sm:text-32 text-24 relative mb-10 text-center font-bold lg:text-[40px] lg:leading-[72px]">
+          {t.title}
         </h2>
 
         <div className="hide-scrollbar overflow-x-auto scroll-smooth pb-6 md:overflow-hidden md:pb-0">
@@ -53,7 +56,6 @@ export default function TeachersTeamSection({ locale }: { locale: string }) {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-10 left-0 w-full text-center text-white">
                     <h3 className="text-24 sm:text-28 mb-3 leading-tight font-bold">
                       {teacher.name}
@@ -71,7 +73,7 @@ export default function TeachersTeamSection({ locale }: { locale: string }) {
             href="/teachers"
             className="inline-flex h-10 items-center rounded-full bg-[#03044f] px-4 py-2 text-sm font-medium text-white md:h-[52px]"
           >
-            Xem tất cả
+            {t.viewAllButton}
             <ChevronRight className="ml-1 h-4 w-4" />
           </Link>
         </div>

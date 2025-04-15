@@ -40,7 +40,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
               <li>
                 <Link
                   href="#"
-                  className="text-dark hover:text-primary text-sm font-medium"
+                  className="text-dark hover:text-primary text-sm font-medium hover:underline"
                 >
                   {t.quickLinks.about}
                 </Link>
@@ -48,7 +48,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
               <li>
                 <Link
                   href="#"
-                  className="text-dark hover:text-primary text-sm font-medium"
+                  className="text-dark hover:text-primary text-sm font-medium hover:underline"
                 >
                   {t.quickLinks.courses}
                 </Link>
@@ -56,7 +56,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
               <li>
                 <Link
                   href="#"
-                  className="text-dark hover:text-primary text-sm font-medium"
+                  className="text-dark hover:text-primary text-sm font-medium hover:underline"
                 >
                   {t.quickLinks.policy}
                 </Link>
@@ -64,7 +64,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
               <li>
                 <Link
                   href="#"
-                  className="text-dark hover:text-primary text-sm font-medium"
+                  className="text-dark hover:text-primary text-sm font-medium hover:underline"
                 >
                   {t.quickLinks.contact}
                 </Link>
@@ -77,17 +77,24 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
               {t.contactInfo.title}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
+              <li className="flex items-center justify-start gap-1">
                 <PhoneIcon />
-                <span className="text-dark ml-1 text-sm font-medium">
-                  (028) 1231 456
-                </span>
+                <Link
+                  href="tel:+61426812895"
+                  className="text-14 font-500 text-dark hover:underline"
+                >
+                  {t.contactInfo.phone}
+                </Link>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-center justify-start gap-1">
                 <MailIcon />
-                <span className="text-dark ml-1 text-sm font-medium">
-                  mail@example.com
-                </span>
+
+                <Link
+                  href="mailto:contact@q3language.com"
+                  className="text-14 font-500 text-dark hover:underline"
+                >
+                  {t.contactInfo.email}
+                </Link>
               </li>
               <li className="flex items-start">
                 <MapPinIcon />
@@ -101,7 +108,9 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
 
         <div className="mt-8 flex flex-col items-center justify-between border-t border-gray-200 pt-8 md:flex-row">
           <div className="text-dark mb-4 text-sm font-medium md:mb-0">
-            <span>{t.footer.legal}</span>
+            <Link href="#" className="hover:underline">
+              {t.footer.legal}
+            </Link>
           </div>
           <div className="text-dark text-sm font-medium">
             {t.footer.copyright}

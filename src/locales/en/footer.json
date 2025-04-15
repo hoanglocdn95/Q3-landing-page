@@ -9,7 +9,9 @@
   },
   "contactInfo": {
     "title": "CONTACT INFORMATION",
-    "address": "19 - 21 - 23 Mac Dinh Chi, Da Kao Ward, District 1, Ho Chi Minh City"
+    "address": "19 - 21 - 23 Mac Dinh Chi, Da Kao Ward, District 1, Ho Chi Minh City",
+    "phone": "(028) 1231 456",
+    "email": "contact@q3language.com"
   },
   "footer": {
     "legal": "Privacy Policy | Cookies | Terms & Conditions",
