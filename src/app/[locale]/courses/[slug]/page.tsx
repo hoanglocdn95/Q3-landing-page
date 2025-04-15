@@ -17,6 +17,7 @@ import { locales } from '@/constants/common';
 import viTranslations from '@/locales/vi/course.json';
 import enTranslations from '@/locales/en/course.json';
 import { ELocale } from '@/constants/enum';
+import { Metadata } from 'next';
 
 export function generateStaticParams() {
   return locales.flatMap(locale => {
@@ -25,6 +26,37 @@ export function generateStaticParams() {
       slug: course.slug,
     }));
   });
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: ELocale; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  const course = courses.find(item => item.slug === slug);
+
+  if (!course) return {};
+
+  return {
+    title: `${course?.[locale].name} - Q3 English Center`,
+    description: course?.[locale].description?.slice(0, 160),
+    openGraph: {
+      title: `${course?.[locale].name} - Q3 English Center`,
+      description: course?.[locale].description,
+      images: [
+        {
+          url: course.previewSrc,
+        },
+      ],
+      locale: locale === ELocale.EN ? 'en_US' : 'vi_VN',
+    },
+    twitter: {
+      title: `${course?.[locale].name} - Q3 English Center`,
+      description: course?.[locale].description?.slice(0, 160),
+    },
+  };
 }
 
 export default async function Page({

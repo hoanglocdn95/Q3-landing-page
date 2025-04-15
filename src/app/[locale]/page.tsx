@@ -7,6 +7,7 @@ import TeachersTeamSection from './_components/teachers-team-section';
 import Evaluate from './_components/evaluate';
 import ContactFormSection from '@/components/contact-form-section';
 import { ELocale } from '@/constants/enum';
+
 export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }

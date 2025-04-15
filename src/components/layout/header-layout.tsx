@@ -207,7 +207,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            <Link href="/" className="flex items-center">
+            <Link href={`/${locale}/`} className="flex items-center">
               <Image
                 src="/images/logo-mobile.png"
                 alt="Q3 Language"
