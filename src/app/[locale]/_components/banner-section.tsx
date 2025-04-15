@@ -6,7 +6,7 @@ export default function BannerSection({ locale }: { locale: string }) {
   return (
     <section className="relative">
       {/* Hero Section with Background Image */}
-      <div className="gt-lg:h-[680px] relative h-[467px] overflow-hidden md:h-[491px]">
+      <div className="relative h-[467px] overflow-hidden md:h-[491px] lg:h-[680px]">
         <Image
           src="/images/home/hero-home.png"
           alt="Student studying"
@@ -21,12 +21,12 @@ export default function BannerSection({ locale }: { locale: string }) {
                 alt="Logo of Q3 Language"
                 width={186}
                 height={88}
-                className="lt-lg:w-[186px] lt-lg:h-[88px] mb-4 h-[64px] w-[135px]"
+                className="mb-4 h-[64px] w-[135px] lg:h-[88px] lg:w-[186px]"
                 src={'/icons/logo-light.svg'}
               />
 
               {/* Hero Text */}
-              <h1 className="text-32 sm:text-40 lt-lg:text-[56px] mb-8 leading-tight font-extrabold text-white sm:mb-12 lg:tracking-[-2px]">
+              <h1 className="text-32 sm:text-40 mb-8 leading-tight font-extrabold text-white sm:mb-12 lg:text-[56px] lg:tracking-[-2px]">
                 Học Không Chỉ Để Thi, <br />
                 Học Là Để Dẫn Đầu!
               </h1>

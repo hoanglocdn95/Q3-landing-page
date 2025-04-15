@@ -35,7 +35,7 @@ export default function TeachersTeamSection({ locale }: { locale: string }) {
         />
         <div className="absolute top-[408px] left-[406px] z-0 size-[300px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#067E81_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.4] sm:size-[500px] md:top-[-20px] md:left-[635px] md:size-[963px]"></div>
         <div className="absolute right-[10px] bottom-[240px] z-0 h-[672px] w-[660px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#FD7200_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.15] md:right-[600px] md:bottom-[160px] md:h-[1254px] md:w-[1232px]"></div>
-        <h2 className="text-text-primary sm:text-32 text-24 gt-lg:text-[40px] gt-lg:leading-[72px] mb-10 text-center font-bold">
+        <h2 className="text-text-primary sm:text-32 text-24 mb-10 text-center font-bold lg:text-[40px] lg:leading-[72px]">
           Đội ngũ giáo viên
         </h2>
 

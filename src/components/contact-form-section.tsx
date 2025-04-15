@@ -38,7 +38,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({
       <div className="section-container relative">
         <div className="flex flex-col items-center gap-6 pt-8 lg:flex-row lg:gap-0 lg:py-16">
           <div className="relative flex w-full flex-col gap-8 lg:w-[522px]">
-            <h2 className="text-text-primary sm:text-32 text-24 gt-lg:text-[40px] gt-lg:leading-[72px] text-center font-bold md:text-3xl lg:mb-6 lg:whitespace-nowrap">
+            <h2 className="text-text-primary sm:text-32 text-24 text-center font-bold md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
               {t.title}
             </h2>
             <form className="relative z-10 flex flex-col gap-6 lg:mb-8">

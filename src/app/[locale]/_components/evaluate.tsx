@@ -74,7 +74,7 @@ const Evaluate = ({ locale }: { locale: string }) => {
   ];
 
   return (
-    <section className="lt-lg:py-18 relative bg-[#FF8D0A] py-10 sm:py-15">
+    <section className="relative bg-[#FF8D0A] py-10 sm:py-15 lg:py-18">
       <Image
         src={'/images/home/evaluete-home.png'}
         width={732}
@@ -84,7 +84,7 @@ const Evaluate = ({ locale }: { locale: string }) => {
       />
       <div className="section-container flex flex-col md:flex-row">
         <div>
-          <h2 className="sm:text-32 text-24 gt-lg:text-[40px] gt-lg:leading-[72px] mb-2.5 text-center font-bold text-white sm:mb-4 md:text-left">
+          <h2 className="sm:text-32 text-24 mb-2.5 text-center font-bold text-white sm:mb-4 md:text-left lg:text-[40px] lg:leading-[72px]">
             Cảm nghĩ học viên
           </h2>
           <p className="mb-6 text-center text-base font-medium text-white sm:text-left">
