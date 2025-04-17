@@ -30,3 +30,4 @@ export { default as FacebookLightIcon } from '@/public/icons/facebook-light.svg'
 export { default as XLightIcon } from '@/public/icons/x-light.svg';
 export { default as ChevronDownIcon } from '@/public/icons/chevron-down.svg';
 export { default as LogoLightIcon } from '@/public/icons/logo-light.svg';
+export { default as ArrowNarrowRightIcon } from '@/public/icons/arrow-narrow-right.svg';

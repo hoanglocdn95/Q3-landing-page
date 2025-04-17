@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ChevronRightIcon } from '@/components/icons';
+import { ArrowNarrowRightIcon } from '@/components/icons';
 import Link from 'next/link';
 import viTranslations from '@/locales/vi/home.json';
 import enTranslations from '@/locales/en/home.json';
@@ -54,7 +54,7 @@ export default function CourseCard({
             {description}
           </p>
           <div className="flex justify-end">
-            <ChevronRightIcon className="h-5 w-5 text-[#ff8d0a]" />
+            <ArrowNarrowRightIcon />
           </div>
         </div>
       </Link>

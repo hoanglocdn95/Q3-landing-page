@@ -56,7 +56,7 @@ export default function BannerSection({ locale }: { locale: ELocale }) {
             </p>
           </div>
 
-          <div className="hidden text-white md:block">\</div>
+          <div className="hidden w-[33.48px] rotate-[73.14deg] border border-white opacity-50 md:block" />
 
           <div className="w-full min-w-[200px] flex-1 md:mx-4 md:w-auto">
             <div className="relative">

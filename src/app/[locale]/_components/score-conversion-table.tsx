@@ -29,7 +29,7 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
         <div className="overflow-hidden rounded-xl bg-white">
           <table className="w-full">
             <thead>
-              <tr>
+              <tr className="border-b border-gray-200">
                 {/* Empty cell for the corner */}
                 <th className="w-20 bg-gray-50 px-2 py-3 text-center font-medium text-gray-700">
                   {t.score_conversion.pte}
@@ -37,7 +37,7 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
                 {scores.map((score, index) => (
                   <th
                     key={index}
-                    className="px-2 py-3 text-center font-medium text-gray-700"
+                    className="bg-gray-50 px-2 py-3 text-center font-medium text-gray-700"
                   >
                     {score.pte}
                   </th>
@@ -46,7 +46,7 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
             </thead>
             <tbody>
               <tr>
-                <th className="bg-gray-50 px-2 py-3 text-center font-medium text-gray-700">
+                <th className="px-2 py-3 text-center font-medium text-gray-700">
                   {t.score_conversion.ielts}
                 </th>
                 {scores.map((score, index) => (
@@ -68,7 +68,7 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
         <div className="overflow-hidden rounded-xl bg-white">
           <table className="w-full">
             <thead>
-              <tr>
+              <tr className="border-b border-gray-200">
                 <th className="w-1/2 bg-gray-50 px-4 py-3 text-center font-medium text-gray-700">
                   {t.score_conversion.pte}
                 </th>
@@ -79,10 +79,7 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
             </thead>
             <tbody>
               {scores.map((score, index) => (
-                <tr
-                  key={index}
-                  className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
-                >
+                <tr key={index} className="border-b border-gray-200 bg-white">
                   <td className="px-4 py-3 text-center text-gray-800">
                     {score.pte}
                   </td>

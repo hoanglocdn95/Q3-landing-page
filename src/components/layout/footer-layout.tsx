@@ -16,10 +16,10 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
   const t = locale === 'en' ? enTranslations : viTranslations;
 
   return (
-    <footer className="relative z-10 border-t bg-white px-4 py-12 md:px-8">
+    <footer className="relative z-10 border-t bg-white py-12">
       <div className="section-container">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
+        <div className="flex flex-col justify-between gap-[28px] md:flex-row md:gap-[52px]">
+          <div className="md:min-w-[406px]">
             <Link href="/" className="mb-6 inline-block">
               <Image
                 src="/images/logo.png"
@@ -29,10 +29,12 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
                 className="h-[46px] w-auto"
               />
             </Link>
-            <p className="text-dark mb-4 text-sm font-medium">{t.slogan}</p>
+            <p className="text-dark mb-4 text-sm font-medium whitespace-pre-line">
+              {t.slogan}
+            </p>
           </div>
 
-          <div>
+          <div className="md:max-w-[345px] md:min-w-[225px]">
             <h3 className="text-text-primary mb-4 font-bold">
               {t.quickLinks.title}
             </h3>
@@ -72,12 +74,12 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
             </ul>
           </div>
 
-          <div>
+          <div className="md:max-w-[345px] md:min-w-[225px]">
             <h3 className="text-text-primary mb-4 font-bold">
               {t.contactInfo.title}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-center justify-start gap-1">
+              <li className="flex items-center justify-start gap-2">
                 <PhoneIcon />
                 <Link
                   href="tel:+61426812895"
@@ -86,7 +88,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
                   {t.contactInfo.phone}
                 </Link>
               </li>
-              <li className="flex items-center justify-start gap-1">
+              <li className="flex items-center justify-start gap-2">
                 <MailIcon />
 
                 <Link
@@ -96,9 +98,9 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
                   {t.contactInfo.email}
                 </Link>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start gap-2">
                 <MapPinIcon />
-                <span className="text-dark ml-1 flex-1 text-sm font-medium">
+                <span className="text-dark flex-1 text-sm font-medium tracking-normal whitespace-pre-line">
                   {t.contactInfo.address}
                 </span>
               </li>
