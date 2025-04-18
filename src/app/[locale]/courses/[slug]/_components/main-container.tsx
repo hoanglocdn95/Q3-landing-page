@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import OverviewMenu from './overview-menu';
 import { cn } from '@/utils/cn';
 import { ELocale } from '@/constants/enum';
 
@@ -15,16 +14,13 @@ interface IProps extends PropsWithChildren {
 
 const MainContainer = ({
   id,
-  courseName,
-  locale,
   children,
-  hasMenu = false,
   fullWidth = false,
   className,
   containerClassName,
 }: IProps) => {
   return (
-    <section className={cn(className)} id={id}>
+    <section className={cn(className)} id={id} data-section={id}>
       <div
         className={cn(
           'section-container flex gap-[54px] py-10 lg:gap-[66px] lg:py-12',
@@ -32,15 +28,7 @@ const MainContainer = ({
         )}
       >
         {!fullWidth && (
-          <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]">
-            {hasMenu && courseName && locale && (
-              <OverviewMenu
-                courseName={courseName}
-                className="sticky top-0"
-                locale={locale}
-              />
-            )}
-          </div>
+          <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]"></div>
         )}
         <div
           className={cn('flex-1', {

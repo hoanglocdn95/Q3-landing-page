@@ -18,6 +18,7 @@ import viTranslations from '@/locales/vi/course.json';
 import enTranslations from '@/locales/en/course.json';
 import { ELocale } from '@/constants/enum';
 import { Metadata } from 'next';
+import OverviewMenu from './_components/overview-menu';
 
 export function generateStaticParams() {
   return locales.flatMap(locale => {
@@ -113,22 +114,33 @@ export default async function Page({
           className="h-auto w-full md:hidden"
         />
       </section>
-      <CourseOverview
-        courseName={courseDetail.name}
-        overview={courseDetail.overview}
-        reasonsToJoin={courseDetail.reasonsToJoin}
-        studyDetails={courseDetail.studyDetails}
-        locale={locale}
-      />
-      <CourseRoadmap data={courseDetail.courseRoadmap} locale={locale} />
-      <CourseFeatures
-        courseName={courseDetail.name}
-        steps={courseDetail.courseFeatures}
-        locale={locale}
-      />
-      <Evaluate evaluate={courseDetail.evaluate} locale={locale} />
-      <FAQ faq={courseDetail.faq} locale={locale} />
-      <Registration banner={courseDetail.banner} locale={locale} />
+      <div className="relative">
+        <div className="absolute left-4 hidden h-full flex-shrink-0 md:top-8 md:left-8 md:block md:w-[225px] lg:top-12 lg:w-[258px] xl:left-[calc(50vw-600px)]">
+          <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]">
+            <OverviewMenu
+              courseName={courseDetail.name}
+              className="sticky top-0"
+              locale={locale}
+            />
+          </div>
+        </div>
+        <CourseOverview
+          courseName={courseDetail.name}
+          overview={courseDetail.overview}
+          reasonsToJoin={courseDetail.reasonsToJoin}
+          studyDetails={courseDetail.studyDetails}
+          locale={locale}
+        />
+        <CourseRoadmap data={courseDetail.courseRoadmap} locale={locale} />
+        <CourseFeatures
+          courseName={courseDetail.name}
+          steps={courseDetail.courseFeatures}
+          locale={locale}
+        />
+        <Evaluate evaluate={courseDetail.evaluate} locale={locale} />
+        <FAQ faq={courseDetail.faq} locale={locale} />
+        <Registration banner={courseDetail.banner} locale={locale} />
+      </div>
     </div>
   );
 }

@@ -64,7 +64,7 @@ const Stage = ({ title, description, className, index }: IStageProps) => {
         <h3 className="font-700 max-md:mb-1">{title}</h3>
         <ul className="text-14 list-disc space-y-1 pl-5">
           {description.map((item, index) => (
-            <li key={index} className="font-500 text-12">
+            <li key={index} className="font-500 text-14">
               {item}
             </li>
           ))}
