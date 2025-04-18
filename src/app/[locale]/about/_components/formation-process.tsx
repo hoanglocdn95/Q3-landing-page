@@ -20,7 +20,7 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
           />
           <div className="absolute top-[275px] left-[106px] z-0 hidden size-[400px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#067E81_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.3] md:block lg:right-0 lg:bottom-[10%] xl:size-[700px]" />
         </div>
-        <div className="order-1 flex-1 md:order-2">
+        <div className="relative z-[1] order-1 flex-1 md:order-2">
           <h2 className="text-24 md:text-32 font-700 lg:text-40 leading-7 md:leading-12 lg:leading-14">
             {t.formation_process.title}
           </h2>

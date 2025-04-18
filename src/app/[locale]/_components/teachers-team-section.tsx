@@ -54,10 +54,10 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
         <div className="mt-8 flex justify-center">
           <Link
             href="/teachers"
-            className="relative inline-flex h-10 items-center rounded-full bg-[#03044f] px-4 py-2 text-sm font-medium text-white md:h-[52px]"
+            className="relative inline-flex h-10 items-center rounded-full bg-[#03044f] px-6 py-4 text-base font-medium text-white md:h-[52px]"
           >
             {t.teachers.view_all_button}
-            <ChevronRight className="ml-1 h-4 w-4" />
+            <ChevronRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
       </section>

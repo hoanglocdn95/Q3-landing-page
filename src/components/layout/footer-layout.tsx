@@ -34,7 +34,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
             </p>
           </div>
 
-          <div className="md:max-w-[345px] md:min-w-[225px]">
+          <div className="flex-1 md:max-w-[345px] lg:min-w-[225px]">
             <h3 className="text-text-primary mb-4 font-bold">
               {t.quickLinks.title}
             </h3>
@@ -74,7 +74,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
             </ul>
           </div>
 
-          <div className="md:max-w-[345px] md:min-w-[225px]">
+          <div className="flex-1 md:max-w-[345px] lg:min-w-[225px]">
             <h3 className="text-text-primary mb-4 font-bold">
               {t.contactInfo.title}
             </h3>
