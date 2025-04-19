@@ -9,7 +9,7 @@ import CourseFeatures from './course-feature';
 import Evaluate from './evaluate';
 import FAQ from './faq';
 import Registration from './registration';
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Main({
   locale,
@@ -18,7 +18,6 @@ export default function Main({
   locale: ELocale;
   courseDetail: ICourse;
 }) {
-  const menuRef = useRef<HTMLDivElement>(null);
   const [windowWidth, setWindowWidth] = useState<number>(1440);
 
   useEffect(() => {
@@ -53,10 +52,7 @@ export default function Main({
 
   return (
     <div className="relative pt-10 md:pt-8 lg:pt-12">
-      <div
-        ref={menuRef}
-        className="sticky left-4 z-10 hidden h-full flex-shrink-0 md:top-8 md:left-8 md:block md:w-[225px] lg:top-12 lg:w-[258px] xl:left-[calc(50vw-600px)]"
-      >
+      <div className="sticky left-4 z-10 hidden h-full flex-shrink-0 md:top-8 md:left-8 md:block md:w-[225px] lg:top-12 lg:w-[258px] xl:left-[calc(50vw-600px)]">
         <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]">
           <OverviewMenu
             courseName={courseDetail.name}
