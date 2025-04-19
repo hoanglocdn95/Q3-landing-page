@@ -7,7 +7,7 @@ import {
 } from '@/components/icons';
 import { IOverview, IReasonsToJoin, IStudyDetails } from '@/types/course';
 import React from 'react';
-import MainContainer from './main-container';
+import SectionContainer from './section-container';
 import { ImageIcon } from '@/components/ui/ImageIcon';
 import viTranslations from '@/locales/vi/course.json';
 import enTranslations from '@/locales/en/course.json';
@@ -29,11 +29,11 @@ const CourseOverview = ({
 }: IOverviewProps) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
   return (
-    <MainContainer
+    <SectionContainer
       locale={locale}
       courseName={courseName}
       hasMenu
-      containerClassName="pt-10 md:pt-8 lg:pt-12"
+      containerClassName="pt-0 lg:pt-0"
     >
       <section id="course-overview" data-section="course-overview">
         <h2 className="text-24 lg:text-32 font-600 mb-4 lg:mb-3">
@@ -127,7 +127,7 @@ const CourseOverview = ({
           </div>
         </div>
       </section>
-    </MainContainer>
+    </SectionContainer>
   );
 };
 

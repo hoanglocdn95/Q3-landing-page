@@ -12,7 +12,7 @@ interface IProps extends PropsWithChildren {
   containerClassName?: string;
 }
 
-const MainContainer = ({
+const SectionContainer = ({
   id,
   children,
   fullWidth = false,
@@ -42,4 +42,4 @@ const MainContainer = ({
   );
 };
 
-export default MainContainer;
+export default SectionContainer;

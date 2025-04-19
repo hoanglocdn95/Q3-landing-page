@@ -1,5 +1,5 @@
 import React from 'react';
-import MainContainer from './main-container';
+import SectionContainer from './section-container';
 import { ChevronRightIcon, FacebookIcon, PhoneIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ interface IRegistrationProps {
 const Registration = ({ banner, locale }: IRegistrationProps) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
   return (
-    <MainContainer containerClassName="!py-0">
+    <SectionContainer containerClassName="!py-0">
       <h2 className="text-24 lg:text-32 font-600">{t.actions.registration}</h2>
       <div className="mt-4 flex flex-col flex-wrap items-start justify-between gap-8 pb-5 md:mt-6 md:flex-row lg:mt-4">
         <div className="order-1 space-y-4 md:mb-0">
@@ -86,7 +86,7 @@ const Registration = ({ banner, locale }: IRegistrationProps) => {
           </div>
         </div>
       </div>
-    </MainContainer>
+    </SectionContainer>
   );
 };
 

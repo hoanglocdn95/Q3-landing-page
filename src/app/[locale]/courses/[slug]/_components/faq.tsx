@@ -1,5 +1,5 @@
 import { Accordion } from '@/components/ui/accordion';
-import MainContainer from './main-container';
+import SectionContainer from './section-container';
 import type { IFAQ } from '@/types/course';
 import viTranslations from '@/locales/vi/course.json';
 import enTranslations from '@/locales/en/course.json';
@@ -19,12 +19,12 @@ const FAQSection = ({ faq, locale }: IFAQProps) => {
   }));
 
   return (
-    <MainContainer id="faq">
+    <SectionContainer id="faq">
       <h2 className="text-24 lg:text-32 font-600 mb-4">
         {t.faq.frequently_asked_questions}
       </h2>
       <Accordion items={items} />
-    </MainContainer>
+    </SectionContainer>
   );
 };
 
