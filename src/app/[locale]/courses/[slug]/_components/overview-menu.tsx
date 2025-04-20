@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import { ChevronRightIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
@@ -20,40 +21,128 @@ const OverviewMenu = ({ className, courseName, locale }: IProps) => {
   const lastScrollTop = useRef(0);
   // Lưu trữ hướng cuộn hiện tại (1: xuống, -1: lên)
   const scrollDirection = useRef(1);
+  // Lưu trữ section active hiện tại bằng ref để tránh mất đồng bộ
+  const currentActiveRef = useRef('course-overview');
+  // Thời gian lần cuối thay đổi active section
+  const lastChangeTimeRef = useRef(0);
+  // Lưu trữ tốc độ cuộn
+  const scrollSpeedRef = useRef(0);
+  // Timestamp của lần cuộn cuối
+  const lastScrollTimeRef = useRef(Date.now());
+  // Flag để kiểm tra component đã mount
+  const isMounted = useRef(false);
 
   const determineScrollDirection = () => {
     const st = window.scrollY || document.documentElement.scrollTop;
+    const now = Date.now();
+    const timeDelta = now - lastScrollTimeRef.current;
+
+    // Tính tốc độ cuộn (px/ms)
+    if (timeDelta > 0) {
+      const scrollDelta = Math.abs(st - lastScrollTop.current);
+      scrollSpeedRef.current = scrollDelta / timeDelta;
+    }
+
     if (st > lastScrollTop.current) {
       scrollDirection.current = 1; // cuộn xuống
     } else if (st < lastScrollTop.current) {
       scrollDirection.current = -1; // cuộn lên
     }
+
     lastScrollTop.current = st <= 0 ? 0 : st; // Cập nhật vị trí cuộn trước đó
+    lastScrollTimeRef.current = now; // Cập nhật thời gian cuộn
+  };
+
+  // Hàm để xác định section active dựa trên vị trí cuộn hiện tại
+  const updateActiveSection = () => {
+    // Lấy thời gian hiện tại
+    const now = Date.now();
+
+    // Kiểm tra xem đã đủ thời gian từ lần thay đổi cuối chưa
+    // Bỏ qua kiểm tra này nếu đang cuộn nhanh lên đầu hoặc khi component mới mount
+    const isFastScrollingUp =
+      scrollDirection.current === -1 && scrollSpeedRef.current > 1.5;
+    if (
+      !isFastScrollingUp &&
+      !isMounted.current &&
+      now - lastChangeTimeRef.current < getMinChangeTime()
+    ) {
+      return;
+    }
+
+    // Tìm tất cả các section có data-section attribute
+    const sectionElements = document.querySelectorAll('[data-section]');
+
+    // Lấy vị trí giữa màn hình
+    const viewportHeight = window.innerHeight;
+    const viewportMiddle = window.scrollY + viewportHeight / 2;
+
+    // Khoảng dung sai (tolerance) - tăng lên khi cuộn nhanh
+    const tolerance =
+      isFastScrollingUp || !isMounted.current
+        ? viewportHeight * 0.5 // Tăng dung sai khi cuộn nhanh lên đầu hoặc khi mới load trang
+        : viewportHeight * 0.2;
+
+    // Tìm section gần nhất với giữa màn hình
+    let closestSection = null;
+    let minDistance = Number.POSITIVE_INFINITY;
+
+    sectionElements.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const sectionMiddle = window.scrollY + rect.top + rect.height / 2;
+      const distance = Math.abs(sectionMiddle - viewportMiddle);
+
+      // Nếu section này gần giữa màn hình hơn section trước đó
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestSection = section;
+      }
+    });
+
+    // Mở rộng điều kiện cập nhật khi cuộn nhanh lên đầu hoặc khi mới load trang
+    if (
+      closestSection &&
+      (minDistance <= tolerance || isFastScrollingUp || !isMounted.current)
+    ) {
+      const newActiveSection =
+        (closestSection as HTMLElement).getAttribute('data-section') || '';
+
+      // Chỉ cập nhật nếu section active thay đổi
+      if (newActiveSection !== currentActiveRef.current) {
+        currentActiveRef.current = newActiveSection;
+        setActiveSection(newActiveSection);
+        lastChangeTimeRef.current = now;
+      }
+    }
+
+    // Đánh dấu component đã mount sau lần cập nhật đầu tiên
+    isMounted.current = true;
+  };
+
+  const getMinChangeTime = () => {
+    // Khi cuộn nhanh lên đầu, giảm thời gian đợi giữa các thay đổi
+    if (scrollDirection.current === -1 && scrollSpeedRef.current > 1.5) {
+      return 0;
+    }
+    return 50;
+  };
+
+  const getDebounceTime = () => {
+    // Khi cuộn nhanh thì giảm debounce time
+    return scrollSpeedRef.current > 2 ? 5 : 20;
   };
 
   useEffect(() => {
+    // Ngay khi component mount, cập nhật section active dựa trên vị trí cuộn hiện tại
+    updateActiveSection();
+
     // Theo dõi sự kiện cuộn để xác định hướng
     window.addEventListener('scroll', determineScrollDirection, {
       passive: true,
     });
 
-    // Tìm tất cả các section có data-section attribute
-    const sectionElements = document.querySelectorAll('[data-section]');
-
     // Biến để lưu trữ timeout ID cho debounce
     let debounceTimeout: NodeJS.Timeout | null = null;
-
-    // Biến để lưu trữ section active hiện tại
-    let currentActive = activeSection;
-
-    // Thời gian debounce (ms)
-    const debounceTime = 50;
-
-    // Khoảng thời gian tối thiểu giữa các lần thay đổi active section (ms)
-    const minChangeTime = 100;
-
-    // Thời gian lần cuối thay đổi active section
-    let lastChangeTime = 0;
 
     const handleScroll = () => {
       // Hủy timeout trước đó nếu có
@@ -61,52 +150,13 @@ const OverviewMenu = ({ className, courseName, locale }: IProps) => {
         clearTimeout(debounceTimeout);
       }
 
-      // Tạo timeout mới để debounce
-      debounceTimeout = setTimeout(() => {
-        // Lấy thời gian hiện tại
-        const now = Date.now();
+      // Xử lý ngay lập tức nếu đang cuộn nhanh lên đầu
+      if (scrollDirection.current === -1 && scrollSpeedRef.current > 1.5) {
+        updateActiveSection();
+      }
 
-        // Kiểm tra xem đã đủ thời gian từ lần thay đổi cuối chưa
-        if (now - lastChangeTime < minChangeTime) {
-          return;
-        }
-
-        // Lấy vị trí giữa màn hình
-        const viewportHeight = window.innerHeight;
-        const viewportMiddle = window.scrollY + viewportHeight / 2;
-
-        // Khoảng dung sai (tolerance) - phần trăm của chiều cao viewport
-        const tolerance = viewportHeight * 0.15; // 15% của chiều cao viewport
-
-        // Tìm section gần nhất với giữa màn hình
-        let closestSection = null;
-        let minDistance = Number.POSITIVE_INFINITY;
-
-        sectionElements.forEach(section => {
-          const rect = section.getBoundingClientRect();
-          const sectionMiddle = window.scrollY + rect.top + rect.height / 2;
-          const distance = Math.abs(sectionMiddle - viewportMiddle);
-
-          // Nếu section này gần giữa màn hình hơn section trước đó
-          if (distance < minDistance) {
-            minDistance = distance;
-            closestSection = section;
-          }
-        });
-
-        // Chỉ cập nhật nếu section gần nhất nằm trong khoảng dung sai
-        if (closestSection && minDistance <= tolerance) {
-          const newActiveSection =
-            (closestSection as HTMLElement).getAttribute('data-section') || '';
-
-          // Chỉ cập nhật nếu section active thay đổi
-          if (newActiveSection !== currentActive) {
-            currentActive = newActiveSection;
-            setActiveSection(newActiveSection);
-            lastChangeTime = now;
-          }
-        }
-      }, debounceTime);
+      // Tạo timeout mới để debounce cho các trường hợp khác
+      debounceTimeout = setTimeout(updateActiveSection, getDebounceTime());
     };
 
     // Theo dõi sự kiện cuộn
@@ -122,6 +172,11 @@ const OverviewMenu = ({ className, courseName, locale }: IProps) => {
       window.removeEventListener('scroll', determineScrollDirection);
       window.removeEventListener('scroll', handleScroll);
     };
+  }, []); // Không phụ thuộc vào activeSection
+
+  // Cập nhật ref khi state thay đổi
+  useEffect(() => {
+    currentActiveRef.current = activeSection;
   }, [activeSection]);
 
   const menuItems = [
@@ -171,7 +226,7 @@ const OverviewMenu = ({ className, courseName, locale }: IProps) => {
             className={cn(
               'text-dark font-500 text-14 lg:text-16 mb-0 cursor-pointer px-3 py-4 lg:px-6 lg:py-5',
               activeSection === item.id
-                ? "bg-primary before:!border-l-primary relative text-white before:absolute before:top-1/2 before:-right-5 before:h-0 before:w-0 before:-translate-y-1/2 before:border-10 before:border-transparent before:content-['']"
+                ? "bg-primary before:!border-l-primary relative text-white before:absolute before:top-1/2 before:-right-5 before:h-0 before:w-0 before:-translate-y-1/2 before:border-11 before:border-transparent before:content-['']"
                 : '',
               index === 0 && 'rounded-t-8',
             )}

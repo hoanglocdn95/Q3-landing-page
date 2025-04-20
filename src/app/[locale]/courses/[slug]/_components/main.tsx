@@ -9,7 +9,7 @@ import CourseFeatures from './course-feature';
 import Evaluate from './evaluate';
 import FAQ from './faq';
 import Registration from './registration';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function Main({
   locale,
@@ -18,42 +18,87 @@ export default function Main({
   locale: ELocale;
   courseDetail: ICourse;
 }) {
-  const [windowWidth, setWindowWidth] = useState<number>(1440);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [menuHeight, setMenuHeight] = useState<number>(0);
+  const [contentReady, setContentReady] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
+  // Sử dụng useEffect để đo chiều cao sau khi component mount
   useEffect(() => {
-    // Khởi tạo giá trị ban đầu
-    setWindowWidth(window.innerWidth);
-
-    // Hàm xử lý khi thay đổi kích thước màn hình
-    const handleResize = () => {
+    // Đặt timeout để đảm bảo trình duyệt có thời gian vẽ UI trước khi đo
+    const timer = setTimeout(() => {
       setWindowWidth(window.innerWidth);
+
+      if (menuRef.current) {
+        setMenuHeight(menuRef.current.offsetHeight);
+      }
+
+      // Đánh dấu content đã sẵn sàng hiển thị sau khi đo xong
+      setContentReady(true);
+    }, 100);
+
+    // Xử lý khi thay đổi kích thước màn hình
+    const handleResize = () => {
+      // Khi resize, ẩn content lại
+      setContentReady(false);
+
+      setWindowWidth(window.innerWidth);
+      if (menuRef.current) {
+        setMenuHeight(menuRef.current.offsetHeight);
+      }
+
+      // Hiển thị lại content sau khi tính toán xong
+      setTimeout(() => {
+        setContentReady(true);
+      }, 100);
     };
 
     // Thêm event listener
     window.addEventListener('resize', handleResize);
 
-    // Clean up event listener khi component unmount
+    // Clean up
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Tính toán marginTop dựa trên breakpoint
+  // Tính toán marginTop dựa trên chiều cao thực tế của menu và breakpoint
   const getMarginTop = () => {
     // Chỉ áp dụng marginTop cho màn hình medium trở lên (768px)
     if (windowWidth < 768) {
       return 0;
     }
-    if (windowWidth < 1024) {
-      return `-540px`;
+
+    // Sử dụng giá trị fallback tùy theo breakpoint nếu chưa đo được
+    if (menuHeight === 0) {
+      if (windowWidth < 1024) {
+        return `-540px`;
+      }
+      return `-610px`;
     }
-    return `-610px`;
+
+    // Sử dụng chiều cao thực tế khi đã đo được
+    return `-${menuHeight}px`;
   };
 
+  // Nếu content chưa sẵn sàng, hiển thị loading
+
+  // Hiển thị nội dung chính khi đã sẵn sàng
   return (
     <div className="relative pt-10 md:pt-8 lg:pt-12">
+      {!contentReady && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+          <div className="flex flex-col items-center">
+            <div className="h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-500"></div>
+          </div>
+        </div>
+      )}
       <div className="sticky left-4 z-10 hidden h-full flex-shrink-0 md:top-8 md:left-8 md:block md:w-[225px] lg:top-12 lg:w-[258px] xl:left-[calc(50vw-600px)]">
-        <div className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]">
+        <div
+          ref={menuRef}
+          className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]"
+        >
           <OverviewMenu
             courseName={courseDetail.name}
             className="sticky top-0"
