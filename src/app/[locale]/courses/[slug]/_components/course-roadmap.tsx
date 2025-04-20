@@ -6,7 +6,7 @@ import {
 } from '@/components/icons';
 import { cn } from '@/utils/cn';
 import React from 'react';
-import MainContainer from './main-container';
+import SectionContainer from './section-container';
 import Image from 'next/image';
 import viTranslations from '@/locales/vi/course.json';
 import enTranslations from '@/locales/en/course.json';
@@ -64,7 +64,7 @@ const Stage = ({ title, description, className, index }: IStageProps) => {
         <h3 className="font-700 max-md:mb-1">{title}</h3>
         <ul className="text-14 list-disc space-y-1 pl-5">
           {description.map((item, index) => (
-            <li key={index} className="font-500 text-12">
+            <li key={index} className="font-500 text-14">
               {item}
             </li>
           ))}
@@ -77,7 +77,7 @@ const Stage = ({ title, description, className, index }: IStageProps) => {
 const CourseRoadmap = ({ data, locale }: ICourseRoadmapProps) => {
   const t = locale === 'en' ? enTranslations : viTranslations;
   return (
-    <MainContainer
+    <SectionContainer
       id="course-roadmap"
       className="bg-secondary relative overflow-hidden"
       containerClassName="max-md:pb-[114px]"
@@ -97,7 +97,7 @@ const CourseRoadmap = ({ data, locale }: ICourseRoadmapProps) => {
         alt="background roadmap"
         className="absolute -right-22 bottom-0 h-[126px] w-[385px] object-cover md:left-0 md:h-[236px] md:w-[603px] lg:h-[340px] lg:w-[864px]"
       />
-    </MainContainer>
+    </SectionContainer>
   );
 };
 

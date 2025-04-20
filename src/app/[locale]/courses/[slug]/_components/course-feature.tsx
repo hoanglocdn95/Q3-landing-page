@@ -1,5 +1,5 @@
 import type { ICourseFeatures } from '@/types/course';
-import MainContainer from './main-container';
+import SectionContainer from './section-container';
 import { cn } from '@/utils/cn';
 import viTranslations from '@/locales/vi/course.json';
 import enTranslations from '@/locales/en/course.json';
@@ -37,7 +37,7 @@ const CourseFeatures: React.FC<ICourseFeaturesProps> = ({
   const t = locale === 'en' ? enTranslations : viTranslations;
 
   return (
-    <MainContainer id="course-features">
+    <SectionContainer id="course-features">
       <h2 className="text-24 lg:text-32 font-600 text-dark mb-4 md:mb-6 lg:mb-8">
         {t.course_features.highlighted_features} {courseName}
       </h2>
@@ -46,7 +46,7 @@ const CourseFeatures: React.FC<ICourseFeaturesProps> = ({
           <CourseFeaturesItem key={index} step={step} className="" />
         ))}
       </div>
-    </MainContainer>
+    </SectionContainer>
   );
 };
 

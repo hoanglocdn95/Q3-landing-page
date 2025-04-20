@@ -142,7 +142,7 @@ const Page = async ({ params }: { params: Promise<{ locale: ELocale }> }) => {
           <p className="text-12 font-600 mb-5 tracking-[0.5em] text-white uppercase">
             {t.mission.introduce}
           </p>
-          <h2 className="font-space-grotesk text-32 md:text-48 px-4 leading-[1.3] whitespace-pre-line text-[#E6E6E6] lg:text-[56px]">
+          <h2 className="font-space-grotesk text-32 md:text-48 px-4 leading-[1.3] font-bold whitespace-pre-line text-[#E6E6E6] lg:text-[56px]">
             {t.mission.values}
           </h2>
         </div>

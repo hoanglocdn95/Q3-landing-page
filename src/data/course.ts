@@ -974,7 +974,7 @@ export const courses = [
       },
     },
     vi: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 36-42-50 ',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
@@ -1447,7 +1447,7 @@ export const courses = [
       },
     },
     vi: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa Foundation Achievers 2',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
@@ -1920,7 +1920,7 @@ export const courses = [
       },
     },
     vi: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 50-58 ',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
@@ -2393,7 +2393,7 @@ export const courses = [
       },
     },
     vi: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 65-73-79 ',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
@@ -3339,7 +3339,7 @@ export const courses = [
       },
     },
     vi: {
-      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \nAchievers 1 Kèm 1 ',
+      name: 'Lộ Trình Ôn Luyện \nKhóa PTE \n Cấp Tốc',
       description: 'Dành cho Tất Cả Các Band Điểm',
       courseRoadmap: [
         {
