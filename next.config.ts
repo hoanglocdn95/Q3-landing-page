@@ -17,7 +17,6 @@ const nextConfig: NextConfig = {
     },
   },
   webpack(config) {
-    // ⚠️ Sửa SVG loader – LOẠI BỎ chunks và maxSize khỏi rule này
     config.module.rules.push({
       test: /\.svg$/,
       use: [
@@ -52,13 +51,9 @@ const nextConfig: NextConfig = {
         },
       ],
     });
-
-    config.optimization = {
-      ...config.optimization,
-      splitChunks: {
-        chunks: 'all',
-        maxSize: 2000000,
-      },
+    config.optimization.splitChunks = {
+      chunks: 'all',
+      maxSize: 2000000,
     };
 
     return config;
