@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: "export",
+  output: 'export',
   images: {
     unoptimized: true,
   },
@@ -10,9 +9,9 @@ const nextConfig: NextConfig = {
   experimental: {
     turbo: {
       rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
         },
       },
     },
@@ -22,12 +21,12 @@ const nextConfig: NextConfig = {
       test: /\.svg$/,
       use: [
         {
-          loader: "@svgr/webpack",
+          loader: '@svgr/webpack',
           options: {
             svgoConfig: {
               plugins: [
                 {
-                  name: "preset-default",
+                  name: 'preset-default',
                   params: {
                     overrides: {
                       removeViewBox: false,
@@ -35,7 +34,7 @@ const nextConfig: NextConfig = {
                   },
                 },
                 {
-                  name: "prefixIds",
+                  name: 'prefixIds',
                   params: {
                     prefixIds: true,
                     prefixClassNames: false,
@@ -51,6 +50,8 @@ const nextConfig: NextConfig = {
           },
         },
       ],
+      chunks: 'all',
+      maxSize: 2000000,
     });
 
     return config;
