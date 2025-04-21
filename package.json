@@ -45,5 +45,9 @@
     "*.{js,jsx,ts,tsx,html,css}": [
       "yarn format"
     ]
+  },
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": "20.x"
   }
 }
