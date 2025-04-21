@@ -1,0 +1,69 @@
+{
+  "form": {
+    "title": "Register for a Free Consultation Now",
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email",
+      "purpose": "What do you need PTE for?",
+      "score": "What PTE score do you need?",
+      "time": "When do you need to achieve this score?",
+      "submit": "Get Consultation Now"
+    },
+    "quick_consult": {
+      "title": "Quick Consulting",
+      "australia": "+61 426 812 895 (Australia)",
+      "vietnam": "+84 888 031 854 (Vietnam)"
+    },
+    "quick_info": {
+      "title": "Quick Info",
+      "zalo": "Zalo"
+    },
+    "hero_form_image_alt": "Consultation support image"
+  },
+  "hero": {
+    "title": "Contact",
+    "hero_image_alt": "Contact page image"
+  },
+  "map": {
+    "title": "Branch Addresses",
+    "map_image_alt": "Google Maps image",
+    "locations": [
+      {
+        "city": "Ho Chi Minh City",
+        "name": "Q3 Language Helper",
+        "address": "440 Dien Bien Phu, Ward 11, District 10, Ho Chi Minh City 700000",
+        "lat": 10.7769,
+        "lng": 106.7009
+      },
+      {
+        "city": "Hanoi",
+        "name": "Q3 Language Helper",
+        "address": "440 Dien Bien Phu, Ward 11, District 10, Ho Chi Minh City 700000",
+        "lat": 21.0285,
+        "lng": 105.8542
+      },
+      {
+        "city": "Da Nang",
+        "name": "Q3 Language Helper",
+        "address": "123 Nguyen Van Linh, Hai Chau District, Da Nang 550000",
+        "lat": 16.0471,
+        "lng": 108.2068
+      },
+      {
+        "city": "Can Tho",
+        "name": "Q3 Language Helper",
+        "address": "456 Nguyen Trai, Ninh Kieu District, Can Tho 900000",
+        "lat": 10.0333,
+        "lng": 105.7833
+      },
+      {
+        "city": "Nha Trang",
+        "name": "Q3 Language Helper",
+        "address": "789 Tran Phu, Loc Tho Ward, Nha Trang 650000",
+        "lat": 12.2388,
+        "lng": 109.1967
+      }
+    ]
+  }
+}

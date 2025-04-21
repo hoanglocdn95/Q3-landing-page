@@ -1,0 +1,39 @@
+{
+  "banner": {
+    "hero_title": "Learn Not Just to Pass, Learn to Lead!",
+    "cta_button": "Find the Right Course Now",
+    "search_section": {
+      "description": "Find courses that suit you and support your academic journey to success",
+      "options": {
+        "option1": "Australian University - Visa 500 (50/50/65)",
+        "option2": "American University - F1 Visa",
+        "option3": "Canadian University - SDS Visa",
+        "option4": "UK University - Tier 4 Visa"
+      },
+      "search_button": "View Suitable Courses"
+    }
+  },
+  "score_conversion": {
+    "title": "PTE - IELTS Score Conversion Table",
+    "pte": "PTE",
+    "ielts": "IELTS"
+  },
+  "course_card": {
+    "coming_soon": "Coming Soon"
+  },
+  "evaluate": {
+    "title": "Student Feedback",
+    "description": "See what some of our students say about the amazing support and excellent service we provide.",
+    "position": {
+      "student": "Student"
+    }
+  },
+  "teachers": {
+    "title": "Teaching Team",
+    "view_all_button": "View All",
+    "roles": {
+      "founder": "Founder & Head Trainer",
+      "pteTrainer": "PTE Trainer"
+    }
+  }
+}

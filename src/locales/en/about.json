@@ -1,0 +1,20 @@
+{
+  "actions": {
+    "see_more": "See More"
+  },
+  "title": "Introduction",
+  "mission": {
+    "description": "At Q3 Language, we believe that every student has the potential to succeed, and our mission is to unlock and nurture that potential. Q3’s mission is to provide a comprehensive PTE learning solution that helps learners not only achieve their target scores but also build confidence and flexible English skills for life and career.",
+    "introduce": "With Q3 Language",
+    "mission": "Mission",
+    "values": "Learn Not Just to Pass,\nLearn to Lead!"
+  },
+  "formation_process": {
+    "title": "Formation and Development Process",
+    "description": "Q3 Language was founded in 2024 in Adelaide, Australia, with the goal of becoming a pioneer in PTE (Pearson Test of English) training and preparation.",
+    "description_2": "Starting from small classes, we focused on building a streamlined and effective curriculum tailored to each student's level. Led by a team of experienced and dedicated experts, Q3 Language continuously refines its teaching methods and integrates realistic test simulation technologies, enabling students to become familiar with and confident for the official PTE exam."
+  },
+  "trainers": {
+    "title": "Teaching Team"
+  }
+}
