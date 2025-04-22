@@ -16,17 +16,18 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
           src={'/images/about/background.png'}
           width={385}
           height={267}
+          priority
           alt="background-roadmap"
           className="absolute top-0 left-0 h-[116px] w-[175px] object-cover md:h-[197px] md:w-[297px] lg:-bottom-16 lg:h-[267px] lg:w-[385px]"
         />
-        <div className="absolute top-[408px] left-[406px] z-0 size-[300px] rotate-[29deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#b5e2fa_0%,_rgba(217,_217,_217,_0)_100%)] sm:size-[500px] md:top-[-20px] md:left-[635px] md:size-[963px]"></div>
+        <div className="absolute top-[408px] left-[406px] z-0 hidden size-[300px] rotate-[29deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#b5e2fa_0%,_rgba(217,_217,_217,_0)_100%)] sm:size-[500px] md:top-[-20px] md:left-[635px] md:size-[963px] lg:block"></div>
         <div className="absolute right-[10px] bottom-[240px] z-0 h-[672px] w-[660px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#FD7200_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.15] md:right-[600px] md:bottom-[160px] md:h-[1254px] md:w-[1232px]"></div>
         <h2 className="text-text-primary sm:text-32 text-24 relative mb-10 text-center font-bold lg:text-[40px] lg:leading-[72px]">
           {t.teachers.title}
         </h2>
 
         <div className="hide-scrollbar overflow-x-auto scroll-smooth pb-6 md:overflow-hidden md:pb-0">
-          <div className="mx-auto flex w-max space-x-4 md:grid md:w-auto md:grid-cols-2 md:gap-5 md:space-x-0 lg:max-w-[794px]">
+          <div className="mx-auto flex w-max space-x-4 md:grid md:w-auto md:max-w-[626px] md:grid-cols-2 md:gap-5 md:space-x-0 lg:max-w-[794px]">
             {trainers.map((teacher, index) => (
               <div
                 key={index}
@@ -34,6 +35,7 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
               >
                 <div className="relative aspect-[3/4] w-full">
                   <Image
+                    priority
                     src={teacher.imageUrl}
                     alt={teacher.name}
                     fill

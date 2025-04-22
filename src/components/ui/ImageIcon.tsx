@@ -34,7 +34,9 @@ const ImageIcon = ({
     return sizeMap[size];
   }, [height, width, size]);
 
-  return <Image src={src} alt={alt || 'icon'} {...sizeIcon} {...props} />;
+  return (
+    <Image src={src} alt={alt || 'icon'} {...sizeIcon} {...props} priority />
+  );
 };
 
 export { ImageIcon };

@@ -20,12 +20,12 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
 
   return (
     <section className="section-container relative z-[1] mt-12 rounded-2xl bg-[#ff8d0a] p-6 md:p-12">
-      <h2 className="sm:text-32 text-24 mb-6 text-center font-bold text-white lg:text-[40px] lg:leading-[72px]">
+      <h2 className="sm:text-32 text-24 mb-6 text-center font-bold whitespace-pre-line text-white md:whitespace-normal lg:text-[40px] lg:leading-[72px]">
         {t.score_conversion.title}
       </h2>
 
       {/* Desktop/Tablet View (Horizontal) - Hidden on mobile */}
-      <div className="hidden sm:block">
+      <div className="hidden md:block">
         <div className="overflow-hidden rounded-xl bg-white">
           <table className="w-full">
             <thead>
@@ -64,7 +64,7 @@ export default function ScoreConversionTable({ locale }: { locale: ELocale }) {
       </div>
 
       {/* Mobile View (Vertical) - Visible only on mobile */}
-      <div className="block sm:hidden">
+      <div className="block md:hidden">
         <div className="overflow-hidden rounded-xl bg-white">
           <table className="w-full">
             <thead>

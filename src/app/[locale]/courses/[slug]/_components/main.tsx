@@ -106,7 +106,10 @@ export default function Main({
           />
         </div>
       </div>
-      <div className="flex-1" style={{ marginTop: getMarginTop() }}>
+      <div
+        className="flex-1 overflow-hidden"
+        style={{ marginTop: getMarginTop() }}
+      >
         <CourseOverview
           courseName={courseDetail.name}
           overview={courseDetail.overview}

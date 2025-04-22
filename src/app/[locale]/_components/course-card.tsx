@@ -35,6 +35,7 @@ export default function CourseCard({
             alt={imageAlt || `Course image for ${title}`}
             fill
             className="object-cover"
+            priority
           />
         </div>
 

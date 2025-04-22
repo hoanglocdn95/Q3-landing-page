@@ -19,6 +19,7 @@ const EvaluateCard = ({ evaluate, className }: IProps) => {
             alt={evaluate.author.image.src || evaluate.author.name}
             width={256}
             height={348}
+            priority
             className="rounded-12 h-[148px] w-[137px] object-cover md:h-[296px] md:w-[260px] lg:h-[348px] lg:w-[265px]"
           />
         </div>

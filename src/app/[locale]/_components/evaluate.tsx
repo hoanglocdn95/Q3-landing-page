@@ -83,6 +83,7 @@ const Evaluate = ({ locale }: { locale: ELocale }) => {
         src={'/images/home/evaluete-home.png'}
         width={732}
         height={239}
+        priority
         alt="formation process background"
         className="absolute bottom-0 -left-10 hidden h-[125px] w-[380px] object-cover sm:block md:right-0 md:-bottom-7 md:h-[180px] md:w-[549px] lg:h-[239px] lg:w-[732px]"
       />

@@ -16,6 +16,7 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
             src="/images/about/formation-process.png"
             alt="formation-process"
             fill
+            priority
             className="rounded-12 object-cover"
           />
           <div className="absolute top-[275px] left-[106px] z-0 hidden size-[400px] rotate-[13deg] bg-[radial-gradient(50%_50%_at_50%_50%,_#067E81_0%,_rgba(217,_217,_217,_0)_100%)] opacity-[0.3] md:block lg:right-0 lg:bottom-[10%] xl:size-[700px]" />
@@ -39,6 +40,7 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
         src={'/images/about/formation-process-background.png'}
         width={732}
         height={239}
+        priority
         alt="formation process background"
         className="absolute -right-12 bottom-0 h-[125px] w-[380px] object-cover md:right-0 md:-bottom-7 md:h-[180px] md:w-[549px] lg:h-[239px] lg:w-[732px]"
       />
