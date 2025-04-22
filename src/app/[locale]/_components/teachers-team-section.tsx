@@ -5,6 +5,7 @@ import viTranslations from '@/locales/vi/home.json';
 import enTranslations from '@/locales/en/home.json';
 import { ELocale } from '@/constants/enum';
 import { trainers } from '@/data/trainers';
+import { Button } from '@/components/ui/button';
 
 export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
@@ -31,15 +32,15 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
             {trainers.map((teacher, index) => (
               <div
                 key={index}
-                className="w-[calc(100vw-32px)] max-w-[300px] overflow-hidden rounded-xl shadow-md md:w-auto md:max-w-[unset]"
+                className="w-[calc(100vw-32px)] max-w-[300px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg md:w-auto md:max-w-[unset]"
               >
-                <div className="relative aspect-[3/4] w-full">
+                <div className="relative aspect-[3/4] w-full rounded-xl">
                   <Image
                     priority
                     src={teacher.imageUrl}
                     alt={teacher.name}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 hover:scale-105"
                   />
                   <div className="absolute bottom-10 left-0 w-full text-center text-white">
                     <h3 className="text-24 sm:text-28 mb-3 leading-tight font-bold">
@@ -54,12 +55,11 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <Link
-            href="/teachers"
-            className="relative inline-flex h-10 items-center rounded-full bg-[#03044f] px-6 py-4 text-base font-medium text-white md:h-[52px]"
-          >
-            {t.teachers.view_all_button}
-            <ChevronRight className="ml-2 h-4 w-4" />
+          <Link href="/teachers" className="relative">
+            <Button className="w-[137px] md:w-[142px] lg:w-[142px]">
+              {t.teachers.view_all_button}
+              <ChevronRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
           </Link>
         </div>
       </section>
