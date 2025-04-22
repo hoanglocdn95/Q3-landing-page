@@ -36,6 +36,7 @@ const MapSection: React.FC<IMapSectionProps> = ({ locale }) => {
                   alt={t.map.map_image_alt}
                   fill
                   className="hidden object-cover sm:block"
+                  priority
                 />
               )}
               <LoadScript
@@ -46,6 +47,7 @@ const MapSection: React.FC<IMapSectionProps> = ({ locale }) => {
                     alt={t.map.map_image_alt}
                     fill
                     className="hidden object-cover sm:block"
+                    priority
                   />
                 }
               >

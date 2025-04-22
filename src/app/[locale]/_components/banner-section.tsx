@@ -19,7 +19,7 @@ export default function BannerSection({ locale }: { locale: ELocale }) {
           priority
         />
         <div className="absolute inset-0">
-          <div className="section-container flex h-full flex-col justify-center py-12">
+          <div className="section-container flex h-full flex-col py-14 md:justify-center md:py-12">
             <div className="max-w-[589px]">
               <Image
                 alt="Logo of Q3 Language"
@@ -48,7 +48,7 @@ export default function BannerSection({ locale }: { locale: ELocale }) {
       </div>
 
       {/* Search Bar Section */}
-      <div className="bg-secondary section-container relative z-10 -mt-16 rounded-4xl p-6 shadow-lg md:px-8 lg:px-10">
+      <div className="bg-secondary section-container relative z-10 -mt-16 rounded-2xl p-6 shadow-lg md:rounded-4xl md:px-8 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div className="text-white md:max-w-xs">
             <p className="text-base font-semibold">
@@ -56,11 +56,11 @@ export default function BannerSection({ locale }: { locale: ELocale }) {
             </p>
           </div>
 
-          <div className="hidden w-[33.48px] rotate-[73.14deg] border border-white opacity-50 md:block" />
+          <div className="hidden min-w-[33.48px] rotate-[73.14deg] border border-white opacity-50 md:block" />
 
-          <div className="w-full min-w-[200px] flex-1 md:mx-4 md:w-auto">
+          <div className="w-full flex-1 md:w-auto md:min-w-[341px] lg:min-w-[200px]">
             <div className="relative">
-              <select className="h-10 w-full appearance-none rounded-full bg-white px-4 py-2 pr-10 text-base font-medium outline-none md:h-[52px]">
+              <select className="h-[52px] w-full appearance-none rounded-full bg-white px-4 py-2 pr-10 text-base font-medium outline-none">
                 <option>{t.banner.search_section.options.option1}</option>
                 <option>{t.banner.search_section.options.option2}</option>
                 <option>{t.banner.search_section.options.option3}</option>

@@ -26,6 +26,7 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
                 alt="Q3 Language"
                 width={104}
                 height={46}
+                priority
                 className="h-[46px] w-auto"
               />
             </Link>

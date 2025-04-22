@@ -37,8 +37,8 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
   return (
     <section className={cn('overflow-hidden', className)}>
       <div className="section-container relative">
-        <div className="flex flex-col items-center gap-6 pt-8 lg:flex-row lg:gap-0 lg:py-16">
-          <div className="relative flex w-full flex-col gap-8 lg:w-[522px]">
+        <div className="flex flex-col items-center gap-6 pt-8 md:flex-row md:gap-0 md:py-16">
+          <div className="relative flex w-full flex-col gap-8 md:w-[522px]">
             <h2 className="text-text-primary sm:text-32 text-24 text-center font-bold sm:text-left md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
               {t.form.title}
             </h2>
@@ -193,13 +193,14 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
             )}
           </div>
 
-          <div className="z-10 h-full w-full max-md:relative lg:w-[calc(100%-522px)]">
+          <div className="z-10 h-full w-full max-md:relative md:w-[calc(100%-522px)]">
             <Image
               src="/images/contact/hero-form.png"
               alt={t.form.hero_form_image_alt}
               width={500}
               height={600}
-              className="bottom-0 h-auto w-full md:max-w-[713px] lg:absolute lg:left-1/2 xl:left-auto"
+              priority
+              className="bottom-0 h-auto w-full md:absolute md:left-1/2 md:max-w-[713px] xl:left-auto"
             />
           </div>
         </div>

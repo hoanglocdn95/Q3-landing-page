@@ -45,7 +45,7 @@ const ImageGallery = ({ className }: { className?: string }) => {
 
   return (
     <div className={cn('mx-auto flex items-center justify-center', className)}>
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+      <div className="flex flex-wrap justify-center gap-2 lg:gap-4">
         {images.map((image, index) => (
           <div key={index} className={image.containerClassName}>
             <Image
@@ -53,6 +53,7 @@ const ImageGallery = ({ className }: { className?: string }) => {
               alt={image.alt}
               width={192}
               height={240}
+              priority
               className={cn('rounded-8 object-cover', image.className)}
             />
           </div>
@@ -66,7 +67,7 @@ const Mission = ({ locale }: { locale: ELocale }) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
   return (
     <section className="bg-background-cream relative mx-auto overflow-hidden py-10 md:py-15 lg:py-16">
-      <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:gap-4 lg:flex-row lg:gap-8">
+      <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:flex-row md:gap-0 lg:gap-8">
         <div className="flex-1">
           <h2 className="lg:text-40 md:text-32 text-24 font-700">
             {t.mission.mission}
@@ -84,6 +85,7 @@ const Mission = ({ locale }: { locale: ELocale }) => {
         src={'/images/about/background.png'}
         width={385}
         height={267}
+        priority
         alt="background-roadmap"
         className="absolute bottom-0 left-0 h-[116px] w-[175px] object-cover md:h-[197px] md:w-[297px] lg:-bottom-16 lg:h-[267px] lg:w-[385px]"
       />

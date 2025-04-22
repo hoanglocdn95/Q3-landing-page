@@ -98,6 +98,7 @@ export default async function Page({
           alt={courseItem.image.desktop.alt}
           width={1200}
           height={468}
+          priority
           className="h-auto w-full max-md:hidden"
         />
         <Image
@@ -105,6 +106,7 @@ export default async function Page({
           alt={courseItem.image.mobile.alt}
           width={375}
           height={386}
+          priority
           className="h-auto w-full md:hidden"
         />
       </section>

@@ -95,6 +95,7 @@ const CourseRoadmap = ({ data, locale }: ICourseRoadmapProps) => {
         width={864}
         height={282}
         alt="background roadmap"
+        priority
         className="absolute -right-22 bottom-0 h-[126px] w-[385px] object-cover md:left-0 md:h-[236px] md:w-[603px] lg:h-[340px] lg:w-[864px]"
       />
     </SectionContainer>

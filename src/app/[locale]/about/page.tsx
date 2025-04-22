@@ -130,14 +130,14 @@ const Page = async ({ params }: { params: Promise<{ locale: ELocale }> }) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
 
   return (
-    <div className="gradient-background relative">
+    <div className="gradient-background relative overflow-hidden">
       <section className="flex h-[386px] items-center justify-center bg-[url('/images/about/banner-mobile.png')] bg-cover bg-center md:bg-[url('/images/about/banner-desktop.png')]">
         <h1 className="text-text-gray-white text-32 md:text-48 lg:text-[56px]">
           {t.title}
         </h1>
       </section>
       <Mission locale={locale} />
-      <section className="relative flex h-[247px] items-center justify-center bg-[url('/images/about/sub-banner-mobile.png')] bg-cover bg-center before:absolute before:inset-0 before:bg-black before:opacity-55 before:content-[''] md:bg-[url('/images/about/sub-banner-desktop.png')] lg:h-[500px]">
+      <section className="relative flex h-[247px] items-center justify-center bg-[url('/images/about/sub-banner-mobile.png')] bg-cover bg-center before:absolute before:inset-0 before:bg-black before:opacity-55 before:content-[''] md:h-[456px] md:bg-[url('/images/about/sub-banner-desktop.png')] lg:h-[500px]">
         <div className="relative z-10 text-center">
           <p className="text-12 font-600 mb-5 tracking-[0.5em] text-white uppercase">
             {t.mission.introduce}

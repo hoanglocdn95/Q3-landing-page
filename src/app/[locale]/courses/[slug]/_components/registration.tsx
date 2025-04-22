@@ -77,6 +77,7 @@ const Registration = ({ banner, locale }: IRegistrationProps) => {
             alt={banner.image.alt}
             fill
             className="object-cover"
+            priority
           />
         </div>
         <div className="pt-6 pb-[270px] md:pb-[162px] lg:pt-9 lg:pb-[166px]">
