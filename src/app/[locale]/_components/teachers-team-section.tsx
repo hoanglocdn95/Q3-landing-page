@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
@@ -6,9 +8,22 @@ import enTranslations from '@/locales/en/home.json';
 import { ELocale } from '@/constants/enum';
 import { trainers } from '@/data/trainers';
 import { Button } from '@/components/ui/button';
+import {
+  CarouselNoArrows,
+  CarouselItem,
+} from '@/components/ui/carousel-no-arrows';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef } from 'react';
 
 export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
+
+  const autoplayRef = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+    }),
+  );
 
   return (
     <div className="relative py-10 md:py-15 lg:py-20">
@@ -27,31 +42,42 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
           {t.teachers.title}
         </h2>
 
-        <div className="hide-scrollbar overflow-x-auto scroll-smooth pb-6 md:overflow-hidden md:pb-0">
-          <div className="mx-auto flex w-max space-x-4 md:grid md:w-auto md:max-w-[626px] md:grid-cols-2 md:gap-5 md:space-x-0 lg:max-w-[794px]">
+        <div className="mx-auto max-w-[900px]">
+          <CarouselNoArrows
+            opts={{
+              loop: true,
+              slidesToScroll: 1,
+              align: 'start',
+              containScroll: 'trimSnaps',
+            }}
+            plugins={[autoplayRef.current]}
+            className="px-0 sm:px-6"
+          >
             {trainers.map((teacher, index) => (
-              <div
+              <CarouselItem
                 key={index}
-                className="w-[calc(100vw-32px)] max-w-[300px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg md:w-auto md:max-w-[unset]"
+                className="basis-full pr-4 pl-4 sm:basis-1/2 md:basis-1/2 lg:basis-1/2"
               >
-                <div className="relative aspect-[3/4] w-full rounded-xl">
-                  <Image
-                    priority
-                    src={teacher.imageUrl}
-                    alt={teacher.name}
-                    fill
-                    className="object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                  <div className="absolute bottom-10 left-0 w-full text-center text-white">
-                    <h3 className="text-24 sm:text-28 mb-3 leading-tight font-bold">
-                      {teacher.name}
-                    </h3>
-                    <p className="text-base text-gray-300">{teacher.role}</p>
+                <div className="mx-auto w-[calc(100vw-32px)] max-w-[300px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg md:w-auto md:max-w-[unset]">
+                  <div className="relative aspect-[3/4] w-full rounded-xl">
+                    <Image
+                      priority
+                      src={teacher.imageUrl}
+                      alt={teacher.name}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                    <div className="absolute bottom-10 left-0 w-full text-center text-white">
+                      <h3 className="text-24 sm:text-28 mb-3 leading-tight font-bold">
+                        {teacher.name}
+                      </h3>
+                      <p className="text-base text-gray-300">{teacher.role}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             ))}
-          </div>
+          </CarouselNoArrows>
         </div>
 
         <div className="mt-8 flex justify-center">

@@ -236,7 +236,7 @@ const OverviewMenu = ({ className, courseName, locale }: IProps) => {
           </li>
         ))}
       </ul>
-      <div className="p-3 pt-1.5 lg:p-4">
+      <div className="p-3 pt-1.5 lg:p-4 lg:px-6">
         <Button>
           {t.actions.registration} <ChevronRightIcon />
         </Button>
