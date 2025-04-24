@@ -70,22 +70,27 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
       href: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: t.courses.pte, href: '#' },
-        { name: t.courses.ielts, href: '#' },
-        { name: t.courses.toeic, href: '#' },
-        { name: t.courses.conversation, href: '#' },
+        { name: t.courses.foundation_1, href: '#' },
+        { name: t.courses.foundation_2, href: '#' },
+        { name: t.courses.pte_30_36_42, href: '#' },
+        { name: t.courses.pte_36_42_50, href: '#' },
+        { name: t.courses.pte_50_58, href: '#' },
+        { name: t.courses.pte_65_73_79, href: '#' },
+        { name: t.courses.pte_1_1, href: '#' },
+        { name: t.courses.pte_fast, href: '#' },
       ],
     },
-    {
-      name: t.nav.knowledge,
-      href: '#',
-      hasDropdown: true,
-      dropdownItems: [
-        { name: t.knowledge.pteTips, href: '#' },
-        { name: t.knowledge.learningTips, href: '#' },
-        { name: t.knowledge.news, href: '#' },
-      ],
-    },
+    // TODO: Knowledge dropdown is unavailable for now
+    // {
+    //   name: t.nav.knowledge,
+    //   href: '#',
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { name: t.knowledge.pteTips, href: '#' },
+    //     { name: t.knowledge.learningTips, href: '#' },
+    //     { name: t.knowledge.news, href: '#' },
+    //   ],
+    // },
     { name: t.nav.policy, href: '#', hasDropdown: false },
     { name: t.nav.contact, href: `/${locale}/contact/`, hasDropdown: false },
   ];
@@ -178,7 +183,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                   <div
                     key={language.code}
                     className={cn(
-                      'block px-4 py-2 text-sm hover:bg-gray-100',
+                      'block cursor-pointer px-4 py-2 text-sm hover:bg-gray-100',
                       locale === language.code &&
                         'text-primary-hover bg-gray-100',
                     )}

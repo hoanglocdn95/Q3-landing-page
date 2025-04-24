@@ -7,14 +7,18 @@
     "about": "Giới thiệu",
     "courses": "Khóa học",
     "knowledge": "Kiến thức",
-    "policy": "Chính sách", 
+    "policy": "Chính sách",
     "contact": "Liên hệ"
   },
   "courses": {
-    "pte": "PTE Academic",
-    "ielts": "IELTS",
-    "toeic": "TOEIC",
-    "conversation": "Tiếng Anh Giao Tiếp"
+    "foundation_1": "Foundation Achievers 1",
+    "foundation_2": "Foundation Achievers 2",
+    "pte_30_36_42": "PTE Achievers 30-36-42",
+    "pte_36_42_50": "PTE Achievers 36-42-50",
+    "pte_50_58": "PTE Achievers 50-58",
+    "pte_65_73_79": "PTE Achievers 65-73-79",
+    "pte_1_1": "PTE 1 kèm 1",
+    "pte_fast": "PTE cấp tốc"
   },
   "knowledge": {
     "pteTips": "Mẹo Thi PTE",
@@ -27,4 +31,4 @@
     "vi": "Tiếng Việt",
     "en": "English"
   }
-} 
+}
