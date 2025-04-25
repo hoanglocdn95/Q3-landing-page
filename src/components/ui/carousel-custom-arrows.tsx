@@ -6,6 +6,8 @@ import useEmblaCarousel, {
 } from 'embla-carousel-react';
 
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { ChevronRightIcon } from '../icons';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -169,6 +171,66 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
   );
 }
 
+function CarouselPrevious({
+  className,
+  variant = 'outline',
+  size = 'icon',
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+
+  return (
+    <Button
+      data-slot="carousel-previous"
+      variant={variant}
+      size={size}
+      className={cn(
+        'hover:!bg-secondary-hover !shadow-1 absolute size-12 rounded-full border-0 !p-0 max-md:hidden',
+        orientation === 'horizontal'
+          ? 'top-1/2 left-0 -translate-x-[100%]'
+          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+        className,
+      )}
+      disabled={!canScrollPrev}
+      onClick={scrollPrev}
+      {...props}
+    >
+      <ChevronRightIcon className="rotate-180" />
+      <span className="sr-only">Previous slide</span>
+    </Button>
+  );
+}
+
+function CarouselNext({
+  className,
+  variant = 'icon',
+  size = 'icon',
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  const { orientation, scrollNext, canScrollNext } = useCarousel();
+
+  return (
+    <Button
+      data-slot="carousel-next"
+      variant={variant}
+      size={size}
+      className={cn(
+        'hover:!bg-secondary-hover !shadow-1 absolute size-12 !p-0 max-md:hidden',
+        orientation === 'horizontal'
+          ? 'top-1/2 right-0 translate-x-1/2'
+          : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+        className,
+      )}
+      disabled={!canScrollNext}
+      onClick={scrollNext}
+      {...props}
+    >
+      <ChevronRightIcon />
+      <span className="sr-only">Next slide</span>
+    </Button>
+  );
+}
+
 interface ICarouselProps
   extends React.ComponentProps<'div'>,
     CarouselGroupProps,
@@ -176,7 +238,7 @@ interface ICarouselProps
   contentClassName?: string;
 }
 
-function CarouselNoArrows({
+function CarouselCustomArrows({
   children,
   contentClassName,
   className,
@@ -185,8 +247,10 @@ function CarouselNoArrows({
   return (
     <CarouselGroup className={cn('px-6', className)} {...props}>
       <CarouselContent className={contentClassName}>{children}</CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
     </CarouselGroup>
   );
 }
 
-export { type CarouselApi, CarouselNoArrows, CarouselItem };
+export { type CarouselApi, CarouselCustomArrows, CarouselItem };

@@ -20,7 +20,7 @@ const TrainerCard: React.FC<ITrainerCardProps> = ({
   return (
     <div
       className={cn(
-        'bg-secondary font-space-grotesk min-h-p[610px] relative flex w-full cursor-pointer overflow-hidden rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl md:min-h-[396px] lg:min-h-[408px] lg:p-6',
+        'bg-secondary font-space-grotesk min-h-p[610px] relative flex h-full w-full cursor-pointer overflow-hidden rounded-2xl p-4 transition-all duration-300 hover:shadow-xl md:min-h-[396px] lg:min-h-[408px] lg:p-6',
         className,
       )}
     >
@@ -30,7 +30,7 @@ const TrainerCard: React.FC<ITrainerCardProps> = ({
             src={imageUrl}
             alt={name}
             fill
-            className="object-cover transition-transform duration-500 hover:scale-110"
+            className="object-cover transition-transform duration-500 md:hover:scale-110"
             priority
           />
         </div>

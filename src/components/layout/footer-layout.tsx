@@ -111,7 +111,10 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
 
         <div className="mt-8 flex flex-col items-center justify-between border-t border-gray-200 pt-8 md:flex-row">
           <div className="text-dark mb-4 text-sm font-medium md:mb-0">
-            <Link href="#" className="text-12 font-medium hover:underline">
+            <Link
+              href="#"
+              className="text-12 text-center font-medium hover:underline"
+            >
               {t.footer.legal}
             </Link>
           </div>

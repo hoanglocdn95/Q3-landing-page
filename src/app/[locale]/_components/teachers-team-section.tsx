@@ -8,22 +8,34 @@ import enTranslations from '@/locales/en/home.json';
 import { ELocale } from '@/constants/enum';
 import { trainers } from '@/data/trainers';
 import { Button } from '@/components/ui/button';
-import {
-  CarouselNoArrows,
-  CarouselItem,
-} from '@/components/ui/carousel-no-arrows';
+import { Carousel, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { useRef } from 'react';
+import { useRef, useState, useCallback } from 'react';
 
 export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
+  const [autoplay, setAutoplay] = useState(true);
 
   const autoplayRef = useRef(
     Autoplay({
-      delay: 3000,
+      delay: 4000,
       stopOnInteraction: false,
     }),
   );
+
+  const handleMouseEnter = useCallback(() => {
+    if (autoplayRef.current && autoplay) {
+      autoplayRef.current.stop();
+      setAutoplay(false);
+    }
+  }, [autoplay]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (autoplayRef.current && !autoplay) {
+      autoplayRef.current.play();
+      setAutoplay(true);
+    }
+  }, [autoplay]);
 
   return (
     <div className="relative py-10 md:py-15 lg:py-20">
@@ -43,7 +55,7 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
         </h2>
 
         <div className="mx-auto max-w-[900px]">
-          <CarouselNoArrows
+          <Carousel
             opts={{
               loop: true,
               slidesToScroll: 1,
@@ -52,11 +64,13 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
             }}
             plugins={[autoplayRef.current]}
             className="px-0 sm:px-6"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             {trainers.map((teacher, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full pr-4 pl-4 sm:basis-1/2 md:basis-1/2 lg:basis-1/2"
+                className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/2"
               >
                 <div className="mx-auto w-[calc(100vw-32px)] max-w-[300px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg md:w-auto md:max-w-[unset]">
                   <div className="relative aspect-[3/4] w-full rounded-xl">
@@ -77,7 +91,7 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
                 </div>
               </CarouselItem>
             ))}
-          </CarouselNoArrows>
+          </Carousel>
         </div>
 
         <div className="mt-8 flex justify-center">
