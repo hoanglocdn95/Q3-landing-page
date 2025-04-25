@@ -47,7 +47,7 @@ const Registration = ({ banner, locale }: IRegistrationProps) => {
           </div>
         </div>
 
-        <div className="order-2 basis-full space-y-3 md:order-3 lg:order-2">
+        <div className="order-2 space-y-3 md:order-3 md:basis-full lg:order-2 lg:basis-auto">
           <h3 className="font-600 text-dark">Facebook</h3>
           <Link
             href="https://facebook.com/q3language"

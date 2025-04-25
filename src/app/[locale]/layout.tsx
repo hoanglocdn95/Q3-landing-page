@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/footer-layout';
 import Header from '@/components/layout/header-layout';
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { locales } from '@/constants/common';
 import { ELocale } from '@/constants/enum';
 import { Metadata } from 'next';
@@ -173,6 +174,7 @@ export default async function RootLayout({
           <Header locale={locale} />
           <main className="flex-grow">{children}</main>
           <Footer locale={locale} />
+          <ScrollToTop />
         </div>
       </body>
     </html>
