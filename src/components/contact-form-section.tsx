@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import viTranslations from '@/locales/vi/contact.json';
@@ -14,6 +16,9 @@ interface IContactFormSectionProps {
   isShowBackground?: boolean;
 }
 
+const CONTACT_API_URL =
+  'https://script.google.com/macros/s/AKfycby7M0Y8aoOYHgxSdo_iPDuO9eDl5JeERxIT9GQU2iAUkNzhOrVjUkPlQ2oSDJYxwFyY/exec';
+
 const ContactFormSection: React.FC<IContactFormSectionProps> = ({
   locale,
   className,
@@ -21,7 +26,6 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
 }) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
 
-  // Thêm các options cho các dropdown
   const purposeOptions =
     locale === 'en'
       ? ['Select', 'Study Abroad', 'Immigration', 'Work', 'Other']
@@ -33,6 +37,69 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
     locale === 'en'
       ? ['1 month', '2 months', '3 months', '6 months', 'Flexible']
       : ['1 tháng', '2 tháng', '3 tháng', '6 tháng', 'Linh hoạt'];
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    purpose: '',
+    achieveScore: '',
+    deadline: '',
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { name, email } = formData;
+    if (!name || !email) {
+      alert('Vui lòng điền đầy đủ các trường bắt buộc.');
+      return;
+    }
+
+    const payload = {
+      ...formData,
+      timestamp: new Date().toLocaleString('en-GB', {
+        hour12: false,
+      }),
+    };
+
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        redirect: 'follow',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          payload,
+          type: 'insert_consultation',
+        }),
+      });
+
+      const result = await res.json();
+      const data = JSON.parse(result.message);
+      if (data.status === 'ok') {
+        alert('Thông tin của bạn đã được gửi thành công!');
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          purpose: '',
+          achieveScore: '',
+          deadline: '',
+        });
+      } else {
+        alert(data.status);
+      }
+    } catch (err) {
+      alert('Đã xảy ra lỗi khi gửi thông tin.');
+      console.error(err);
+    }
+  };
 
   return (
     <section className={cn('overflow-hidden', className)}>
@@ -54,21 +121,25 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   type="text"
                   id="name"
                   className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
+                  onChange={handleChange}
+                  autoComplete="off"
                 />
               </div>
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                   <label
-                    htmlFor="phone"
+                    htmlFor="phoneNumber"
                     className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.form.phone}
                   </label>
                   <input
                     type="tel"
-                    id="phone"
+                    id="phoneNumber"
                     className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
+                    onChange={handleChange}
+                    autoComplete="off"
                   />
                 </div>
                 <div>
@@ -83,20 +154,23 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                     id="email"
                     placeholder="you@company.com"
                     className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
+                    onChange={handleChange}
+                    autoComplete="off"
                   />
                 </div>
               </div>
 
               <div>
                 <label
-                  htmlFor="pte"
+                  htmlFor="purpose"
                   className="mb-1 block text-sm font-medium text-gray-700"
                 >
                   {t.form.form.purpose}
                 </label>
                 <select
-                  id="pte"
+                  id="purpose"
                   className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
+                  onChange={handleChange}
                 >
                   {purposeOptions.map((option, index) => (
                     <option key={`purpose-${index}`} value={option}>
@@ -109,14 +183,15 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
                   <label
-                    htmlFor="score"
+                    htmlFor="achieveScore"
                     className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.form.score}
                   </label>
                   <select
-                    id="score"
+                    id="achieveScore"
                     className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
+                    onChange={handleChange}
                   >
                     {scoreOptions.map((option, index) => (
                       <option key={`score-${index}`} value={option}>
@@ -127,14 +202,15 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                 </div>
                 <div>
                   <label
-                    htmlFor="time"
+                    htmlFor="deadline"
                     className="mb-1 block text-sm font-medium text-gray-700"
                   >
                     {t.form.form.time}
                   </label>
                   <select
-                    id="time"
+                    id="deadline"
                     className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
+                    onChange={handleChange}
                   >
                     {timeOptions.map((option, index) => (
                       <option key={`time-${index}`} value={option}>
@@ -144,7 +220,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   </select>
                 </div>
               </div>
-              <Button type="submit">
+              <Button type="submit" onClick={handleSubmit}>
                 {t.form.form.submit}
                 <ChevronRight size={16} className="ml-1" />
               </Button>
