@@ -11,10 +11,14 @@ import { Button } from '@/components/ui/button';
 import { Carousel, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef, useState, useCallback } from 'react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { ITrainer } from '@/types/trainer';
 
 export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
   const [autoplay, setAutoplay] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [selectedTrainer, setSelectedTrainer] = useState<ITrainer | null>(null);
 
   const autoplayRef = useRef(
     Autoplay({
@@ -72,7 +76,13 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
                 key={index}
                 className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/2"
               >
-                <div className="mx-auto w-[calc(100vw-32px)] max-w-[300px] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg md:w-auto md:max-w-[unset]">
+                <div
+                  className="mx-auto w-[calc(100vw-32px)] max-w-[300px] cursor-pointer overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:shadow-lg md:w-auto md:max-w-[unset]"
+                  onClick={() => {
+                    setSelectedTrainer(teacher);
+                    setOpen(true);
+                  }}
+                >
                   <div className="relative aspect-[3/4] w-full rounded-xl">
                     <Image
                       priority
@@ -103,6 +113,36 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
           </Link>
         </div>
       </section>
+
+      {/* Modal hiển thị chi tiết trainer */}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="bg-secondary font-space-grotesk border-secondary text-white sm:max-w-xl [&_button]:ring-0 [&_button]:focus:ring-0 [&_button]:focus:outline-none">
+          {selectedTrainer && (
+            <>
+              <div className="flex h-fit flex-col gap-3 py-4 md:flex-row md:gap-6">
+                <div className="rounded-12 relative aspect-[311/360] h-fit w-full overflow-hidden transition-transform duration-300 group-hover:scale-105 max-md:max-w-[360px] md:aspect-[194/280] md:w-[194px] lg:aspect-[250/360] lg:w-[250px]">
+                  <Image
+                    src={selectedTrainer.imageUrl}
+                    alt={`Image of ${selectedTrainer.name}`}
+                    fill
+                    className="object-cover transition-transform duration-500 md:hover:scale-110"
+                    priority
+                  />
+                </div>
+                <div className="flex-1 text-white md:pt-6 lg:pt-3">
+                  <h3 className="text-24 lg:text-28 font-700 hover:text-primary transition-colors duration-300">
+                    {selectedTrainer.name}
+                  </h3>
+                  <p className="text-16 font-500">{selectedTrainer.role}</p>
+                  <p className="text-14 font-400 mt-2 leading-[1.2] md:mt-3">
+                    {selectedTrainer.description[locale]}
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

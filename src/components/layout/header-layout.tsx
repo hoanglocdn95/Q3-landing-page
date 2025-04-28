@@ -31,6 +31,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [languageDropdownMobileOpen, setLanguageDropdownMobileOpen] =
     useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // For mobile view only
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<
@@ -39,6 +40,17 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
 
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const languageDropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // Handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close dropdowns when clicking outside (for mobile)
   useEffect(() => {
@@ -113,7 +125,12 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-primary h-12 text-white">
+      <div
+        className={cn(
+          'bg-primary h-12 transform text-white transition-all duration-300',
+          isScrolled && 'hidden -translate-y-full',
+        )}
+      >
         <div className="section-container flex h-full items-center justify-between">
           <div className="flex w-full items-center justify-between gap-2 md:w-auto md:justify-start md:gap-6">
             <div className="flex items-center text-sm">
@@ -201,7 +218,13 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
       </div>
 
       {/* Main Navigation */}
-      <header className="relative z-20 bg-white py-4 shadow-sm">
+      <header
+        className={cn(
+          'relative z-20 transform bg-white py-4 shadow-sm transition-all duration-300',
+          isScrolled && 'fixed top-0 right-0 left-0 translate-y-0 shadow-md',
+          !isScrolled && 'translate-y-0',
+        )}
+      >
         <div className="section-container flex items-center justify-between">
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4">

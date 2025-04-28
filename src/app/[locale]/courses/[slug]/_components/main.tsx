@@ -66,7 +66,7 @@ export default function Main({
   // Tính toán marginTop dựa trên chiều cao thực tế của menu và breakpoint
   const getMarginTop = () => {
     // Chỉ áp dụng marginTop cho màn hình medium trở lên (768px)
-    if (windowWidth < 768) {
+    if (windowWidth <= 768) {
       return 0;
     }
 
@@ -94,7 +94,7 @@ export default function Main({
           </div>
         </div>
       )}
-      <div className="sticky left-4 z-10 hidden h-full flex-shrink-0 md:top-8 md:left-8 md:block md:w-[225px] lg:top-12 lg:w-[258px] xl:left-[calc(50vw-600px)]">
+      <div className="sticky left-4 z-10 hidden h-full flex-shrink-0 md:top-[100px] md:left-8 md:block md:w-[225px] lg:w-[258px] xl:left-[calc(50vw-600px)]">
         <div
           ref={menuRef}
           className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]"
@@ -107,7 +107,7 @@ export default function Main({
         </div>
       </div>
       <div
-        className="flex-1 overflow-hidden"
+        className="flex-1 overflow-hidden max-md:mt-0"
         style={{ marginTop: getMarginTop() }}
       >
         <CourseOverview
