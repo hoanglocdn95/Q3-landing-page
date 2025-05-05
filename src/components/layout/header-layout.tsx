@@ -82,14 +82,32 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
       href: '#',
       hasDropdown: true,
       dropdownItems: [
-        { name: t.courses.foundation_1, href: '#' },
-        { name: t.courses.foundation_2, href: '#' },
-        { name: t.courses.pte_30_36_42, href: '#' },
-        { name: t.courses.pte_36_42_50, href: '#' },
-        { name: t.courses.pte_50_58, href: '#' },
-        { name: t.courses.pte_65_73_79, href: '#' },
-        { name: t.courses.pte_1_1, href: '#' },
-        { name: t.courses.pte_fast, href: '#' },
+        {
+          name: t.courses.foundation_1,
+          href: `/${locale}/courses/foundation-achievers-1`,
+        },
+        {
+          name: t.courses.foundation_2,
+          href: `/${locale}/courses/foundation-achievers-2`,
+        },
+        {
+          name: t.courses.pte_30_36_42,
+          href: `/${locale}/courses/pte-achievers-30-36-42`,
+        },
+        {
+          name: t.courses.pte_36_42_50,
+          href: `/${locale}/courses/pte-achievers-36-42-50`,
+        },
+        {
+          name: t.courses.pte_50_58,
+          href: `/${locale}/courses/pte-achievers-50-58`,
+        },
+        {
+          name: t.courses.pte_65_73_79,
+          href: `/${locale}/courses/pte-achievers-65-73-79`,
+        },
+        { name: t.courses.pte_1_1, href: `/${locale}/courses/pte-1-kem-1` },
+        { name: t.courses.pte_fast, href: `/${locale}/courses/pte-cap-toc` },
       ],
     },
     // TODO: Knowledge dropdown is unavailable for now
