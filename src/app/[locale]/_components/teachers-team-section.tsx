@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Carousel, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef, useState, useCallback } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { ITrainer } from '@/types/trainer';
 
 export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
@@ -116,11 +116,14 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
 
       {/* Modal hiển thị chi tiết trainer */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="bg-secondary font-space-grotesk border-secondary text-white sm:max-w-xl [&_button]:ring-0 [&_button]:focus:ring-0 [&_button]:focus:outline-none">
+        <DialogContent className="font-space-grotesk max-w-[100svw] rounded-none border-0 p-0 sm:max-w-[794px] md:max-h-[462px] [&_button]:ring-0 [&_button]:focus:ring-0 [&_button]:focus:outline-none">
+          <div className="sr-only">
+            <DialogTitle />
+          </div>
           {selectedTrainer && (
             <>
-              <div className="flex h-fit flex-col gap-3 py-4 md:flex-row md:gap-6">
-                <div className="rounded-12 relative aspect-[311/360] h-fit w-full overflow-hidden transition-transform duration-300 group-hover:scale-105 max-md:max-w-[360px] md:aspect-[194/280] md:w-[194px] lg:aspect-[250/360] lg:w-[250px]">
+              <div className="flex h-fit flex-col gap-3 px-4 py-12 sm:flex-row sm:gap-6 sm:p-0">
+                <div className="relative aspect-[311/360] h-fit w-full overflow-hidden transition-transform duration-300 group-hover:scale-105 max-md:max-w-[360px] md:aspect-[256/360] md:w-[256px] lg:aspect-[316/462] lg:w-[316px]">
                   <Image
                     src={selectedTrainer.imageUrl}
                     alt={`Image of ${selectedTrainer.name}`}
@@ -129,7 +132,7 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
                     priority
                   />
                 </div>
-                <div className="flex-1 text-white md:pt-6 lg:pt-3">
+                <div className="relative flex-1 sm:pt-[78px] sm:pr-6">
                   <h3 className="text-24 lg:text-28 font-700 hover:text-primary transition-colors duration-300">
                     {selectedTrainer.name}
                   </h3>
@@ -137,6 +140,14 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
                   <p className="text-14 font-400 mt-2 leading-[1.2] md:mt-3">
                     {selectedTrainer.description[locale]}
                   </p>
+                  <Image
+                    src={'/images/about/background.png'}
+                    width={385}
+                    height={267}
+                    priority
+                    alt="background-roadmap"
+                    className="absolute bottom-0 left-0 hidden h-[116px] w-[175px] object-cover md:-bottom-16 md:-left-6 md:block md:h-[202px] md:w-[306px]"
+                  />
                 </div>
               </div>
             </>
