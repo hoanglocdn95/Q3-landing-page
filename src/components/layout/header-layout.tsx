@@ -280,8 +280,8 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                 {item.hasDropdown ? (
                   <>
                     <button
-                      className={`hover:text-primary flex items-center font-semibold text-[#111111] focus:outline-none ${
-                        activeDropdown === item.name ? 'text-primary' : ''
+                      className={`hover:text-secondary flex items-center font-semibold text-[#111111] focus:outline-none ${
+                        activeDropdown === item.name ? 'text-secondary' : ''
                       }`}
                       aria-expanded={activeDropdown === item.name}
                       aria-haspopup="true"
@@ -298,7 +298,9 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         className={`ml-1 transition-transform duration-200 ${
-                          activeDropdown === item.name ? 'rotate-180' : ''
+                          activeDropdown === item.name
+                            ? 'text-secondary rotate-180'
+                            : ''
                         }`}
                       >
                         <path d="m6 9 6 6 6-6" />
@@ -327,7 +329,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="hover:text-primary font-semibold text-[#111111]"
+                    className="hover:text-secondary font-semibold text-[#111111]"
                   >
                     {item.name}
                   </Link>
