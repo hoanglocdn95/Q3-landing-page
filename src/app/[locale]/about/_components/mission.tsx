@@ -1,9 +1,11 @@
+'use client';
+
 import { ChevronDownIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { ELocale } from '@/constants/enum';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import viTranslations from '@/locales/vi/about.json';
 import enTranslations from '@/locales/en/about.json';
 
@@ -65,6 +67,8 @@ const ImageGallery = ({ className }: { className?: string }) => {
 
 const Mission = ({ locale }: { locale: ELocale }) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
+  const [isShowMore, setIsShowMore] = useState(false);
+
   return (
     <section className="bg-background-cream relative mx-auto overflow-hidden py-10 md:py-15 lg:py-16">
       <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:flex-row md:gap-0 lg:gap-8">
@@ -75,8 +79,19 @@ const Mission = ({ locale }: { locale: ELocale }) => {
           <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
             {t.mission.description}
           </p>
-          <Button className="w-[137px] md:w-[155px]">
-            {t.actions.see_more} <ChevronDownIcon />
+          {isShowMore && (
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
+              {t.mission.description_2}
+            </p>
+          )}
+          <Button
+            className="w-[137px] md:w-[155px]"
+            onClick={() => setIsShowMore(!isShowMore)}
+          >
+            {isShowMore ? t.actions.shorten : t.actions.see_more}
+            <ChevronDownIcon
+              className={`transition-transform ${isShowMore ? 'rotate-180' : ''}`}
+            />
           </Button>
         </div>
         <ImageGallery className="relative z-10 w-full md:w-[525px] lg:w-[576px]" />

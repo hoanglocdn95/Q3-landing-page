@@ -1,13 +1,16 @@
+'use client';
+
 import { ChevronDownIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import viTranslations from '@/locales/vi/about.json';
 import enTranslations from '@/locales/en/about.json';
 import { ELocale } from '@/constants/enum';
 
 const FormationProcess = ({ locale }: { locale: ELocale }) => {
   const t = locale === 'en' ? enTranslations : viTranslations;
+  const [isShowMore, setIsShowMore] = useState(false);
   return (
     <section className="relative pt-10 pb-[138px] md:py-15 lg:py-16">
       <div className="section-container flex flex-col justify-between gap-4 md:flex-row md:gap-10 lg:gap-[105px]">
@@ -31,8 +34,19 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
           <p className="font-500 text-text-secondary text-14 lg:text-16 mb-6">
             {t.formation_process.description_2}
           </p>
-          <Button className="w-[137px] md:w-[142px] lg:w-[142px]">
-            {t.actions.see_more} <ChevronDownIcon />
+          {isShowMore && (
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
+              {t.formation_process.description_3}
+            </p>
+          )}
+          <Button
+            className="w-[137px] md:w-[142px] lg:w-[142px]"
+            onClick={() => setIsShowMore(!isShowMore)}
+          >
+            {isShowMore ? t.actions.shorten : t.actions.see_more}
+            <ChevronDownIcon
+              className={`transition-transform ${isShowMore ? 'rotate-180' : ''}`}
+            />
           </Button>
         </div>
       </div>

@@ -1,10 +1,12 @@
 {
   "actions": {
-    "see_more": "Xem thêm"
+    "see_more": "Xem thêm",
+    "shorten": "Rút gọn"
   },
   "title": "Giới thiệu",
   "mission": {
     "description": "Tại Q3 Language, chúng tôi tin rằng mỗi học viên đều mang trong mình tiềm năng để thành công và nhiệm vụ của chúng tôi là khai phá và phát huy tiềm năng đó. Sứ mệnh của Q3s là mang đến giải pháp học PTE toàn diện, giúp học viên không chỉ đạt được mục tiêu điểm số mà còn xây dựng sự tự tin và khả năng sử dụng tiếng Anh linh hoạt trong cuộc sống và sự nghiệp.",
+    "description_2": "Tại Q3 Language, chúng tôi tin rằng mỗi học viên đều mang trong mình tiềm năng để thành công và nhiệm vụ của chúng tôi là khai phá và phát huy tiềm năng đó. Sứ mệnh của Q3s là mang đến giải pháp học PTE toàn diện, giúp học viên không chỉ đạt được mục tiêu điểm số mà còn xây dựng sự tự tin và khả năng sử dụng tiếng Anh linh hoạt trong cuộc sống và sự nghiệp.",
     "introduce": "Với Q3 Language",
     "mission": "Sứ mệnh",
     "values": "Học Không Chỉ Để Thi,\nHọc Là Để Dẫn Đầu!"
@@ -12,7 +14,8 @@
   "formation_process": {
     "title": "Quá trình hình thành và phát triển",
     "description": "Q3 Language được thành lập vào năm 2024 tại thành phố Adelaide, Úc, với mục tiêu trở thành đơn vị tiên phong trong lĩnh vực đào tạo và luyện thi chứng chỉ PTE (Pearson Test of English).",
-    "description_2": "Khởi đầu từ những lớp học nhỏ, chúng tôi tập trung vào việc xây dựng chương trình học tinh gọn và hiệu quả, phù hợp với từng cấp độ học viên. Với sự dẫn dắt của đội ngũ chuyên gia có bề dày kinh nghiệm và tâm huyết, Q3s Language không ngừng hoàn thiện các phương pháp giảng dạy, tích hợp công nghệ mô phỏng bài thi thực tế để học viên làm quen và tự tin khi bước vào kỳ thi PTE chính thức."
+    "description_2": "Khởi đầu từ những lớp học nhỏ, chúng tôi tập trung vào việc xây dựng chương trình học tinh gọn và hiệu quả, phù hợp với từng cấp độ học viên. Với sự dẫn dắt của đội ngũ chuyên gia có bề dày kinh nghiệm và tâm huyết, Q3s Language không ngừng hoàn thiện các phương pháp giảng dạy, tích hợp công nghệ mô phỏng bài thi thực tế để học viên làm quen và tự tin khi bước vào kỳ thi PTE chính thức.",
+    "description_3": "Khởi đầu từ những lớp học nhỏ, chúng tôi tập trung vào việc xây dựng chương trình học tinh gọn và hiệu quả, phù hợp với từng cấp độ học viên. Với sự dẫn dắt của đội ngũ chuyên gia có bề dày kinh nghiệm và tâm huyết, Q3s Language không ngừng hoàn thiện các phương pháp giảng dạy, tích hợp công nghệ mô phỏng bài thi thực tế để học viên làm quen và tự tin khi bước vào kỳ thi PTE chính thức."
   },
   "trainers": {
     "title": "Đội ngũ giáo viên"

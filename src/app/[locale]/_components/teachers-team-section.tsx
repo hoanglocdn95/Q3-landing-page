@@ -105,7 +105,7 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <Link href="/teachers" className="relative">
+          <Link href={`/${locale}/teachers`} className="relative">
             <Button className="w-[137px] md:w-[142px] lg:w-[142px]">
               {t.teachers.view_all_button}
               <ChevronRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

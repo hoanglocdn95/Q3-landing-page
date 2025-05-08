@@ -145,7 +145,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
       {/* Top Bar */}
       <div
         className={cn(
-          'bg-primary h-12 transform text-white transition-all duration-300',
+          'bg-primary z-30 h-12 transform text-white transition-all duration-300',
           isScrolled && 'hidden -translate-y-full',
         )}
       >
@@ -197,7 +197,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
               onMouseLeave={() => setLanguageDropdownOpen(false)}
             >
               <button
-                className="ml-2 flex items-center text-sm focus:outline-none"
+                className="ml-2 flex cursor-pointer items-center text-sm focus:outline-none"
                 onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
                 aria-expanded={languageDropdownOpen}
                 aria-haspopup="true"
@@ -208,7 +208,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
 
               {/* Language Dropdown Menu */}
               <div
-                className={`text-text-primary absolute top-full right-0 z-50 w-40 rounded-md bg-white py-1 shadow-lg transition-opacity duration-150 ${
+                className={`text-text-primary absolute top-full right-0 z-1000 w-40 rounded-md bg-white py-1 shadow-lg transition-opacity duration-150 ${
                   languageDropdownOpen
                     ? 'opacity-100'
                     : 'invisible opacity-0 group-hover:visible group-hover:opacity-100'
@@ -501,7 +501,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
 
                 {/* Language Dropdown Menu */}
                 <div
-                  className={`text-text-primary absolute top-full right-0 z-50 mb-2 w-40 rounded-md bg-white py-1 shadow-lg transition-opacity duration-150 ${languageDropdownMobileOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
+                  className={`text-text-primary absolute top-full right-0 mb-2 w-40 rounded-md bg-white py-1 shadow-lg transition-opacity duration-150 ${languageDropdownMobileOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
                 >
                   {languages.map(language => (
                     <button
