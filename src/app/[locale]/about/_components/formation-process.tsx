@@ -34,18 +34,25 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
           <p className="font-500 text-text-secondary text-14 lg:text-16 mb-6">
             {t.formation_process.description_2}
           </p>
-          {isShowMore && (
-            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
+          <div
+            className={`overflow-hidden transition-all duration-600 ease-in-out ${
+              isShowMore ? 'max-h-[1000px]' : 'max-h-0'
+            }`}
+          >
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-6 md:mb-8">
               {t.formation_process.description_3}
             </p>
-          )}
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-6 md:mb-8">
+              {t.formation_process.description_4}
+            </p>
+          </div>
           <Button
             className="w-[137px] md:w-[142px] lg:w-[142px]"
             onClick={() => setIsShowMore(!isShowMore)}
           >
             {isShowMore ? t.actions.shorten : t.actions.see_more}
             <ChevronDownIcon
-              className={`transition-transform ${isShowMore ? 'rotate-180' : ''}`}
+              className={`transition-all duration-600 ease-in-out ${isShowMore ? 'rotate-180' : 'rotate-0'}`}
             />
           </Button>
         </div>

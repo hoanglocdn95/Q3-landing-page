@@ -10,6 +10,8 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { ELocale } from '@/constants/enum';
+import toast, { Toaster } from 'react-hot-toast';
+
 interface IContactFormSectionProps {
   locale: ELocale;
   className?: string;
@@ -17,7 +19,7 @@ interface IContactFormSectionProps {
 }
 
 const CONTACT_API_URL =
-  'https://script.google.com/macros/s/AKfycby7M0Y8aoOYHgxSdo_iPDuO9eDl5JeERxIT9GQU2iAUkNzhOrVjUkPlQ2oSDJYxwFyY/exec';
+  'https://script.google.com/macros/s/AKfycbwZLcNpffDFdQThmbtkAZAyJPAzhXxfMi_cXQxjLfFJtmOuEIs4GQyZkVa_RJFqGGGc/exec';
 
 const ContactFormSection: React.FC<IContactFormSectionProps> = ({
   locale,
@@ -25,6 +27,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
   isShowBackground = false,
 }) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
+  const [isLoading, setIsLoading] = useState(false);
 
   const purposeOptions =
     locale === 'en'
@@ -58,10 +61,11 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
 
     const { name, email } = formData;
     if (!name || !email) {
-      alert('Vui lòng điền đầy đủ các trường bắt buộc.');
+      toast.error('Vui lòng điền đầy đủ các trường bắt buộc.');
       return;
     }
 
+    setIsLoading(true);
     const payload = {
       ...formData,
       timestamp: new Date().toLocaleString('en-GB', {
@@ -83,7 +87,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
       const result = await res.json();
       const data = JSON.parse(result.message);
       if (data.status === 'ok') {
-        alert('Thông tin của bạn đã được gửi thành công!');
+        toast.success('Thông tin của bạn đã được gửi thành công!');
         setFormData({
           name: '',
           email: '',
@@ -93,16 +97,28 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
           deadline: '',
         });
       } else {
-        alert(data.status);
+        toast.error(data.status);
       }
     } catch (err) {
-      alert('Đã xảy ra lỗi khi gửi thông tin.');
+      toast.error('Đã xảy ra lỗi khi gửi thông tin.');
       console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <section className={cn('overflow-hidden', className)}>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: '#333',
+            color: '#fff',
+          },
+        }}
+      />
       <div className="section-container relative">
         <div className="flex flex-col items-center gap-6 pt-8 md:flex-row md:gap-0 md:py-16">
           <div className="relative flex w-full flex-col gap-8 md:w-[522px]">
@@ -192,6 +208,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                     id="achieveScore"
                     className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
+                    defaultValue={scoreOptions[0]}
                   >
                     {scoreOptions.map((option, index) => (
                       <option key={`score-${index}`} value={option}>
@@ -211,6 +228,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                     id="deadline"
                     className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
+                    defaultValue={timeOptions[0]}
                   >
                     {timeOptions.map((option, index) => (
                       <option key={`time-${index}`} value={option}>
@@ -220,9 +238,26 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   </select>
                 </div>
               </div>
-              <Button type="submit" onClick={handleSubmit}>
-                {t.form.form.submit}
-                <ChevronRight size={16} className="ml-1" />
+              <Button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={isLoading}
+                className={cn(
+                  'relative',
+                  isLoading && 'cursor-not-allowed opacity-70',
+                )}
+              >
+                {isLoading ? (
+                  <div className="flex items-center justify-center">
+                    <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                    {t.form.form.submitting || 'Đang gửi...'}
+                  </div>
+                ) : (
+                  <>
+                    {t.form.form.submit}
+                    <ChevronRight size={16} className="ml-1" />
+                  </>
+                )}
               </Button>
             </form>
             <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2">

@@ -1,23 +1,29 @@
 {
   "actions": {
-    "see_more": "See More",
+    "see_more": "See more",
     "shorten": "Shorten"
   },
   "title": "Introduction",
   "mission": {
-    "description": "At Q3 Language, we believe that every student has the potential to succeed, and our mission is to unlock and nurture that potential. Q3’s mission is to provide a comprehensive PTE learning solution that helps learners not only achieve their target scores but also build confidence and flexible English skills for life and career.",
-    "description_2": "At Q3 Language, we believe that every student has the potential to succeed, and our mission is to unlock and nurture that potential. Q3’s mission is to provide a comprehensive PTE learning solution that helps learners not only achieve their target scores but also build confidence and flexible English skills for life and career.",
-    "introduce": "With Q3 Language",
+    "description": "At Q3 Language, we believe that every student has the potential to succeed and our mission is to discover and develop that potential. Q3s mission is to provide a comprehensive PTE learning solution, helping students not only achieve their score goals but also build confidence and the ability to use English flexibly in life and career.",
+    "description_2": {
+      "title": "Based on the philosophy of '3Qs of Learning' - Quest (Journey of discovery), Query (Deep understanding), and Question (Thinking training), we commit to:",
+      "item_1": "Personalized learning path: Meet the needs and learning speed of each student.",
+      "item_2": "Applying advanced educational technology: Optimize learning experience, increase efficiency in the shortest time.",
+      "item_3": "Create a strong learning community: Where students can share, support and inspire each other."
+    },
+    "description_3": "Q3 Language is not only a place to prepare for the PTE exam, but also a launching pad to help students overcome their limits, expand opportunities to study abroad, work and settle internationally. We constantly innovate and improve, so that each student enters the exam with a ready mindset and succeeds from the first time",
     "mission": "Mission",
-    "values": "Learn Not Just to Pass,\nLearn to Lead!"
+    "values": "Study Not Just for Exams,\nStudy to Lead!"
   },
   "formation_process": {
-    "title": "Formation and Development Process",
-    "description": "Q3 Language was founded in 2024 in Adelaide, Australia, with the goal of becoming a pioneer in PTE (Pearson Test of English) training and preparation.",
-    "description_2": "Starting from small classes, we focused on building a streamlined and effective curriculum tailored to each student's level. Led by a team of experienced and dedicated experts, Q3 Language continuously refines its teaching methods and integrates realistic test simulation technologies, enabling students to become familiar with and confident for the official PTE exam.",
-    "description_3": "Starting from small classes, we focused on building a streamlined and effective curriculum tailored to each student's level. Led by a team of experienced and dedicated experts, Q3 Language continuously refines its teaching methods and integrates realistic test simulation technologies, enabling students to become familiar with and confident for the official PTE exam."
+    "title": "Formation and development process",
+    "description": "Q3 Language was established in 2024 in Adelaide, Australia, with the goal of becoming a pioneer in the field of training and preparation for PTE (Pearson Test of English) certification. ",
+    "description_2": "Starting from small classes, we focus on building a concise and effective curriculum, suitable for each level of students. With the guidance of a team of experienced and dedicated experts, Q3s Language constantly improves teaching methods, integrating real test simulation technology so that students can get acquainted and confident when taking the official PTE exam.",
+    "description_3": "In a short time, Q3s has quickly affirmed the quality of training through the actual results of students. We are proud to be a trusted companion, helping thousands of students Hundreds of students in Vietnam and Australia have achieved their PTE target and opened up new opportunities in study, work and life.",
+    "description_4": "With a solid foundation and a spirit of constant innovation, Q3s Language continues to expand its scope of operations, providing PTE learning solutions that save time, costs and optimize results for students around the world."
   },
   "trainers": {
-    "title": "Teaching Team"
+    "title": "Teacher team"
   }
 }

@@ -7,8 +7,9 @@
       "email": "Email",
       "purpose": "What do you need PTE for?",
       "score": "What PTE score do you need?",
-      "time": "When do you need to achieve this score?",
-      "submit": "Get Consultation Now"
+      "time": "When do you need this score?",
+      "submit": "Get Consultation Now",
+      "submitting": "Submitting..."
     },
     "quick_consult": {
       "title": "Quick Consulting",

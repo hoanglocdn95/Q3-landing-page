@@ -76,21 +76,33 @@ const Mission = ({ locale }: { locale: ELocale }) => {
           <h2 className="lg:text-40 md:text-32 text-24 font-700">
             {t.mission.mission}
           </h2>
-          <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
+          <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-3 md:mt-2 md:mb-4 lg:mt-4">
             {t.mission.description}
           </p>
-          {isShowMore && (
-            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
-              {t.mission.description_2}
+          <div
+            className={`overflow-hidden transition-all duration-600 ease-in-out ${
+              isShowMore ? 'max-h-[1000px]' : 'max-h-0'
+            }`}
+          >
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-3 md:mb-4">
+              {t.mission.description_2.title}
             </p>
-          )}
+            <ul className="font-500 text-14 lg:text-16 text-text-secondary ml-3 list-inside list-disc">
+              <li>{t.mission.description_2.item_1}</li>
+              <li>{t.mission.description_2.item_2}</li>
+              <li>{t.mission.description_2.item_3}</li>
+            </ul>
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
+              {t.mission.description_3}
+            </p>
+          </div>
           <Button
             className="w-[137px] md:w-[155px]"
             onClick={() => setIsShowMore(!isShowMore)}
           >
             {isShowMore ? t.actions.shorten : t.actions.see_more}
             <ChevronDownIcon
-              className={`transition-transform ${isShowMore ? 'rotate-180' : ''}`}
+              className={`transition-all duration-600 ease-in-out ${isShowMore ? 'rotate-180' : 'rotate-0'}`}
             />
           </Button>
         </div>
