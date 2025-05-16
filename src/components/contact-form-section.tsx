@@ -45,9 +45,9 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
     name: '',
     email: '',
     phoneNumber: '',
-    purpose: '',
-    achieveScore: '',
-    deadline: '',
+    purpose: purposeOptions[0],
+    achieveScore: scoreOptions[0],
+    deadline: timeOptions[0],
   });
 
   const handleChange = (
@@ -92,9 +92,9 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
           name: '',
           email: '',
           phoneNumber: '',
-          purpose: '',
-          achieveScore: '',
-          deadline: '',
+          purpose: purposeOptions[0],
+          achieveScore: scoreOptions[0],
+          deadline: timeOptions[0],
         });
       } else {
         toast.error(data.status);
@@ -136,6 +136,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
                   className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                   onChange={handleChange}
                   autoComplete="off"
@@ -153,6 +154,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   <input
                     type="tel"
                     id="phoneNumber"
+                    value={formData.phoneNumber}
                     className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
                     autoComplete="off"
@@ -168,6 +170,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
                     placeholder="you@company.com"
                     className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
@@ -185,6 +188,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                 </label>
                 <select
                   id="purpose"
+                  value={formData.purpose}
                   className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                   onChange={handleChange}
                 >
@@ -206,9 +210,9 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   </label>
                   <select
                     id="achieveScore"
+                    value={formData.achieveScore}
                     className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
-                    defaultValue={scoreOptions[0]}
                   >
                     {scoreOptions.map((option, index) => (
                       <option key={`score-${index}`} value={option}>
@@ -226,9 +230,9 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   </label>
                   <select
                     id="deadline"
+                    value={formData.deadline}
                     className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
-                    defaultValue={timeOptions[0]}
                   >
                     {timeOptions.map((option, index) => (
                       <option key={`time-${index}`} value={option}>
