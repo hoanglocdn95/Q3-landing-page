@@ -31,7 +31,7 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
           <p className="font-500 text-text-secondary text-14 lg:text-16 my-3 md:my-2 lg:my-4">
             {t.formation_process.description}
           </p>
-          <p className="font-500 text-text-secondary text-14 lg:text-16 mb-6">
+          <p className="font-500 text-text-secondary text-14 lg:text-16 mb-4">
             {t.formation_process.description_2}
           </p>
           <div
@@ -39,10 +39,10 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
               isShowMore ? 'max-h-[1000px]' : 'max-h-0'
             }`}
           >
-            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-6 md:mb-8">
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-6 md:mb-4">
               {t.formation_process.description_3}
             </p>
-            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-6 md:mb-8">
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mb-6 md:mb-4">
               {t.formation_process.description_4}
             </p>
           </div>

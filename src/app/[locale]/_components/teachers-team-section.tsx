@@ -116,7 +116,7 @@ export default function TeachersTeamSection({ locale }: { locale: ELocale }) {
 
       {/* Modal hiển thị chi tiết trainer */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="font-space-grotesk max-w-[100svw] rounded-none border-0 p-0 sm:max-w-[794px] md:max-h-[462px] [&_button]:ring-0 [&_button]:focus:ring-0 [&_button]:focus:outline-none">
+        <DialogContent className="font-space-grotesk shadow-outline max-w-[100svw] overflow-hidden rounded-none border-0 p-0 sm:max-w-[794px] md:max-h-[462px] [&_button]:ring-0 [&_button]:focus:ring-0 [&_button]:focus:outline-none">
           <div className="sr-only">
             <DialogTitle />
           </div>

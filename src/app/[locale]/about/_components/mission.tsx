@@ -20,7 +20,7 @@ const ImageGallery = ({ className }: { className?: string }) => {
     {
       src: '/images/about/mission-image-2.png',
       alt: 'image 2',
-      containerClassName: 'basis-[calc(50%-8px)] flex justify-start',
+      containerClassName: 'basis-[calc(50%-8px)] flex items-end justify-start',
       className: 'w-[86px] h-[144px] md:w-[129px] md:h-[192px] xl:h-60 xl:w-40',
     },
     {
@@ -92,7 +92,7 @@ const Mission = ({ locale }: { locale: ELocale }) => {
               <li>{t.mission.description_2.item_2}</li>
               <li>{t.mission.description_2.item_3}</li>
             </ul>
-            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-8 lg:mt-4">
+            <p className="font-500 text-14 lg:text-16 text-text-secondary mt-3 mb-6 md:mt-2 md:mb-4 lg:mt-4">
               {t.mission.description_3}
             </p>
           </div>
