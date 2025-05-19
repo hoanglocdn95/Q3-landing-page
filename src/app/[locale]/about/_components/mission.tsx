@@ -46,7 +46,7 @@ const ImageGallery = ({ className }: { className?: string }) => {
   ];
 
   return (
-    <div className={cn('mx-auto flex items-center justify-center', className)}>
+    <div className={cn('mx-auto flex items-start justify-center', className)}>
       <div className="flex flex-wrap justify-center gap-2 lg:gap-4">
         {images.map((image, index) => (
           <div key={index} className={image.containerClassName}>
@@ -70,7 +70,7 @@ const Mission = ({ locale }: { locale: ELocale }) => {
   const [isShowMore, setIsShowMore] = useState(false);
 
   return (
-    <section className="bg-background-cream relative mx-auto overflow-hidden py-10 md:py-15 lg:py-16">
+    <section className="bg-background-cream relative mx-auto overflow-hidden py-10 transition-all duration-600 ease-in-out md:py-15 lg:py-16">
       <div className="section-container relative z-10 flex flex-col flex-wrap gap-6 md:flex-row md:gap-0 lg:gap-8">
         <div className="flex-1">
           <h2 className="lg:text-40 md:text-32 text-24 font-700">

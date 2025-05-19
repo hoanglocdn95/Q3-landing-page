@@ -12,9 +12,9 @@ const FormationProcess = ({ locale }: { locale: ELocale }) => {
   const t = locale === 'en' ? enTranslations : viTranslations;
   const [isShowMore, setIsShowMore] = useState(false);
   return (
-    <section className="relative pt-10 pb-[138px] md:py-15 lg:py-16">
+    <section className="relative pt-10 pb-[138px] transition-all duration-600 ease-in-out md:py-15 lg:py-16">
       <div className="section-container flex flex-col justify-between gap-4 md:flex-row md:gap-10 lg:gap-[105px]">
-        <div className="relative order-2 aspect-[503/600] w-full md:order-1 md:w-[41%] md:max-w-[503px]">
+        <div className="relative order-2 aspect-[503/600] w-full md:order-1 md:max-h-[462px] md:w-[41%] md:max-w-[503px] lg:max-h-[586px]">
           <Image
             src="/images/about/formation-process.png"
             alt="formation-process"
