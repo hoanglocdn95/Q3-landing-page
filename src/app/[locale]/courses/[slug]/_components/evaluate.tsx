@@ -19,7 +19,7 @@ const Evaluate = ({ evaluate, locale }: IEvaluateProps) => {
         <h2 className="text-24 lg:text-32 font-600 text-white">
           {t.evaluate.student_feedback}
         </h2>
-        <EvaluateCarousel evaluate={evaluate} />
+        <EvaluateCarousel studentEvaluate={evaluate} locale={locale} />
       </div>
     </SectionContainer>
   );

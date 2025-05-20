@@ -1,12 +1,18 @@
 export const courses = [
   {
     id: '1',
-    title: 'Foundation Achievers 1',
+    title: {
+      vi: 'Khóa PTE Cơ Bản (Nền Tảng 1)',
+      en: 'PTE Foundation Achievers 1',
+    },
     slug: 'foundation-achievers-1',
     previewSrc: '/images/courses/foundation-achievers-1.png',
     previewAlt: 'Foundation Achievers 1',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
+
     comingSoon: false,
     image: {
       desktop: {
@@ -473,12 +479,17 @@ export const courses = [
   },
   {
     id: '2',
-    title: 'Foundation Achievers 2',
+    title: {
+      vi: 'Khóa PTE Nâng Cao (Nền Tảng 2)',
+      en: 'PTE Advanced Achievers 2',
+    },
     slug: 'foundation-achievers-2',
     previewSrc: '/images/courses/foundation-achievers-2.png',
     previewAlt: 'Foundation Achievers 2',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: true,
     image: {
       desktop: {
@@ -946,12 +957,17 @@ export const courses = [
   },
   {
     id: '3',
-    title: 'PTE Achievers 30-36-42',
+    title: {
+      vi: 'Khóa PTE 30-36-42',
+      en: 'PTE Achievers 30-36-42',
+    },
     slug: 'pte-achievers-30-36-42',
     previewSrc: '/images/courses/pte-achievers-30-36-42.png',
     previewAlt: 'PTE Achievers 30-36-42',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: false,
     image: {
       desktop: {
@@ -1429,12 +1445,17 @@ export const courses = [
   },
   {
     id: '4',
-    title: 'PTE Achievers 36-42-50',
+    title: {
+      vi: 'Khóa PTE 36-42-50',
+      en: 'PTE Achievers 36-42-50',
+    },
     slug: 'pte-achievers-36-42-50',
     previewSrc: '/images/courses/pte-achievers-36-42-50.png',
     previewAlt: 'PTE Achievers 36-42-50',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: false,
     image: {
       desktop: {
@@ -1907,8 +1928,10 @@ export const courses = [
     slug: 'pte-achievers-50-58',
     previewSrc: '/images/courses/pte-achievers-50-58.png',
     previewAlt: 'PTE Achievers 50-58',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: false,
     image: {
       desktop: {
@@ -2376,12 +2399,17 @@ export const courses = [
   },
   {
     id: '6',
-    title: 'PTE Achievers 65-73-79',
+    title: {
+      vi: 'Khóa PTE 65-73-79',
+      en: 'PTE Achievers 65-73-79',
+    },
     slug: 'pte-achievers-65-73-79',
     previewSrc: '/images/courses/pte-achievers-65-73-79.png',
     previewAlt: 'PTE Achievers 65-73-79',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: true,
     image: {
       desktop: {
@@ -2849,12 +2877,17 @@ export const courses = [
   },
   {
     id: '7',
-    title: 'PTE 1 kèm 1',
+    title: {
+      vi: 'Khóa PTE 1 kèm 1',
+      en: 'PTE 1 on 1',
+    },
     slug: 'pte-1-kem-1',
     previewSrc: '/images/courses/pte-1-kem-1.png',
     previewAlt: 'PTE 1 kèm 1',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: false,
     image: {
       desktop: {
@@ -3322,12 +3355,17 @@ export const courses = [
   },
   {
     id: '8',
-    title: 'PTE Cấp Tốc',
+    title: {
+      vi: 'Khóa PTE Cấp Tốc',
+      en: 'PTE Fast Track',
+    },
     slug: 'pte-cap-toc',
     previewSrc: '/images/courses/pte-cap-toc.png',
     previewAlt: 'PTE Cấp Tốc',
-    shortDescription:
-      'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading jjdajdjaldaldkasdkadjkasdskajd.',
+    shortDescription: {
+      vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
+      en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
+    },
     comingSoon: false,
     image: {
       desktop: {

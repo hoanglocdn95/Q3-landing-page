@@ -1,81 +1,13 @@
 import React from 'react';
 import EvaluateCarousel from '@/components/feature/carousel/evaluate-carousel';
-import type { IEvaluate } from '@/types/course';
 import Image from 'next/image';
 import viTranslations from '@/locales/vi/home.json';
 import enTranslations from '@/locales/en/home.json';
 import { ELocale } from '@/constants/enum';
+import { studentEvaluate } from '@/data/student-evaluate';
 
 const Evaluate = ({ locale }: { locale: ELocale }) => {
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
-
-  const evaluate: IEvaluate[] = [
-    {
-      id: '1',
-      author: {
-        name: 'Herman Miller',
-        position: t.evaluate.position.student,
-        image: {
-          src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-          alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-        },
-      },
-      comment: 'I love this course!',
-      rating: 1,
-    },
-    {
-      id: '2',
-      author: {
-        name: 'Herman Miller',
-        position: t.evaluate.position.student,
-        image: {
-          src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-          alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-        },
-      },
-      comment: 'I love this course!',
-      rating: 5,
-    },
-    {
-      id: '3',
-      author: {
-        name: 'Herman Miller',
-        position: t.evaluate.position.student,
-        image: {
-          src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-          alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-        },
-      },
-      comment: 'I love this course!',
-      rating: 5,
-    },
-    {
-      id: '4',
-      author: {
-        name: 'Herman Miller',
-        position: t.evaluate.position.student,
-        image: {
-          src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-          alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-        },
-      },
-      comment: 'I love this course!',
-      rating: 2,
-    },
-    {
-      id: '5',
-      author: {
-        name: 'Herman Miller',
-        position: t.evaluate.position.student,
-        image: {
-          src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-          alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-        },
-      },
-      comment: 'I love this course!',
-      rating: 5,
-    },
-  ];
 
   return (
     <section className="relative bg-[#FF8D0A] py-10 sm:py-15 lg:py-18">
@@ -97,7 +29,7 @@ const Evaluate = ({ locale }: { locale: ELocale }) => {
           </p>
         </div>
         <div className="max-w-[658px]">
-          <EvaluateCarousel evaluate={evaluate} />
+          <EvaluateCarousel studentEvaluate={studentEvaluate} locale={locale} />
         </div>
       </div>
     </section>

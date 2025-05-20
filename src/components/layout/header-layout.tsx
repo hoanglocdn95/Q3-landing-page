@@ -15,11 +15,11 @@ import {
   FacebookDarkIcon,
   FacebookLightIcon,
   InstagramDarkIcon,
-  InstagramLightIcon,
+  // InstagramLightIcon,
   MailLightIcon,
   PhoneLightIcon,
   XDarkIcon,
-  XLightIcon,
+  // XLightIcon,
   YoutubeDarkIcon,
   YoutubeLightIcon,
 } from '../icons';
@@ -121,7 +121,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
     //     { name: t.knowledge.news, href: '#' },
     //   ],
     // },
-    { name: t.nav.policy, href: '#', hasDropdown: false },
+    { name: t.nav.policy, href: `/${locale}/policy/`, hasDropdown: false },
     { name: t.nav.contact, href: `/${locale}/contact/`, hasDropdown: false },
   ];
 
@@ -176,18 +176,30 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
             </div>
           </div>
           <div className="hidden h-full items-center gap-3 md:flex">
-            <Link href="#" aria-label="Youtube">
+            <Link
+              href="https://www.youtube.com/@Q3Language"
+              aria-label="Youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <YoutubeLightIcon />
             </Link>
-            <Link href="#" aria-label="Instagram">
+            {/* TODO: Instagram will be updated soon */}
+            {/* <Link href="#" aria-label="Instagram">
               <InstagramLightIcon />
-            </Link>
-            <Link href="#" aria-label="Facebook">
+            </Link> */}
+            <Link
+              href="https://www.facebook.com/q3language"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FacebookLightIcon />
             </Link>
-            <Link href="#" aria-label="Twitter">
+            {/* TODO: Twitter will be updated soon */}
+            {/* <Link href="#" aria-label="Twitter">
               <XLightIcon />
-            </Link>
+            </Link> */}
 
             {/* Language Dropdown */}
             <div
@@ -340,7 +352,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
 
           <div className="flex items-center gap-4">
             <Button asChild>
-              <Link href="#">
+              <Link href={`/${locale}/contact/`} className="uppercase">
                 {t.cta}
                 <ChevronRightIcon />
               </Link>
@@ -383,7 +395,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
           </div>
           <Link
             href="#"
-            className="bg-primary hover:bg-primary-hover flex items-center rounded-full px-4 py-2 text-sm font-medium text-white transition-colors"
+            className="bg-primary hover:bg-primary-hover flex items-center rounded-full px-4 py-2 text-sm font-medium text-white uppercase transition-colors"
           >
             {t.cta}
             <ChevronRight size={16} className="ml-1" />

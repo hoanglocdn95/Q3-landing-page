@@ -4,11 +4,11 @@ import viTranslations from '@/locales/vi/footer.json';
 import enTranslations from '@/locales/en/footer.json';
 import {
   FacebookDarkIcon,
-  InstagramDarkIcon,
+  // InstagramDarkIcon,
   MailIcon,
   MapPinIcon,
   PhoneIcon,
-  XDarkIcon,
+  // XDarkIcon,
   YoutubeDarkIcon,
 } from '../icons';
 
@@ -123,33 +123,33 @@ export default function Footer({ locale = 'vi' }: { locale?: string }) {
           </div>
           <div className="mt-4 flex space-x-3 md:mt-0">
             <Link
-              href="#"
+              href="https://www.youtube.com/@Q3Language"
               aria-label="Youtube"
               className="text-dark hover:text-primary"
             >
               <YoutubeDarkIcon />
             </Link>
-            <Link
+            {/* <Link
               href="#"
               aria-label="Instagram"
               className="text-dark hover:text-primary"
             >
               <InstagramDarkIcon />
-            </Link>
+            </Link> */}
             <Link
-              href="#"
+              href="https://www.facebook.com/q3language"
               aria-label="Facebook"
               className="text-dark hover:text-primary"
             >
               <FacebookDarkIcon />
             </Link>
-            <Link
+            {/* <Link
               href="#"
               aria-label="Twitter"
               className="text-dark hover:text-primary"
             >
               <XDarkIcon />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

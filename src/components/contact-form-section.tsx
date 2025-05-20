@@ -34,7 +34,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
       ? ['Select', 'Study Abroad', 'Immigration', 'Work', 'Other']
       : ['Chọn', 'Du học', 'Định cư', 'Làm việc', 'Khác'];
 
-  const scoreOptions = ['50', '65', '70', '79', '79+'];
+  const scoreOptions = ['30', '36', '42', '50', '58', '65', '73', '79'];
 
   const timeOptions =
     locale === 'en'
@@ -122,7 +122,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
       <div className="section-container relative">
         <div className="flex flex-col items-center gap-6 pt-8 md:flex-row md:gap-0 md:py-16">
           <div className="relative flex w-full flex-col gap-8 md:w-[522px]">
-            <h2 className="text-text-primary sm:text-32 text-24 text-center font-bold sm:text-left md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
+            <h2 className="text-text-primary sm:text-32 text-24 text-center font-bold uppercase sm:text-left md:text-3xl lg:mb-6 lg:text-[40px] lg:leading-[72px] lg:whitespace-nowrap">
               {t.form.title}
             </h2>
             <form className="relative z-10 flex flex-col gap-6 lg:mb-8">
@@ -131,7 +131,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                   htmlFor="name"
                   className="mb-1 block text-sm font-medium text-gray-700"
                 >
-                  {t.form.form.name}
+                  {t.form.form.name}(*)
                 </label>
                 <input
                   type="text"
@@ -149,7 +149,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                     htmlFor="phoneNumber"
                     className="mb-1 block text-sm font-medium text-gray-700"
                   >
-                    {t.form.form.phone}
+                    {t.form.form.phone}(*)
                   </label>
                   <input
                     type="tel"
@@ -165,7 +165,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                     htmlFor="email"
                     className="mb-1 block text-sm font-medium text-gray-700"
                   >
-                    {t.form.form.email}
+                    {t.form.form.email}(*)
                   </label>
                   <input
                     type="email"
@@ -247,7 +247,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                 onClick={handleSubmit}
                 disabled={isLoading}
                 className={cn(
-                  'relative',
+                  'relative uppercase',
                   isLoading && 'cursor-not-allowed opacity-70',
                 )}
               >

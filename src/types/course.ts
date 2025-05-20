@@ -32,14 +32,20 @@ export interface IEvaluate {
   id: string;
   author: {
     name: string;
-    position: string;
     image: {
       src: string;
       alt?: string;
     };
   };
-  comment: string;
   rating: number;
+  vi: {
+    position: string;
+    comment: string;
+  };
+  en: {
+    position: string;
+    comment: string;
+  };
 }
 
 export interface IFAQ {

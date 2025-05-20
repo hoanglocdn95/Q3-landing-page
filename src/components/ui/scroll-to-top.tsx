@@ -39,7 +39,7 @@ export function ScrollToTop({ className, threshold = 300 }: ScrollToTopProps) {
       variant="icon"
       size="icon"
       className={cn(
-        'bg-primary hover:bg-primary-hover invisible fixed right-6 bottom-6 z-50 translate-y-4 rounded-full text-white opacity-0 shadow-lg transition-all duration-300 hover:scale-110',
+        'bg-primary hover:bg-primary-hover invisible fixed right-3 bottom-3 z-50 translate-y-4 rounded-full text-white opacity-0 shadow-lg transition-all duration-300 hover:scale-110',
         isVisible && 'visible translate-y-0 opacity-100',
         className,
       )}

@@ -3,13 +3,16 @@ import { IEvaluate } from '@/types/course';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
 import React from 'react';
+import { ELocale } from '@/constants/enum';
 
 interface IProps {
   evaluate: IEvaluate;
   className?: string;
+  locale: ELocale;
 }
 
-const EvaluateCard = ({ evaluate, className }: IProps) => {
+const EvaluateCard = ({ evaluate, className, locale = ELocale.VI }: IProps) => {
+  console.log(' EvaluateCard ~ evaluate:', evaluate);
   return (
     <div className={cn('bg-text-gray-white rounded-12 w-full', className)}>
       <div className="flex flex-col max-md:p-4 md:flex-row md:items-center">
@@ -37,15 +40,18 @@ const EvaluateCard = ({ evaluate, className }: IProps) => {
               />
             ))}
           </div>
-          <p className="text-text-secondary text-14 font-500 md:text-16 mb-4 md:mb-7 lg:mb-10">
-            {evaluate.comment}
-          </p>
+
+          <div className="mb-4 line-clamp-8 max-h-[192px] md:mb-6 lg:mb-7">
+            <p className="text-text-secondary text-14 font-500 md:text-16">
+              {evaluate[locale].comment}
+            </p>
+          </div>
           <div>
             <h4 className="font-700 text-14 md:text-17">
               {evaluate.author.name}
             </h4>
             <p className="text-text-secondary text-14 md:text-16">
-              {evaluate.author.position}
+              {evaluate[locale].position}
             </p>
           </div>
         </div>

@@ -8,12 +8,20 @@ export default function CourseGrid({ locale }: { locale: ELocale }) {
       <div className="flex w-max grid-cols-2 space-x-4 sm:grid sm:w-auto sm:gap-5 sm:space-x-0 md:grid-cols-3 lg:grid-cols-4">
         {courses.map((course, index) => (
           <CourseCard
-            locale={locale}
             key={index}
-            title={course.title}
+            locale={locale}
+            title={
+              typeof course.title === 'string'
+                ? course.title
+                : course.title[locale]
+            }
             imageSrc={course.previewSrc}
             imageAlt={course.previewAlt}
-            description={course.shortDescription}
+            description={
+              typeof course.shortDescription === 'string'
+                ? course.shortDescription
+                : course.shortDescription[locale]
+            }
             comingSoon={course.comingSoon}
             slug={course.slug}
           />
