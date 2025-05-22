@@ -69,11 +69,13 @@ export default async function Page({
 
   const courseItem = courses.find(course => course.slug === slug);
 
-  const courseDetail = courseItem?.[
-    locale as keyof typeof courseItem
-  ] as ICourse;
+  if (!courseItem) {
+    notFound();
+  }
 
-  if (!courseItem || !courseDetail) {
+  const courseDetail = courseItem[locale];
+
+  if (!courseDetail) {
     notFound();
   }
 
@@ -110,7 +112,7 @@ export default async function Page({
           className="h-auto w-full md:hidden"
         />
       </section>
-      <Main locale={locale} courseDetail={courseDetail} />
+      <Main locale={locale} courseDetail={courseDetail as unknown as ICourse} />
     </div>
   );
 }

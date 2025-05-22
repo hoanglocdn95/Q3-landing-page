@@ -19,7 +19,7 @@ interface IContactFormSectionProps {
 }
 
 const CONTACT_API_URL =
-  'https://script.google.com/macros/s/AKfycbwZLcNpffDFdQThmbtkAZAyJPAzhXxfMi_cXQxjLfFJtmOuEIs4GQyZkVa_RJFqGGGc/exec';
+  'https://script.google.com/macros/s/AKfycbymZntb0Elb8FZoCdND8cBwTJq3TqOB4bFAkhjNEpe9lPMPrDuOILRmZfzWyy5jjVjQ/exec';
 
 const ContactFormSection: React.FC<IContactFormSectionProps> = ({
   locale,
@@ -44,6 +44,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    zalo: '',
     phoneNumber: '',
     purpose: purposeOptions[0],
     achieveScore: scoreOptions[0],
@@ -91,6 +92,7 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
         setFormData({
           name: '',
           email: '',
+          zalo: '',
           phoneNumber: '',
           purpose: purposeOptions[0],
           achieveScore: scoreOptions[0],
@@ -126,21 +128,40 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
               {t.form.title}
             </h2>
             <form className="relative z-10 flex flex-col gap-6 lg:mb-8">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-1 block text-sm font-medium text-gray-700"
-                >
-                  {t.form.form.name}(*)
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
-                  onChange={handleChange}
-                  autoComplete="off"
-                />
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="mb-1 block text-sm font-medium text-gray-700"
+                  >
+                    {t.form.form.name}(*)
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={formData.name}
+                    className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
+                    onChange={handleChange}
+                    autoComplete="off"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-1 block text-sm font-medium text-gray-700"
+                  >
+                    {t.form.form.email}(*)
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    placeholder="you@company.com"
+                    className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
+                    onChange={handleChange}
+                    autoComplete="off"
+                  />
+                </div>
               </div>
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -162,16 +183,15 @@ const ContactFormSection: React.FC<IContactFormSectionProps> = ({
                 </div>
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="zalo"
                     className="mb-1 block text-sm font-medium text-gray-700"
                   >
-                    {t.form.form.email}(*)
+                    {t.form.form.zalo}(*)
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    placeholder="you@company.com"
+                    type="tel"
+                    id="zalo"
+                    value={formData.zalo}
                     className="w-full rounded-md border border-gray-200 px-3 py-2 shadow-(--shadow-input)"
                     onChange={handleChange}
                     autoComplete="off"

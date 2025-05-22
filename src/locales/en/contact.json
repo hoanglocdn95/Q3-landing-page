@@ -5,6 +5,7 @@
       "name": "Full Name",
       "phone": "Phone Number",
       "email": "Email",
+      "zalo": "Zalo Phone Number",
       "purpose": "What do you need PTE for?",
       "score": "What PTE score do you need?",
       "time": "When do you need this score?",
