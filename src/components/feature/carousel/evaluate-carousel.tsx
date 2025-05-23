@@ -10,7 +10,6 @@ interface IProps {
 }
 
 const EvaluateCarousel = ({ studentEvaluate, locale = ELocale.VI }: IProps) => {
-  console.log(' EvaluateCarousel ~ studentEvaluate:', studentEvaluate);
   return (
     <Carousel
       opts={{

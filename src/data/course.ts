@@ -1,3 +1,5 @@
+import { studentEvaluate } from './student-evaluate';
+
 export const courses = [
   {
     id: '1',
@@ -146,73 +148,8 @@ export const courses = [
             'Đến với Q3, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -368,73 +305,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -624,73 +496,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -846,73 +653,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -1103,73 +845,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -1334,73 +1011,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -1591,73 +1203,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -1813,73 +1360,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -2066,73 +1548,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -2288,73 +1705,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -2544,73 +1896,7 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
       faq: [
         {
           id: '1',
@@ -2766,73 +2052,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -3022,73 +2243,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -3244,73 +2400,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -3500,73 +2591,8 @@ export const courses = [
             'Đến với Q3s, bạn sẽ trở thành bậc thầy giải đề, sẵn sàng đối mặt với mọi thử thách PTE!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',
@@ -3722,73 +2748,8 @@ export const courses = [
             'At Q3, you’ll become an exam expert, ready to conquer every PTE challenge!',
         },
       ],
-      evaluate: [
-        {
-          id: '1',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 1,
-        },
-        {
-          id: '2',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '3',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-        {
-          id: '4',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 2,
-        },
-        {
-          id: '5',
-          author: {
-            name: 'Herman Miller',
-            position: 'Student',
-            image: {
-              src: 'https://statictuoitre.mediacdn.vn/thumb_w/640/2017/7-1512755474943.jpg',
-              alt: 'I would definitely recommend Medlink Students! They offer a very professional service and make the application process very quick and easy.',
-            },
-          },
-          comment: 'I love this course!',
-          rating: 5,
-        },
-      ],
+      evaluate: studentEvaluate,
+
       faq: [
         {
           id: '1',

@@ -85,7 +85,6 @@ export default function Main({
   // Nếu content chưa sẵn sàng, hiển thị loading
 
   // Hiển thị nội dung chính khi đã sẵn sàng
-  console.log(' courseDetail.evaluate:', courseDetail.evaluate);
   return (
     <div className="relative pt-10 md:pt-8 lg:pt-12">
       {!contentReady && (
