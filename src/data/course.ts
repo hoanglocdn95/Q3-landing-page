@@ -15,7 +15,7 @@ export const courses = [
       en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     },
 
-    comingSoon: false,
+    comingSoon: true,
     image: {
       desktop: {
         src: '/images/courses/course-banner-desktop.png',
@@ -710,7 +710,7 @@ export const courses = [
       vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
       en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     },
-    comingSoon: false,
+    comingSoon: true,
     image: {
       desktop: {
         src: '/images/courses/course-banner-desktop.png',
@@ -1068,7 +1068,7 @@ export const courses = [
       vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
       en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     },
-    comingSoon: false,
+    comingSoon: true,
     image: {
       desktop: {
         src: '/images/courses/course-banner-desktop.png',
@@ -1414,7 +1414,7 @@ export const courses = [
       vi: 'Chương trình toàn diện này bao gồm tất cả các khía cạnh của bài kiểm tra, bao gồm nói, viết, nghe và đọc.',
       en: 'This comprehensive program covers all aspects of the test, including speaking, writing, listening, and reading.',
     },
-    comingSoon: false,
+    comingSoon: true,
     image: {
       desktop: {
         src: '/images/courses/course-banner-desktop.png',
