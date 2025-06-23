@@ -136,7 +136,9 @@ function ComingSoonPopup({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="text-center">
-        <DialogTitle>{featureName}</DialogTitle>
+        <DialogTitle>
+          Tính năng {featureName} sẽ cập nhật trong thời gian sớm nhất
+        </DialogTitle>
         <div className="mt-4 flex justify-center">
           <Image
             src="/images/coming-soon.png"

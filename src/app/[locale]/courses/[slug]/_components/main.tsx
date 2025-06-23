@@ -99,11 +99,7 @@ export default function Main({
           ref={menuRef}
           className="hidden flex-shrink-0 md:block md:w-[225px] lg:w-[258px]"
         >
-          <OverviewMenu
-            courseName={courseDetail.name}
-            className="sticky top-0"
-            locale={locale}
-          />
+          <OverviewMenu className="sticky top-0" locale={locale} />
         </div>
       </div>
       <div

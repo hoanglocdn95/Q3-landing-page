@@ -12,7 +12,6 @@ interface IProps {
 }
 
 const EvaluateCard = ({ evaluate, className, locale = ELocale.VI }: IProps) => {
-  console.log(' EvaluateCard ~ evaluate:', evaluate);
   return (
     <div className={cn('bg-text-gray-white rounded-12 w-full', className)}>
       <div className="flex flex-col max-md:p-4 md:flex-row md:items-center">

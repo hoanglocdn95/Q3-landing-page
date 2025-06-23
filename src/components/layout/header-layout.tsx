@@ -6,8 +6,11 @@ import { ChevronRight, Menu, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import viTranslations from '@/locales/vi/header.json';
 import enTranslations from '@/locales/en/header.json';
-import { redirect } from 'next/navigation';
+import home_viTranslations from '@/locales/vi/home.json';
+import home_enTranslations from '@/locales/en/home.json';
+import { redirect, useRouter } from 'next/navigation';
 import { cn } from '@/utils/cn';
+import { ELocale } from '@/constants/enum';
 import { Button } from '../ui/button';
 import {
   ChevronDownIcon,
@@ -23,15 +26,21 @@ import {
   YoutubeDarkIcon,
   YoutubeLightIcon,
 } from '../icons';
+import { ComingSoonPopup } from '@/components/ui/dialog';
 
 export default function Header({ locale = 'vi' }: { locale?: string }) {
-  const t = locale === 'en' ? enTranslations : viTranslations;
+  const t = locale === ELocale.EN ? enTranslations : viTranslations;
+  const t_home =
+    locale === ELocale.EN ? home_enTranslations : home_viTranslations;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const [languageDropdownMobileOpen, setLanguageDropdownMobileOpen] =
     useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [titleCourse, setTitleCourse] = useState<string>('');
+  const router = useRouter();
 
   // For mobile view only
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<
@@ -85,29 +94,43 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
         {
           name: t.courses.foundation_1,
           href: `/${locale}/courses/foundation-achievers-1`,
+          comingSoon: true,
         },
         {
           name: t.courses.foundation_2,
           href: `/${locale}/courses/foundation-achievers-2`,
+          comingSoon: true,
         },
         {
           name: t.courses.pte_30_36_42,
           href: `/${locale}/courses/pte-achievers-30-36-42`,
+          comingSoon: true,
         },
         {
           name: t.courses.pte_36_42_50,
           href: `/${locale}/courses/pte-achievers-36-42-50`,
+          comingSoon: true,
         },
         {
           name: t.courses.pte_50_58,
           href: `/${locale}/courses/pte-achievers-50-58`,
+          comingSoon: true,
         },
         {
           name: t.courses.pte_65_73_79,
           href: `/${locale}/courses/pte-achievers-65-73-79`,
+          comingSoon: true,
         },
-        { name: t.courses.pte_1_1, href: `/${locale}/courses/pte-1-kem-1` },
-        { name: t.courses.pte_fast, href: `/${locale}/courses/pte-cap-toc` },
+        {
+          name: t.courses.pte_1_1,
+          href: `/${locale}/courses/pte-1-kem-1`,
+          comingSoon: false,
+        },
+        {
+          name: t.courses.pte_fast,
+          href: `/${locale}/courses/pte-cap-toc`,
+          comingSoon: false,
+        },
       ],
     },
     // TODO: Knowledge dropdown is unavailable for now
@@ -137,6 +160,19 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
       const newPathname = pathname.replace(/\/(en|vi)\//, `/${language}/`);
 
       redirect(newPathname);
+    }
+  };
+
+  const handleSelectCourse = (
+    isComingSoon: boolean,
+    href: string,
+    title: string,
+  ) => {
+    if (isComingSoon) {
+      setTitleCourse(title);
+      setOpen(true);
+    } else {
+      router.push(href);
     }
   };
 
@@ -328,13 +364,19 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                       }`}
                     >
                       {item.dropdownItems?.map(dropdownItem => (
-                        <Link
+                        <div
                           key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="hover:text-primary block px-4 py-2 text-sm font-semibold text-[#111111] hover:bg-gray-100"
+                          className={`hover:text-primary block cursor-pointer px-4 py-2 text-sm font-semibold text-[#111111] hover:bg-gray-100`}
+                          onClick={() =>
+                            handleSelectCourse(
+                              dropdownItem.comingSoon,
+                              dropdownItem.href,
+                              dropdownItem.name,
+                            )
+                          }
                         >
                           {dropdownItem.name}
-                        </Link>
+                        </div>
                       ))}
                     </div>
                   </>
@@ -436,20 +478,26 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
                         activeMobileDropdown === item.name
-                          ? 'max-h-60 opacity-100'
+                          ? 'max-h-64 opacity-100'
                           : 'max-h-0 opacity-0'
                       }`}
                     >
                       <div className="flex flex-col gap-2 pl-4">
                         {item.dropdownItems?.map(dropdownItem => (
-                          <Link
+                          <div
                             key={dropdownItem.name}
-                            href={dropdownItem.href}
-                            className="hover:text-primary block font-medium text-[#111111]"
-                            onClick={() => setMobileMenuOpen(false)}
+                            className={`cursor-point hover:text-primary block font-medium text-[#111111]`}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              handleSelectCourse(
+                                dropdownItem.comingSoon,
+                                dropdownItem.href,
+                                dropdownItem.name,
+                              );
+                            }}
                           >
                             {dropdownItem.name}
-                          </Link>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -536,6 +584,12 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
           </div>
         </nav>
       </div>
+
+      <ComingSoonPopup
+        featureName={`${titleCourse}${t_home.coming_soon_popup.title}`}
+        open={open}
+        onOpenChange={setOpen}
+      />
     </>
   );
 }

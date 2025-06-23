@@ -21,6 +21,9 @@
   "course_card": {
     "coming_soon": "Sắp Ra Mắt"
   },
+  "coming_soon_popup": {
+    "title": " sắp ra mắt!!!"
+  },
   "evaluate": {
     "title": "Cảm nghĩ học viên",
     "description": "Xem một số học viên của chúng tôi nói gì về sự hỗ trợ tuyệt vời và dịch vụ xuất sắc mà chúng tôi cung cấp.",

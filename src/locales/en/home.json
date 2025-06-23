@@ -21,6 +21,9 @@
   "course_card": {
     "coming_soon": "Coming Soon"
   },
+  "coming_soon_popup": {
+    "title": " is coming soon!!!"
+  },
   "evaluate": {
     "title": "Student Feedback",
     "description": "See what some of our students say about the amazing support and excellent service we provide.",

@@ -10,11 +10,10 @@ import { ELocale } from '@/constants/enum';
 
 interface IProps {
   className?: string;
-  courseName: string;
   locale: ELocale;
 }
 
-const OverviewMenu = ({ className, courseName, locale }: IProps) => {
+const OverviewMenu = ({ className, locale }: IProps) => {
   const [activeSection, setActiveSection] = useState('course-overview');
   const t = locale === ELocale.EN ? enTranslations : viTranslations;
   // Lưu trữ vị trí cuộn trước đó để xác định hướng cuộn
@@ -197,7 +196,7 @@ const OverviewMenu = ({ className, courseName, locale }: IProps) => {
       id: 'course-roadmap',
     },
     {
-      title: `${t.menu.course_features} ${courseName}`,
+      title: `${t.menu.course_features}`,
       id: 'course-features',
     },
     {

@@ -4,10 +4,10 @@
   },
   "menu": {
     "overview": "Overview",
-    "reasons_to_join": "You should join this course if you:",
-    "study_details": "Flexible Study Time",
-    "course_roadmap": "Learning Path",
-    "course_features": "Course Highlights",
+    "reasons_to_join": "You should join this course if you",
+    "study_details": "Flexible Study Schedule",
+    "course_roadmap": "Study Roadmap",
+    "course_features": "Key Features Of The Course",
     "student_feedback": "Student Feedback",
     "faq": "Frequently Asked Questions"
   },
@@ -15,18 +15,18 @@
     "overview": "Overview",
     "reasons_to_join": "You should join this course if you",
     "study_details": {
-      "flexible_study_time": "Flexible Study Time",
+      "flexible_study_time": "Flexible Study Schedule:",
       "total_hours": "Course Duration:",
-      "hours_per_session": "Hours per Session:",
-      "sessions": "Number of Sessions:",
+      "hours_per_session": "Total Study Hours:",
+      "sessions": "Session Length:",
       "schedule": "Schedule:"
     }
   },
   "course_roadmap": {
-    "learning_path": "Learning Path"
+    "learning_path": "Study Roadmap"
   },
   "course_features": {
-    "highlighted_features": "Course Highlights"
+    "highlighted_features": "Key Features Of The Course"
   },
   "evaluate": {
     "student_feedback": "Student Feedback"

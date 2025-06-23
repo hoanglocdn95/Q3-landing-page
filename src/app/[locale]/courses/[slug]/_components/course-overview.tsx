@@ -107,7 +107,7 @@ const CourseOverview = ({
             <ClockRewindIcon />
             <div>
               <p className="font-600 text-14 lg:text-16 mb-1">
-                {t.course_overview.study_details.hours_per_session}
+                {t.course_overview.study_details.sessions}
               </p>
               <span className="text-14 lg:text-16">
                 {studyDetails.hoursPerSession}

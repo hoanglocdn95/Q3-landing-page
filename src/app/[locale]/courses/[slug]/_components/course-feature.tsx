@@ -30,7 +30,6 @@ const CourseFeaturesItem: React.FC<ICourseFeaturesItemProps> = ({
 };
 
 const CourseFeatures: React.FC<ICourseFeaturesProps> = ({
-  courseName,
   steps,
   locale,
 }: ICourseFeaturesProps) => {
@@ -39,7 +38,7 @@ const CourseFeatures: React.FC<ICourseFeaturesProps> = ({
   return (
     <SectionContainer id="course-features">
       <h2 className="text-24 lg:text-32 font-600 text-dark mb-4 md:mb-6 lg:mb-8">
-        {t.course_features.highlighted_features} {courseName}
+        {t.course_features.highlighted_features}
       </h2>
       <div className="grid gap-x-10 gap-y-6 md:grid-cols-3 md:gap-y-8">
         {steps.map((step, index) => (
