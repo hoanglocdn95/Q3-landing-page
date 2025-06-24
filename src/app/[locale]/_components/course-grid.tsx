@@ -42,6 +42,7 @@ export default function CourseGrid({ locale }: { locale: ELocale }) {
         ))}
       </div>
       <ComingSoonPopup
+        title={t.course_card.coming_soon}
         featureName={`${titleCourse}${t.coming_soon_popup.title}`}
         open={open}
         onOpenChange={setOpen}

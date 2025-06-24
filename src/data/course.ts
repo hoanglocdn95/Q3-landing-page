@@ -2647,7 +2647,7 @@ export const courses = [
       },
     },
     en: {
-      name: 'PTE Expresse',
+      name: 'PTE Express',
       description: 'Fast-track your prep, secure your score',
       courseRoadmap: [
         {

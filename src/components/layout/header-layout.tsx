@@ -586,6 +586,7 @@ export default function Header({ locale = 'vi' }: { locale?: string }) {
       </div>
 
       <ComingSoonPopup
+        title={t_home.course_card.coming_soon}
         featureName={`${titleCourse}${t_home.coming_soon_popup.title}`}
         open={open}
         onOpenChange={setOpen}

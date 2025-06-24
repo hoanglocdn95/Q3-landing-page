@@ -123,28 +123,41 @@ function DialogDescription({
 }
 
 interface ComingSoonPopupProps {
+  title: string;
   featureName: string;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
 function ComingSoonPopup({
+  title,
   featureName,
   open,
   onOpenChange,
 }: ComingSoonPopupProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="text-center">
-        <DialogTitle>{featureName}</DialogTitle>
-        <div className="mt-4 flex justify-center">
+      <DialogContent className="bg-background h-fit w-[400px]">
+        <div className="flex flex-col items-center justify-center">
           <Image
             src="/images/coming-soon.png"
             alt="Coming Soon"
             width={300}
-            height={200}
+            height={194}
             className="h-[200px] w-auto object-contain"
           />
+          <p className="mt-[-32px] mb-1 text-xl leading-7 font-bold text-[#121926]">
+            {title}
+          </p>
+          <p className="font-500 mb-8 text-sm leading-6 text-[#667085]">
+            {featureName}
+          </p>
+          <button
+            className="h-[38xp] cursor-pointer rounded-xl bg-[#FF8D0A] px-4 py-2 text-white"
+            onClick={() => onOpenChange(false)}
+          >
+            OK
+          </button>
         </div>
       </DialogContent>
     </Dialog>
